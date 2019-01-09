@@ -1,0 +1,26 @@
+Pain001.xml,/home/wls/dh/profiles/SBSAOM_CSTM_DMP/data/incoming/debulk,192.168.168.75,22,wls,wls
+Pain001.xml,/home/wls/dh/profiles/SBSAOM_CSTM_DMP/data/incoming/debulk,192.168.168.75,22,wls,wls
+
+### Keyword : FILEFINDNREPLACE
+### Object/Soap UI Step: NA
+### Value : Pain001.xml:Pain001.xml#MsgIdMsgId:${Prop_MsgId}#PmtInfIdPmtInfId:${Prop_PmtInfId}#InstrIdInstrId:${Prop_InstrId}#EndToEndIdEndToEndId:${Prop_EndToEndId}#BtchBookgBtchBookg:false#ReqdExctnDtReqdExctnDt:${Prop_BD}#DbtrAcctId:4444444444#CdtrAcctId:1234567890
+## Business flow name : Incoming file - DB only
+
+Pain001.xml:Pain001.xml#MsgIdMsgId:55059077758432#PmtInfIdPmtInfId:22936984666435#InstrIdInstrId:07119793919917#EndToEndIdEndToEndId:28235795198730#BtchBookgBtchBookg:false#ReqdExctnDtReqdExctnDt:2016-12-08#DbtrAcctId:4444444444#CdtrAcctId:1234567890
+New file created with name:Pain001.xml
+Pain001.xml
+0 days, 0 hours, 0 minutes, 0 seconds.0 days, 0 hours, 0 minutes, 1 seconds.#### Row : 0
+
+### Keyword : FILEFINDNREPLACE
+### Object/Soap UI Step: NA
+### Value : Pain001.xml:Pain001.xml#MsgIdMsgId:${Prop_MsgId}#PmtInfIdPmtInfId:${Prop_PmtInfId}#InstrIdInstrId:${Prop_InstrId}#EndToEndIdEndToEndId:${Prop_EndToEndId}#BtchBookgBtchBookg:false#ReqdExctnDtReqdExctnDt:${Prop_BD}#DbtrAcctId:4444444444#CdtrAcctId:1234567890
+## Business flow name : Incoming file - DB only
+
+Pain001.xml:Pain001.xml#MsgIdMsgId:57145336941943#PmtInfIdPmtInfId:77214648431194#InstrIdInstrId:29204588743606#EndToEndIdEndToEndId:90208677485828#BtchBookgBtchBookg:false#ReqdExctnDtReqdExctnDt:2016-12-08#DbtrAcctId:4444444444#CdtrAcctId:1234567890
+New file created with name:Pain001.xml
+Pain001.xml
+0 days, 0 hours, 0 minutes, 0 seconds.0 days, 0 hours, 0 minutes, 0 seconds.#### Row : 0
+### Keyword : WAIT
+### Object/Soap UI Step: NA
+### Value : MINIMUM
+## Business flow name : Incoming file - DB only

@@ -1,0 +1,31 @@
+!Db property
+hibernate.dialect=org.hibernate.dialect.MySQLDialect
+hibernate.connection.driver_class=com.mysql.jdbc.Driver
+
+!Development
+hibernate.connection.url=jdbc:mysql://10.91.106.24:3306/automation_testing_tool
+hibernate.connection.username=root
+hibernate.connection.password=root
+
+!Stagging
+!hibernate.connection.url=jdbc:mysql://10.91.103.44:3306/automation_testing_tool_production
+!hibernate.connection.username=root
+!hibernate.connection.password=root
+
+hibernate.hbm2ddl.auto=
+show_sql=false
+hibernate.current_session_context_class=thread
+
+
+!Production
+#hibernate.connection.url=jdbc:mysql://10.91.10.229:3306/gqm_automation_production
+#hibernate.connection.username=developer
+#hibernate.connection.password=developer12#$
+
+!Email properties
+mailRecepients=chetan.aher@fundtech.com
+mailHost=outlook.office.com
+mailPort=587
+mailUsername=chetan.aher@fundtech.com
+mailPassword=Q2hldGFuMTIjJA==
+

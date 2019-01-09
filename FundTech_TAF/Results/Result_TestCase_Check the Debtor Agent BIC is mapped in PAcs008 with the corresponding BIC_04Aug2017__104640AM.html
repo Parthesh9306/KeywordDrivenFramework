@@ -1,0 +1,204 @@
+<html> <head> <meta http-equiv=Content-Languagecontent=en-us> <meta http-equiv=Content-Typecontent=text/html; charset=windows-1252:> <title>Test Automation Execution Summery Report </title> </head> <body> <blockquote> <table border=2 bordercolor=#000000 id=table1 width=1000 height=31 bordercolorlight= #000000> <tr> <td COLSPAN = 10 bgcolor = #FFF8C6> <p align=center><font color=#000080 size=4 face="Copperplate Gothic Bold">Test Automation Execution Result for Test Case: Check the Debtor Agent BIC is mapped in PAcs008 with the corresponding BIC</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Product Name: Total Payments</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Customer: SAAS</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Build / Release: Version 5.0.DC.SP_RND.57.00 </font><font face="Copperplate Gothic Bold"></font> </p></td></tr><tr><td COLSPAN = 10 bgcolor = #FFF8C6><p align=justify><b><font color=#000080 size=2 face= Verdana> DATE:04 Aug 2017 10:46:40AM<p align=justify><b><font color=#000080 size=2 face= Verdana> SystemInfo: FTDT800.fundtech.co.in</td></tr><tr></tr><tr bgcolor=#8A4117><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Step Description</b><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Action</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Object / Data</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Data</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Result</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Trace</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Duration (HH:MM:SS)</b></td></blockquote></body></html><tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>Check the Debtor Agent BIC is mapped in Pacs008 with the corresponding BIC</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>Check the Debtor Agent BIC is mapped in Pacs008 with the corresponding BIC</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Connect to database</td>
+<td width=400><p align=center><font face=Verdana size=2>SETUPDBCONNECTION</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_SPNAB_PRD_QA}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : SPNAB_PRD_QA environment value : SPNAB_PRD_QA<br>Db connection set to : SPNAB_PRD_QA</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:7</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Setup MQ connection </td>
+<td width=400><p align=center><font face=Verdana size=2>SETUP_QUEUE_CONNECTION</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_Queue_SPNAB_PRD_QA}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : Queue_SPNAB_PRD_QA environment value : Queue_SPNAB_PRD_QA<br>Queue connection : Queue_SPNAB_PRD_QA</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:2</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Generate random OSNID</td>
+<td width=400><p align=center><font face=Verdana size=2>GENERATERANDOMVALUEINPROPERTY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Instr_ID##NUMBER_PRE##7_INSTR1</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2>Property Name : Instr_ID<br> Value generated INSTR17244874</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Generate random End to End Id</td>
+<td width=400><p align=center><font face=Verdana size=2>GENERATERANDOMVALUEINPROPERTY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>E2E_ID##NUMBER_PRE##6_E2EID11</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2>Property Name : E2E_ID<br> Value generated E2EID11802291</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Generate random Message Id</td>
+<td width=400><p align=center><font face=Verdana size=2>GENERATERANDOMVALUEINPROPERTY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>MsgId##NUMBER_PRE##7_NER061</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2>Property Name : MsgId<br> Value generated NER0617252990</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Fetch Db value into a variable: Db Connection name##TableName##Select column or function##Aliase##Where condition (columnName=value/Prop_variable)##Property name to store</td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>SELECT to_char(BSNESSDATE,'YYYY-MM-DD') AS BSNESSDATE FROM banks WHERE office = 'NAB'##BSNESSDATE##ObusinessDate</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> ObusinessDate : 2017-08-03<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FA5858>
+<td width=400><p align=center><font face=Verdana size=2>Load payment (Pain001/Pacs008) message</td>
+<td width=400><p align=center><font face=Verdana size=2>EXECUTE_SOAP_REQUEST</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_Environment}##<soapenv:Envelope xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope"
+xmlns:q0="http://fundtech.com/SCL/BusinessFlowSelectorService"
+xmlns:q1="http://fundtech.com/SCL/CommonTypes"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header>
+    <contextName>PaymentInitiation</contextName>
+    <deliveryTimestamp>2016-08-31T06:19:06</deliveryTimestamp>
+    <q2:FndtHeader xmlns:q2="http://fundtech.com/SCL/CommonTypes">
+      <q2:credentials>
+        <q2:UserID>TUSHAR1</q2:UserID>
+        <q2:Role>ALL1</q2:Role>
+      </q2:credentials>
+    </q2:FndtHeader>
+  </soapenv:Header>
+  <soapenv:Body>
+    <q0:BusinessFlowSelectorRequest>
+      <q0:message>
+        <![CDATA[
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.06">
+        <CstmrCdtTrfInitn>
+          <GrpHdr>
+            <MsgId>${Prop_MsgId}</MsgId>
+            <CreDtTm>${Prop_ObusinessDate}T06:45:57.057Z</CreDtTm>
+            <NbOfTxs>1</NbOfTxs>
+            <InitgPty>
+              <Id>
+                <OrgId>
+                  <Othr>
+                    <Id>NABSANATAAU33XXX</Id>
+                 </Othr>
+                </OrgId>
+              </Id>
+            </InitgPty>
+          </GrpHdr>
+          <PmtInf>
+            <PmtInfId>TESTSNE2753</PmtInfId>
+            <PmtMtd>TRF</PmtMtd>
+            <ReqdExctnDt>${Prop_ObusinessDate}</ReqdExctnDt>
+            <Dbtr>
+              <Nm>NPP DR test2 ACC</Nm>
+              <Id>
+                <OrgId>
+                  <Othr>
+                    <Id>NATAAU33XXX</Id>
+                  </Othr>
+                </OrgId>
+              </Id>
+            </Dbtr>
+            <DbtrAcct>
+              <Id>
+                <Othr>
+                  <Id>${Env_Outward_DebitorAccount}</Id>
+                  <SchmeNm>
+                    <Cd>BBAN</Cd>
+                  </SchmeNm>
+                  <Issr>${Env_Outward_DebitorIssr}</Issr>
+                </Othr>
+              </Id>
+            </DbtrAcct>
+            <DbtrAgt>
+              <FinInstnId>
+                <BICFI>NATAAU33XXX</BICFI>
+                <PstlAdr>
+                  <AdrLine>AdrLine</AdrLine>
+                </PstlAdr>
+              </FinInstnId>
+            </DbtrAgt>
+            <CdtTrfTxInf>
+              <PmtId>
+                <InstrId>${Prop_Instr_ID}</InstrId>
+                <EndToEndId>${Prop_E2E_ID}</EndToEndId>
+              </PmtId>
+              <PmtTpInf>
+                <InstrPrty>HIGH</InstrPrty>
+                <SvcLvl>
+                  <Prtry>sct.01</Prtry>
+                </SvcLvl>
+                <LclInstrm>
+                  <Cd>CCI</Cd>
+                </LclInstrm>
+              </PmtTpInf>
+              <Amt>
+                <InstdAmt Ccy="AUD">${Env_BaseAmount}</InstdAmt>
+              </Amt>
+              <ChrgBr>SHAR</ChrgBr>
+              <UltmtDbtr>
+                <Nm>sdrfg</Nm>
+                <PstlAdr>
+                  <AdrLine>Adr</AdrLine>
+                </PstlAdr>
+                <Id>
+                  <PrvtId>
+                    <Othr>
+                      <Id>Idd</Id>
+                      <SchmeNm>
+                        <Cd>Cod1</Cd>
+                      </SchmeNm>
+                    </Othr>
+                  </PrvtId>
+                </Id>
+              </UltmtDbtr>
+              
+              <Cdtr>
+                <Nm>NPP CR test ACC</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id>
+                  <Othr>
+                    <Id>${Env_Outward_CreditorIssr}</Id>
+                    <SchmeNm>
+                      <Cd>BBAN</Cd>
+                    </SchmeNm>
+                    <Issr>${Env_Outward_CreditorIssr}</Issr>
+                  </Othr>
+                </Id>
+              </CdtrAcct>
+              <RgltryRptg>
+                     <Dtls>
+                     <Inf>Y</Inf>
+                     </Dtls>
+             </RgltryRptg>
+            </CdtTrfTxInf>
+          </PmtInf>
+        </CstmrCdtTrfInitn>
+      </Document>
+]]>
+</q0:message>
+      <q0:inMsgContext>Feeder</q0:inMsgContext>
+    </q0:BusinessFlowSelectorRequest>
+  </soapenv:Body>
+</soapenv:Envelope></td>
+<td width=400><p align=center><b><font face=Verdana size=2><a href="Check the Debtor Agent BIC is mapped in PAcs008 with the corresponding BIC_04Aug2017__104640AM\04_Aug_2017__10_46_52AM_10.91.106.15.png" target="_blank">Fail</a> </href></font></b></td>
+<td width=400><p align=center><font face=Verdana size=2>; nested exception is: 
+	java.net.ConnectException: Connection refused: connect</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:2</td>
+</td></tr>

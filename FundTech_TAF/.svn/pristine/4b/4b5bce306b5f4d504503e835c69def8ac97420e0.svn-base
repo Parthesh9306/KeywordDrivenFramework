@@ -1,0 +1,31 @@
+#Variable properties
+#Thu May 19 18:17:15 IST 2016
+Register.ConfirmPassword=name\:confirmPassword
+BookFlight.FromMonth=name\:fromMonth
+BookFlight.ServiceClassBusiness=xpath\://input[@value\='Business']
+Register.Submit=name\:register
+Register.FirstName=name\:firstName
+BookFlight.ToDay=name\:toDay
+BookFlight.VerifyBookedSummary=xpath\://font[contains(text(),'itinerary has been booked\!')]
+BookFlight.FromDay=name\:fromDay
+BookFlight.TypeOneWay=xpath\://input[@value\='oneway']
+Register.UserName=id\:email
+BookFlight.PassCount=name\:passCount
+HomePage.REGISTER=xpath\://a[text()\='REGISTER']
+Login.Password=name\:password
+BookFlight.ToMonth=name\:toMonth
+HomePage.SIGN-OFF=xpath\://a[text()\='SIGN-OFF']
+OB=
+Register.LastName=name\:lastName
+BookFlight.ReserveFlights=name\:reserveFlights
+BookFlight.ToPort=name\:toPort
+MercuryFlightURL=http\://newtours.demoaut.com/
+BookFlight.VerifySummary=xpath\://font[contains(text(),'Summary')]
+HomePage.SIGN-ON=xpath\://a[text()\='SIGN-ON']
+Login.UserName=name\:userName
+BookFlight.Continue=name\:findFlights
+BookFlight.VerifyFromTo=xpath\://font[contains(text(),'London to Paris')]
+BookFlight.FromPort=name\:fromPort
+BookFlight.BuyFlights=name\:buyFlights
+Login.Submit=name\:login
+Register.Password=name\:password

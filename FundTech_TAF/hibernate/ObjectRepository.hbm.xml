@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="hibernate.entity.ObjectRepository" table="object_repository">
+		<id name="id" type="int">
+			<column name="id" scale="0" />
+			<generator class="increment" />
+		</id>
+		
+		<property name="createdAt" type="date">
+			<column name="created_at" />
+		</property>
+		
+		<property name="description" type="java.lang.String">
+			<column name="description" />
+		</property>
+		
+		<property name="findBy" type="java.lang.String">
+			<column name="findBy" />
+		</property>
+		
+		<property name="locator" type="java.lang.String">
+			<column name="locator" />
+		</property>
+		
+		<property name="name" type="java.lang.String">
+			<column name="name" />
+		</property>
+		
+		<property name="updatedAt" type="date">
+			<column name="updated_at" />
+		</property>
+		
+		<property name="createdBy" type="int">
+			<column name="created_by" />
+		</property>	
+		
+		<property name="productId" type="int">
+			<column name="product_id" />
+		</property>
+		<set name="product" table="product"
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="product_id" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.entity.Product" />
+        </set>
+		<property name="customerId" type="int">
+			<column name="customer_id" />
+		</property>
+		
+		<property name="screenId" type="int">
+			<column name="screen_id" />
+		</property>
+		
+		
+</class>
+</hibernate-mapping>

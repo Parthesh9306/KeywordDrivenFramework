@@ -1,0 +1,488 @@
+<html> <head> <meta http-equiv=Content-Languagecontent=en-us> <meta http-equiv=Content-Typecontent=text/html; charset=windows-1252:> <title>Test Automation Execution Summery Report </title> </head> <body> <blockquote> <table border=2 bordercolor=#000000 id=table1 width=1000 height=31 bordercolorlight= #000000> <tr> <td COLSPAN = 10 bgcolor = #FFF8C6> <p align=center><font color=#000080 size=4 face="Copperplate Gothic Bold">Test Automation Execution Result for Test Case: 377107</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Product Name: Total Payments</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Customer: SaaS</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Build / Release: Version 5.0.DC.SP_RND.57.00  </font><font face="Copperplate Gothic Bold"></font> </p></td></tr><tr><td COLSPAN = 10 bgcolor = #FFF8C6><p align=justify><b><font color=#000080 size=2 face= Verdana> DATE:03 Oct 2017 03:52:45PM<p align=justify><b><font color=#000080 size=2 face= Verdana> SystemInfo: FTDT798.fundtech.co.in</td></tr><tr></tr><tr bgcolor=#8A4117><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Step Description</b><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Action</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Object / Data</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Data</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Result</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Trace</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Duration (HH:MM:SS)</b></td></blockquote></body></html><tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>Debtor  Account Validation</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>Debtor  Account Validation</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Configure database connection</td>
+<td width=400><p align=center><font face=Verdana size=2>SETUPDBCONNECTION</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_SPNED}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : SPNED environment value : SPNED<br>Db connection set to : SPNED</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:5</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Configure Queue connection</td>
+<td width=400><p align=center><font face=Verdana size=2>SETUP_QUEUE_CONNECTION</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_Queue_SPNED}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : Queue_SPNED environment value : Queue_SPNED<br>Queue connection : Queue_SPNED</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:2</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save db field value in property variable: Query to execute ${Prop_variable name} if in property ## Column to fetch separated by comma ## properties to store seperated by comma </td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>select * from mandate man where creditor_id_key='0002${Prop_BD}815${Prop_RandomNum1}'##UMR##UMR</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : BD property value : 2017-01-24<br> variable : RandomNum1 property value : 868343<br> UMR : 201710030000030018<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Assign payment file to property</td>
+<td width=400><p align=center><font face=Verdana size=2>WRITEPROPERTY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Pacs003##<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.003.001.03">
+ <FIToFICstmrDrctDbt>
+  <GrpHdr>
+   <MsgId>021/DDOUT/00210002/Var_BSD1/Var_RandomNum2</MsgId>
+   <CreDtTm>Var_BDT10:00:00</CreDtTm>
+   <NbOfTxs>1</NbOfTxs>
+   <CtrlSum>100</CtrlSum>
+   <TtlIntrBkSttlmAmt Ccy="ZAR">100</TtlIntrBkSttlmAmt>
+   <IntrBkSttlmDt>Var_BD</IntrBkSttlmDt>                                           
+   <SttlmInf>
+    <SttlmMtd>CLRG</SttlmMtd>
+    <ClrSys>
+     <Prtry>AC</Prtry>
+    </ClrSys>
+   </SttlmInf>
+   <InstgAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>210000</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </InstgAgt>
+   <InstdAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>210001</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </InstdAgt>
+  </GrpHdr>
+  <DrctDbtTxInf>
+   <PmtId>
+    <EndToEndId>0002/20160824/Var_RandomNum2</EndToEndId>
+    <TxId>80SVar_RandomNum2</TxId>
+   </PmtId>
+   <PmtTpInf>
+    <LclInstrm>
+     <Prtry>00</Prtry>
+    </LclInstrm>
+    <SeqTp>FRST</SeqTp>
+    <CtgyPurp>
+     <Prtry>0044</Prtry>
+    </CtgyPurp>
+   </PmtTpInf>
+   <IntrBkSttlmAmt Ccy="ZAR">100</IntrBkSttlmAmt>
+   <ChrgBr>SLEV</ChrgBr>
+   <ReqdColltnDt>Var_BD</ReqdColltnDt>
+   <DrctDbtTx>
+    <MndtRltdInf>
+     <MndtId>Var_UMR</MndtId>
+    </MndtRltdInf>
+   </DrctDbtTx>
+   <Cdtr>
+    <Nm>Name</Nm>
+    <!-- pain.009 Cdtr nm -->
+    <CtctDtls>
+     <PhneNb>+270-118321278</PhneNb>
+     <EmailAdr>HOMELOANS@NED.CO.ZA</EmailAdr>
+    </CtctDtls>
+   </Cdtr>
+   <CdtrAcct>
+    <Id>
+     <Othr>
+      <Id>299454323</Id>
+     </Othr>
+    </Id>
+   </CdtrAcct>
+   <CdtrAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>350005</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </CdtrAgt>
+   <InitgPty>
+    <Nm>NUPAY</Nm>
+   </InitgPty>
+   <Dbtr>
+    <Nm>Dimistos</Nm>
+   </Dbtr>
+   <DbtrAcct>
+    <Id>
+     <Othr>
+      <Id>1111111111</Id>
+     </Othr>
+    </Id>
+    <Tp>
+     <Prtry>CURRENT</Prtry>
+    </Tp>
+   </DbtrAcct>
+   <DbtrAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>198765</MmbId>
+      <!--branch number of SBSA-->
+     </ClrSysMmbId>
+    </FinInstnId>
+   </DbtrAgt>
+   <RmtInf>
+    <Ustrd>MultChoiceDA00009554Var_BSD1</Ustrd>
+    <!-- pain.009 UltmtCdtr Id + pain.009 MndtReqId-->
+   </RmtInf>
+  </DrctDbtTxInf>
+ </FIToFICstmrDrctDbt>
+</Document></td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Update pacs002 to upload to server</td>
+<td width=400><p align=center><font face=Verdana size=2>VARFINDNREPLACE</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${READVAR_Pacs003}:Pacs003_${Prop_RandomNum2}.txt#Var_BSD1:${Prop_BD1}#Var_RandomNum1:${Prop_RandomNum1}#Var_BD:${Prop_BD}#Var_Day:${Prop_Day}#Var_UMR:${Prop_UMR}#Var_RandomNum2:${Prop_RandomNum2}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : RandomNum2 property value : 716933<br> variable : BD1 property value : 20170124<br> variable : RandomNum1 property value : 868343<br> variable : BD property value : 2017-01-24<br> variable : Day property value : 24<br> variable : UMR property value : 201710030000030018<br> variable : RandomNum2 property value : 716933<br> variable : Pacs003 property value : <Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.003.001.03">
+ <FIToFICstmrDrctDbt>
+  <GrpHdr>
+   <MsgId>021/DDOUT/00210002/Var_BSD1/Var_RandomNum2</MsgId>
+   <CreDtTm>Var_BDT10:00:00</CreDtTm>
+   <NbOfTxs>1</NbOfTxs>
+   <CtrlSum>100</CtrlSum>
+   <TtlIntrBkSttlmAmt Ccy="ZAR">100</TtlIntrBkSttlmAmt>
+   <IntrBkSttlmDt>Var_BD</IntrBkSttlmDt>                                           
+   <SttlmInf>
+    <SttlmMtd>CLRG</SttlmMtd>
+    <ClrSys>
+     <Prtry>AC</Prtry>
+    </ClrSys>
+   </SttlmInf>
+   <InstgAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>210000</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </InstgAgt>
+   <InstdAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>210001</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </InstdAgt>
+  </GrpHdr>
+  <DrctDbtTxInf>
+   <PmtId>
+    <EndToEndId>0002/20160824/Var_RandomNum2</EndToEndId>
+    <TxId>80SVar_RandomNum2</TxId>
+   </PmtId>
+   <PmtTpInf>
+    <LclInstrm>
+     <Prtry>00</Prtry>
+    </LclInstrm>
+    <SeqTp>FRST</SeqTp>
+    <CtgyPurp>
+     <Prtry>0044</Prtry>
+    </CtgyPurp>
+   </PmtTpInf>
+   <IntrBkSttlmAmt Ccy="ZAR">100</IntrBkSttlmAmt>
+   <ChrgBr>SLEV</ChrgBr>
+   <ReqdColltnDt>Var_BD</ReqdColltnDt>
+   <DrctDbtTx>
+    <MndtRltdInf>
+     <MndtId>Var_UMR</MndtId>
+    </MndtRltdInf>
+   </DrctDbtTx>
+   <Cdtr>
+    <Nm>Name</Nm>
+    <!-- pain.009 Cdtr nm -->
+    <CtctDtls>
+     <PhneNb>+270-118321278</PhneNb>
+     <EmailAdr>HOMELOANS@NED.CO.ZA</EmailAdr>
+    </CtctDtls>
+   </Cdtr>
+   <CdtrAcct>
+    <Id>
+     <Othr>
+      <Id>299454323</Id>
+     </Othr>
+    </Id>
+   </CdtrAcct>
+   <CdtrAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>350005</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </CdtrAgt>
+   <InitgPty>
+    <Nm>NUPAY</Nm>
+   </InitgPty>
+   <Dbtr>
+    <Nm>Dimistos</Nm>
+   </Dbtr>
+   <DbtrAcct>
+    <Id>
+     <Othr>
+      <Id>1111111111</Id>
+     </Othr>
+    </Id>
+    <Tp>
+     <Prtry>CURRENT</Prtry>
+    </Tp>
+   </DbtrAcct>
+   <DbtrAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>198765</MmbId>
+      <!--branch number of SBSA-->
+     </ClrSysMmbId>
+    </FinInstnId>
+   </DbtrAgt>
+   <RmtInf>
+    <Ustrd>MultChoiceDA00009554Var_BSD1</Ustrd>
+    <!-- pain.009 UltmtCdtr Id + pain.009 MndtReqId-->
+   </RmtInf>
+  </DrctDbtTxInf>
+ </FIToFICstmrDrctDbt>
+</Document><br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>MINIMUM</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:5</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Upload file to server</td>
+<td width=400><p align=center><font face=Verdana size=2>UPLOADFTPFILE</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>Pacs003_${Prop_RandomNum2}.txt,${Env_AutomationPath}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : RandomNum2 property value : 716933<br> variable : AutomationPath environment value : /home/was/dh/profiles/SPNED_SCD_QA3/data/incoming/Auto,192.168.169.5,22,was,was<br>File to Upload : D:\Proviso\FundTech_TAF_SOAP_UI\FileToUpload\Pacs003_716933.txt<Br> Location to Upload : /home/was/dh/profiles/SPNED_SCD_QA3/data/incoming/Auto</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:3</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Copy File from one server location to other server location</td>
+<td width=400><p align=center><font face=Verdana size=2>COPYFTPFILE</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>Pacs003_${Prop_RandomNum2}.txt,${Env_AutomationPath},${Env_ACPath}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : RandomNum2 property value : 716933<br> variable : AutomationPath environment value : /home/was/dh/profiles/SPNED_SCD_QA3/data/incoming/Auto,192.168.169.5,22,was,was<br> variable : ACPath environment value : /home/was/dh/profiles/SPNED_SCD_QA3/data/incoming/AC,192.168.169.5,22,was,was<br>File to Upload : <Br> Location to Copy : /home/was/dh/profiles/SPNED_SCD_QA3/data/incoming/AC</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:6</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>MINIMUM</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:5</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save db field value in property variable: Query to execute ${Prop_variable name} if in property ## Column to fetch separated by comma ## properties to store seperated by comma </td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>select * from file_summary where file_reference ='021/DDOUT/00210002/${Prop_BD1}/${Prop_RandomNum2}'##INTERNAL_FILE_ID##IFID2</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : BD1 property value : 20170124<br> variable : RandomNum2 property value : 716933<br> IFID2 : H0A3D24176470I1Q<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save db field value in property variable: Query to execute ${Prop_variable name} if in property ## Column to fetch separated by comma ## properties to store seperated by comma </td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>select * FROM MINF WHERE P_IN_INTERNAL_FILEID = '${Prop_IFID2}' and P_MSG_TYPE = 'Pacs_003'##P_MID##MID_Pacs003</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : IFID2 property value : H0A3D24176470I1Q<br> MID_Pacs003 : H0A3D24179R71X1Y<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Verify property / value from DB</td>
+<td width=400><p align=center><font face=Verdana size=2>VERIFYFROMDBQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>REJECTED##select * FROM MINF WHERE P_MID = '${Prop_MID_Pacs003}'##P_MSG_STS</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID_Pacs003 property value : H0A3D24179R71X1Y<br>DB value found : REJECTED<br> Value to verify : REJECTED<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save db field value in property variable: Query to execute ${Prop_variable name} if in property ## Column to fetch separated by comma ## properties to store seperated by comma </td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>select * FROM MINF WHERE P_IN_INTERNAL_FILEID = '${Prop_IFID2}' and P_MSG_TYPE = 'Pacs_002'##P_MID##MID_Pacs002</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : IFID2 property value : H0A3D24176470I1Q<br> MID_Pacs002 : H0A3D2417IW71I2C<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Verify property / value from DB</td>
+<td width=400><p align=center><font face=Verdana size=2>VERIFYFROMDBQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>COMPLETE##select * FROM MINF WHERE P_MID = '${Prop_MID_Pacs002}'##P_MSG_STS</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID_Pacs002 property value : H0A3D2417IW71I2C<br>DB value found : COMPLETE<br> Value to verify : COMPLETE<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save db field value in property variable: Query to execute ${Prop_variable name} if in property ## Column to fetch separated by comma ## properties to store seperated by comma </td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>select * FROM MINF WHERE P_MID = '${Prop_MID_Pacs002}'##XML_MSG##xml_msg</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID_Pacs002 property value : H0A3D2417IW71I2C<br> xml_msg : <FndtMsg xmlns="http://fundtech.com/SCL/CommonTypes">
+  <Msg>
+    <Pmnt>
+      <Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.04">
+        <FIToFIPmtStsRpt>
+          <GrpHdr>
+            <MsgId>H0A3D2417IW71I2C</MsgId>
+            <CreDtTm>2017-10-03T13:24:17</CreDtTm>
+            <InstdAgt>
+              <FinInstnId>
+                <BIC>CITIZAJXXXX</BIC>
+                <ClrSysMmbId>
+                  <MmbId>350005</MmbId>
+                </ClrSysMmbId>
+              </FinInstnId>
+            </InstdAgt>
+          </GrpHdr>
+          <OrgnlGrpInfAndSts>
+            <StsRsnInf>
+              <Rsn>
+                <Prtry>902109</Prtry>
+              </Rsn>
+            </StsRsnInf>
+          </OrgnlGrpInfAndSts>
+          <TxInfAndSts>
+            <OrgnlEndToEndId>0002/20160824/716933</OrgnlEndToEndId>
+            <OrgnlTxId>80S716933</OrgnlTxId>
+            <TxSts>RJCT</TxSts>
+            <StsRsnInf>
+              <Rsn>
+                <Prtry>902109</Prtry>
+              </Rsn>
+            </StsRsnInf>
+            <OrgnlTxRef>
+              <IntrBkSttlmAmt Ccy="ZAR">100</IntrBkSttlmAmt>
+              <IntrBkSttlmDt>2017-01-25</IntrBkSttlmDt>
+              <MndtRltdInf>
+                <MndtId>201710030000030018</MndtId>
+              </MndtRltdInf>
+              <RmtInf>
+                <Ustrd>MultChoiceDA0000955420170124</Ustrd>
+              </RmtInf>
+              <Dbtr>
+                <Nm>Dimistos</Nm>
+              </Dbtr>
+              <DbtrAcct>
+                <Id>
+                  <Othr>
+                    <Id>1111111111</Id>
+                  </Othr>
+                </Id>
+              </DbtrAcct>
+              <DbtrAgt>
+                <FinInstnId>
+                  <ClrSysMmbId>
+                    <MmbId>198765</MmbId>
+                  </ClrSysMmbId>
+                </FinInstnId>
+              </DbtrAgt>
+              <CdtrAgt>
+                <FinInstnId>
+                  <ClrSysMmbId>
+                    <MmbId>350005</MmbId>
+                  </ClrSysMmbId>
+                </FinInstnId>
+              </CdtrAgt>
+              <Cdtr>
+                <Nm>Name</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id>
+                  <Othr>
+                    <Id>299454323</Id>
+                  </Othr>
+                </Id>
+              </CdtrAcct>
+            </OrgnlTxRef>
+          </TxInfAndSts>
+        </FIToFIPmtStsRpt>
+      </Document>
+    </Pmnt>
+    <Extn>
+      <ProcessingTransientInfo>
+        <D_FIRST_IN_DST_CHAIN_NCC_CODE>ZANCC</D_FIRST_IN_DST_CHAIN_NCC_CODE>
+        <D_1ST_IN_DST_CHA_NCC_CD_FLD_ID>X_CDTR_AGT_CLR_SYS_CD</D_1ST_IN_DST_CHA_NCC_CD_FLD_ID>
+      </ProcessingTransientInfo>
+      <XMLPersistentInfo>
+        <D_FF_OFFSET_OUTBUFF>0,0</D_FF_OFFSET_OUTBUFF>
+        <D_MOP_CYCLE_UID/>
+        <InstrNxtAgtOtherCodes>
+          <InstrNxtAgtOtherCode>
+            <X_INSTR_NXT_AGT_OTHER_CD>/STCD//QMGT/U
+/PAYO//null/PAYB/null
+/CPRO/null/CPRB/null</X_INSTR_NXT_AGT_OTHER_CD>
+          </InstrNxtAgtOtherCode>
+        </InstrNxtAgtOtherCodes>
+      </XMLPersistentInfo>
+    </Extn>
+  </Msg>
+</FndtMsg>
+<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Verify value or variable by xpath</td>
+<td width=400><p align=center><font face=Verdana size=2>VERIFYBYXPATH</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>902109##//*[local-name() = 'TxInfAndSts']/*[local-name() = 'StsRsnInf']/*[local-name() = 'Rsn']/*[local-name() = 'Prtry']/text()##Prop_xml_msg</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2>Xpath / File : Prop_xml_msg Xapth value : 902109</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Verify property / value from DB</td>
+<td width=400><p align=center><font face=Verdana size=2>VERIFYFROMDBQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Invalid DD |1. Debtor account does not match the mandate Debtor account. Mandate ID: |2 Creditor ID |3.##SELECT * FROM JOURNALMESSAGES WHERE ERROR_CODE IN (SELECT ERROR_CODE FROM MSGERR WHERE MID ='${Prop_MID_Pacs003}')##DESCRIPTION</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID_Pacs003 property value : H0A3D24179R71X1Y<br>DB value found : Invalid DD |1. Debtor account does not match the mandate Debtor account. Mandate ID: |2 Creditor ID |3.<br> Value to verify : Invalid DD |1. Debtor account does not match the mandate Debtor account. Mandate ID: |2 Creditor ID |3.<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Disconnect Database</td>
+<td width=400><p align=center><font face=Verdana size=2>DESTROYDBCONNECTION</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_SPNED}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : SPNED environment value : SPNED<br>Db connection destroyed : SPNED</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Disconnect Message Queue</td>
+<td width=400><p align=center><font face=Verdana size=2>DESTROY_QUEUE_CONNECTION</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_Queue_SPNED}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : Queue_SPNED environment value : Queue_SPNED<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>

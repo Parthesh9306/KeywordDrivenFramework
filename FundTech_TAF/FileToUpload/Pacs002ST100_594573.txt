@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.04 FIToFIPaymentStatusReportV04_pacs.002.001.04_for_Pacs_Payment_msgs.xsd" xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.04" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <FIToFIPmtStsRpt>
+  <GrpHdr>
+   <MsgId>021/ST100/00210001/20170124/594573</MsgId> 
+   <CreDtTm>2015-12-30T09:44:47</CreDtTm>
+   <InstgAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>210000</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </InstgAgt>
+   <InstdAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>210001</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </InstdAgt>
+  </GrpHdr>
+  <OrgnlGrpInfAndSts>
+   <OrgnlMsgId>021/MANIN/00210002/20170919/019029</OrgnlMsgId> <!--Same as <MsgId> in outgoing 009file-->
+   <OrgnlMsgNmId>pain.009.001.03</OrgnlMsgNmId>
+   <OrgnlCreDtTm>2015-12-30T09:44:48</OrgnlCreDtTm>
+   <GrpSts>ACCP</GrpSts>
+   <NbOfTxsPerSts>
+    <DtldNbOfTxs>1</DtldNbOfTxs>
+    <DtldSts>ACCP</DtldSts>
+   </NbOfTxsPerSts>
+  </OrgnlGrpInfAndSts>
+ </FIToFIPmtStsRpt>
+</Document>

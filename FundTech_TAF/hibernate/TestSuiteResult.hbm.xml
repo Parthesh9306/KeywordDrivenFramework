@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="hibernate.entity.TestSuiteResult" table="test_suite_result">
+		<id name="id" type="int">
+			<column name="id" scale="0" />
+			<generator class="increment" />
+		</id>
+		<property name="name" type="string">
+			<column name="name" />
+		</property>
+		<property name="description" type="string">
+			<column name="description" />
+		</property>
+		<property name="result" type="string">
+			<column name="result" />
+		</property>
+		<property name="duration" type="string">
+			<column name="duration" />
+		</property>
+		
+		<property name="passCount" type="int">
+			<column name="pass_count" />
+		</property>
+
+		<property name="failCount" type="int">
+			<column name="fail_count" />
+		</property>
+
+		<many-to-one name="ExecutionMaster" class="hibernate.entity.ExecutionMaster">
+			<column name="execution_master_id" />
+		</many-to-one>
+
+		<set name="testcaseResults" cascade="all">
+			<key column="test_suite_result_id"></key>
+			<one-to-many class="hibernate.entity.TestcaseResult" />
+		</set>
+	</class>
+</hibernate-mapping>

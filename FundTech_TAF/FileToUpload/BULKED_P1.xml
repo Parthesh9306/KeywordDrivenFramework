@@ -1,0 +1,62 @@
+<FndtMsgBatch xmlns="http://fundtech.com/SCL/CommonTypes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><BatchHeader><GrpHdr xmlns="urn:iso:std:iso:20022:tech:xsd:pain.002.001.03"><MsgId>173LA2846IHY0I00</MsgId><CreDtTm>2017-03-21T10:28:46.666</CreDtTm><InitgPty><Nm>SWEDSESSXXX</Nm><Id><OrgId><BICOrBEI>SWEDSESSXXX</BICOrBEI></OrgId></Id></InitgPty></GrpHdr></BatchHeader><FndtOriginalGroupInformationAndStatus><OrgnlGrpInfAndSts xmlns="urn:iso:std:iso:20022:tech:xsd:pain.002.001.03"><OrgnlMsgId>SWED170314172740997</OrgnlMsgId><OrgnlMsgNmId>pain.001.001.03</OrgnlMsgNmId><OrgnlCreDtTm>2016-03-15T18:12:15.000</OrgnlCreDtTm></OrgnlGrpInfAndSts></FndtOriginalGroupInformationAndStatus><PmntTxInf><PmntHeader><OrgnlPmtInfAndSts xmlns="urn:iso:std:iso:20022:tech:xsd:pain.002.001.03"><OrgnlPmtInfId>PID170314172740997</OrgnlPmtInfId></OrgnlPmtInfAndSts></PmntHeader><TxInf><FndtMsg><Msg><Pmnt><Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.002.001.03"><TxInfAndSts>
+              <StsId>173LA2807BGY0A1N</StsId>
+              <OrgnlInstrId>1FI170314172740997</OrgnlInstrId>
+              <OrgnlEndToEndId>E2E0170314172740997</OrgnlEndToEndId>
+              <TxSts>RJCT</TxSts>
+              <StsRsnInf>
+                <Rsn>
+                  <Prtry>6042</Prtry>
+                </Rsn>
+                <AddtlInf>This message may be a duplicate because a message with the same key fields exists in the database.</AddtlInf>
+              </StsRsnInf>
+              <OrgnlTxRef>
+                <IntrBkSttlmAmt Ccy="SEK">2</IntrBkSttlmAmt>
+                <IntrBkSttlmDt>2017-01-27</IntrBkSttlmDt>
+                <RmtInf>
+                  <Ustrd>RIX Betalning</Ustrd>
+                </RmtInf>
+                <Dbtr>
+                  <Nm>CUST_NAME</Nm>
+                </Dbtr>
+                <DbtrAcct>
+                  <Id>
+                    <Othr>
+                      <Id>832799843064107</Id>
+                      <SchmeNm>
+                        <Cd>BBAN</Cd>
+                      </SchmeNm>
+                    </Othr>
+                  </Id>
+                </DbtrAcct>
+                <DbtrAgt>
+                  <FinInstnId>
+                    <BIC>SWEDSESS</BIC>
+                  </FinInstnId>
+                </DbtrAgt>
+                <CdtrAgt>
+                  <FinInstnId>
+                    <BIC>NDEASESS</BIC>
+                  </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                  <Nm>Karlssons Elektriska AB</Nm>
+                </Cdtr>
+                <CdtrAcct>
+                  <Id>
+                    <IBAN>SE8712000000012460104006</IBAN>
+                  </Id>
+                </CdtrAcct>
+              </OrgnlTxRef>
+            </TxInfAndSts></Document></Pmnt><Extn>
+      <ProcessingPersistentInfo>
+        <P_BASE_AMT>2</P_BASE_AMT>
+        <P_MSG_STS>REJECTED</P_MSG_STS>
+        <P_PMNT_SRC>FDR_FILE</P_PMNT_SRC>
+      </ProcessingPersistentInfo>
+      <UserDefinedFields>
+        <System>
+          <SWD_DBT_CUST_ID>JOSH12345678</SWD_DBT_CUST_ID>
+          <SWD_DBT_BANK_ID>8990</SWD_DBT_BANK_ID>
+        </System>
+      </UserDefinedFields>
+    </Extn></Msg></FndtMsg></TxInf></PmntTxInf></FndtMsgBatch>

@@ -1,0 +1,81 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.04" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <FIToFIPmtStsRpt>
+  <GrpHdr>
+   <MsgId>021/DROUT/00000016/20150222/599061</MsgId>
+   <CreDtTm>2017-08-11T09:40:47</CreDtTm>
+   <InstgAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>210001</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </InstgAgt>
+   <InstdAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>210001</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </InstdAgt>
+  </GrpHdr>
+  <OrgnlGrpInfAndSts>
+   <OrgnlMsgId>021/DDINP/00210001/20170703/002022</OrgnlMsgId> <!--from 003-->
+   <OrgnlMsgNmId>pacs.003.001.03</OrgnlMsgNmId> <!--from 003-->
+   <GrpSts>PART</GrpSts>
+  </OrgnlGrpInfAndSts>
+  <TxInfAndSts>
+   <OrgnlEndToEndId>0001/20160233/599061</OrgnlEndToEndId><!--from 003-->
+   <OrgnlTxId>0001/2017-08-21/000001029</OrgnlTxId> <!--from 003-->
+   <TxSts>ACCP</TxSts>
+   <!--<StsRsnInf>
+    <Rsn>
+     <Cd>AM09</Cd>
+    </Rsn>
+   </StsRsnInf>-->
+   <OrgnlTxRef>
+    <IntrBkSttlmAmt Ccy="ZAR">101.14</IntrBkSttlmAmt>
+    <IntrBkSttlmDt>2017-01-25</IntrBkSttlmDt>
+    <MndtRltdInf>
+     <MndtId>201708210000001131</MndtId>
+    </MndtRltdInf>
+    <RmtInf>
+     <Ustrd>Payment to PL account</Ustrd>
+    </RmtInf>
+    <Dbtr>
+     <Nm>800006D1D50000017</Nm>
+    </Dbtr>
+    <DbtrAcct>
+     <Id>
+      <Othr>
+       <Id>000525252</Id>
+      </Othr>
+     </Id>
+    </DbtrAcct>
+    <DbtrAgt>
+     <FinInstnId>
+      <ClrSysMmbId>
+       <MmbId>051001</MmbId>
+      </ClrSysMmbId>
+     </FinInstnId>
+    </DbtrAgt>
+    <CdtrAgt>
+     <FinInstnId>
+      <ClrSysMmbId>
+       <MmbId>051001</MmbId>
+      </ClrSysMmbId>
+     </FinInstnId>
+    </CdtrAgt>
+    <Cdtr>
+     <Nm>Std Bank Home Loans</Nm>
+    </Cdtr>
+    <CdtrAcct>
+     <Id>
+      <Othr>
+       <Id>4444444444</Id>
+      </Othr>
+     </Id>
+    </CdtrAcct>
+   </OrgnlTxRef>
+  </TxInfAndSts>
+ </FIToFIPmtStsRpt>
+</Document>

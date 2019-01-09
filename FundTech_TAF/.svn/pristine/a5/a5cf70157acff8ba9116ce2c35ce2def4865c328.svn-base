@@ -1,0 +1,296 @@
+package operation;
+
+import java.io.IOException;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Properties;
+
+import javax.jms.Connection;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.MessageConsumer;
+import javax.jms.MessageProducer;
+import javax.jms.Queue;
+import javax.jms.QueueBrowser;
+import javax.jms.Session;
+import javax.jms.TextMessage;
+
+import Utility.ProvisoException;
+
+import com.ibm.msg.client.jms.JmsConnectionFactory;
+import com.ibm.msg.client.jms.JmsFactoryFactory;
+import com.ibm.msg.client.wmq.WMQConstants;
+
+/**
+ * A JMS queue browser application that looks at all available messages on the
+ * named queue, without removing them, in the order they would be received by a
+ * consumer application.
+ */
+public class QueueOperation {
+
+    /**
+     * This details come from environment file
+     */
+    private static final String CONFIG_QUEUE_MANAGER = "queue_manager";
+    private static final String CONFIG_QUEUE_CHANNEL = "queue_channel";
+    private static final String CONFIG_QUEUE_HOST = "host";
+    private static final String CONFIG_QUEUE_PORT = "port";
+
+    static Connection connection = null;
+    static Session session = null;
+    static QueueBrowser browser = null;
+    static MessageConsumer consumer = null;
+    static MessageProducer producer = null;
+
+    PropertyFileOperation propertyFileOperation = new PropertyFileOperation();
+
+    /**
+     * Send message to queue
+     * 
+     * @param message
+     * @return
+     * @throws JMSException 
+     */
+    public String sendMessage(String queueName, String jmsCorrelationId,
+        String message) throws JMSException {
+        
+        Queue queue = session.createQueue(queueName);
+        producer = session.createProducer(queue);
+
+        TextMessage textMessage = session.createTextMessage(message);
+
+        if (!jmsCorrelationId.equalsIgnoreCase("Null")) {
+           textMessage.setJMSCorrelationID(jmsCorrelationId);
+        }
+
+        // Start the connection
+        connection.start();
+
+        // And, send the message
+        producer.send(textMessage);
+        System.out.println("Sent message:\n" + textMessage);
+
+        return "Pass";
+    }
+
+    /**
+     * Consume message from queue
+     * 
+     * @param searchString
+     * @param jmsIdPropertyname
+     * @param messagePropertyName
+     * @return
+     * @throws IOException 
+     * @throws JMSException 
+     */
+    public String consumeAndSearch(String queueName, String searchString,
+        String messagePropertyName, String jmsIdPropertyname, String correlationProperty) throws IOException, JMSException {
+        System.out.print("Consume starts");
+        Queue queue = session.createQueue(queueName);
+        consumer = session.createConsumer(queue);
+        // Start the connection
+        connection.start();
+        int count = 0;
+        Message message = null;
+        // And, receive the message
+        String currentMessage = "";
+        String currentJmsId = "";
+        String currentJmsCorrelationId = "";
+        do {
+            System.out.print(".");
+            message = consumer.receive(3);
+
+            if (message != null) {
+                currentMessage = ((TextMessage) message).getText();
+
+                currentJmsId = message.getJMSMessageID();
+                currentJmsCorrelationId = message.getJMSCorrelationID();
+                
+                if (currentMessage.contains(searchString)) {
+                    System.out.println("Jms message id : " + currentJmsId);
+                    System.out.println("Jms correlation id : " + currentJmsCorrelationId);
+                    System.out.println("Jms message content : "
+                        + currentMessage);
+                    System.out.println("\nfound message : " + ++count
+                        + ":\n");
+                }
+            }
+        } while (message != null);
+
+        if (count == 0) {
+            System.out.println("No message");
+            return "Fail";
+        } else {
+            HashMap<String, String> propertNameValue = new HashMap<String, String>();
+            propertNameValue.put(messagePropertyName, currentMessage);
+            propertNameValue.put(jmsIdPropertyname, currentJmsId);
+            if (correlationProperty != null && currentJmsCorrelationId != null) {
+            	propertNameValue.put(correlationProperty, currentJmsCorrelationId);
+            }
+            propertyFileOperation.writePropertyByMap(propertNameValue);
+        }
+
+        return "Pass";
+    }
+
+    /**
+     * Browser queue message
+     * 
+     * @param searchString
+     * @param messagePropertyName
+     * @param jmsIdPropertyname
+     * @return
+     * @throws IOException 
+     * @throws JMSException 
+     */
+    public String browseAndSearchMessage(String queueName, String searchString,
+        String messagePropertyName, String jmsIdPropertyname, String correlationProperty) throws IOException, JMSException {
+        Queue queue = session.createQueue(queueName);
+        browser = session.createBrowser(queue);
+        connection.start();
+        // And, browse the message
+        @SuppressWarnings("rawtypes")
+        Enumeration messages = browser.getEnumeration();
+        int count = 0;
+        Message current;
+        System.out.print("Browse starts");
+        String currentMessage = "";
+        String currentJmsId = "";
+        String currentJmsCorrelationId = "";
+
+        while (messages.hasMoreElements()) {
+            System.out.print(".");
+            current = (Message) messages.nextElement();
+            currentMessage = ((TextMessage) current).getText();
+            currentJmsId = current.getJMSMessageID();
+            currentJmsCorrelationId = current.getJMSCorrelationID();
+            
+            if (currentMessage.contains(searchString)) {
+                System.out.println("Jms message id : " + currentJmsId);
+                System.out.println("Jms correlation id : " + currentJmsCorrelationId);
+                System.out.println("Jms message content : "
+                    + currentMessage);
+                System.out.println("\nfound message : " + ++count + ":\n"); 
+                break;
+            }
+        }
+
+        if (count == 0) {
+            System.out.println("NO MESSAGE");
+            return "Fail";
+        } else {
+            HashMap<String, String> propertNameValue = new HashMap<String, String>();
+            propertNameValue.put(messagePropertyName, currentMessage);
+            propertNameValue.put(jmsIdPropertyname, currentJmsId);
+            if (correlationProperty != null && currentJmsCorrelationId != null) {
+            	propertNameValue.put(correlationProperty, currentJmsCorrelationId);
+            }
+            
+            propertyFileOperation.writePropertyByMap(propertNameValue);
+        }
+
+        return "Pass";
+    }
+
+    /**
+     * Set up queue connection
+     * 
+     * @param environment
+     * @param connectionName
+     * @return
+     * @throws JMSException 
+     * @throws IOException 
+     * @throws ProvisoException 
+     */
+    public String setUpQueueConnection(String connectionName) throws JMSException, IOException, ProvisoException {
+        Properties environment;
+        PropertyFileOperation fileOperation = new PropertyFileOperation();
+        
+        if (!Debug.enviromentIsOn) {
+            environment = fileOperation .getAllPropertiesFromFile(Debug.propertyFileToRead);    
+        } else {
+            environment = fileOperation.getAllPropertiesFromFile(Debug.objectsFolderPath + Debug.enviromentFileName + ".properties");  
+        }
+        String queueManagerName = environment.getProperty(connectionName + "."
+            + CONFIG_QUEUE_MANAGER);
+        String queueChannel = environment.getProperty(connectionName + "."
+            + CONFIG_QUEUE_CHANNEL);
+
+        Integer port = Integer.parseInt(environment.getProperty(connectionName
+            + "." + CONFIG_QUEUE_PORT, "0"));
+        String host = environment.getProperty(connectionName + "."
+            + CONFIG_QUEUE_HOST);
+        if (null == queueManagerName || null == queueChannel || 0 == port || null == host) {
+            throw new ProvisoException("Please specify queue details as host, port, queue_manager, queue_channel in environment and session name");
+        }
+        System.out
+            .println("HOST => " + host + " PORT => " + port + " MANAGER => "
+                + queueManagerName + " CHANNEL => " + queueChannel);
+            if (connectionName == null || "".equals(connectionName)) {
+                System.out.println("Provide queue connection details");
+
+                return "Fail";
+            }
+            // Create a connection factory
+            JmsFactoryFactory ff = JmsFactoryFactory
+                .getInstance(WMQConstants.WMQ_PROVIDER);
+            JmsConnectionFactory cf = ff.createConnectionFactory();
+
+            // Set the properties
+            cf.setStringProperty(WMQConstants.WMQ_HOST_NAME, host);
+            cf.setIntProperty(WMQConstants.WMQ_PORT, port);
+            cf.setStringProperty(WMQConstants.WMQ_CHANNEL, queueChannel);
+
+            cf.setIntProperty(WMQConstants.WMQ_CONNECTION_MODE,
+                WMQConstants.WMQ_CM_CLIENT);
+
+            cf.setStringProperty(WMQConstants.WMQ_QUEUE_MANAGER,
+                queueManagerName);
+
+            // Create JMS objects
+            connection = cf.createConnection();
+            session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+        
+
+        return "Pass";
+    }
+
+    /**
+     * Destroy queue connection
+     * 
+     * @return
+     */
+    public String destroyQueueConnection() {
+        if (browser != null) {
+            try {
+                browser.close();
+            } catch (JMSException jmsex) {
+                System.out.println("Browser could not be closed.");
+
+                return "Fail";
+            }
+        }
+
+        if (session != null) {
+            try {
+                session.close();
+            } catch (JMSException jmsex) {
+                System.out.println("Session could not be closed.");
+
+                return "Fail";
+            }
+        }
+
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (JMSException jmsex) {
+                System.out.println("Connection could not be closed.");
+
+                return "Fail";
+            }
+        }
+
+        return "Pass";
+    }
+}

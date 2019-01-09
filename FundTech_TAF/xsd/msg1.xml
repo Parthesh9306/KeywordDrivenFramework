@@ -1,0 +1,92 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.06">
+    <CstmrCdtTrfInitn>
+        <GrpHdr>
+            <MsgId>${Properties#OrgnlMsgId}</MsgId>
+            <CreDtTm>2015-08-18T06:45:57</CreDtTm>
+            <NbOfTxs>1</NbOfTxs>
+            <CtrlSum>1.00</CtrlSum>
+            <InitgPty>
+                <Nm>NPP DR test2 ACC</Nm>
+                <Id>
+                    <OrgId>
+                        <Othr>
+                            <Id>NABSANATAAU33</Id>
+                            <!--CUST_CODE in GPP for the BOFA Client Account, who is the Debitor. If Invalid, GPP will Reject request-->
+                        </Othr>
+                    </OrgId>
+                </Id>
+            </InitgPty>
+        </GrpHdr>
+        <PmtInf>
+            <PmtInfId>NJK8207A08S1072</PmtInfId>
+            <PmtMtd>TRF</PmtMtd>
+            <PmtTpInf>
+                <InstrPrty>HIGH</InstrPrty>
+                <SvcLvl>
+                    <Prtry>none.01</Prtry>
+                </SvcLvl>
+            </PmtTpInf>
+            <ReqdExctnDt>2015-08-18</ReqdExctnDt>
+            <Dbtr>
+                <Nm>NPP DR test2 ACC</Nm>
+                <Id>
+                    <OrgId>
+                        <Othr>
+                            <Id>NATAAU33XXX</Id>
+                            <!--CUST_CODE in GPP for the BOFA Client Account, who is the Debitor. If Invalid, GPP will Reject request-->
+                        </Othr>
+                    </OrgId>
+                </Id>
+            </Dbtr>
+            <DbtrAcct>
+                <Id>
+                    <Othr>
+                        <Id>201201999888555</Id>
+                        <SchmeNm>
+                            <Cd>ABSB</Cd>
+                        </SchmeNm>
+                        <Issr>083001</Issr>
+                    </Othr>
+                </Id>
+            </DbtrAcct>
+            <DbtrAgt>
+                <FinInstnId>
+                    <BICFI>NATAAU33XXX</BICFI>
+                </FinInstnId>
+            </DbtrAgt>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <InstrId>${Properties#Instr_ID}</InstrId>
+                    <EndToEndId>${Properties#E2E_ID}</EndToEndId>
+                </PmtId>
+                <Amt>
+                    <InstdAmt Ccy="AUD">1.00</InstdAmt>
+                    <!--Value of Transaction-->
+                </Amt>
+                <ChrgBr>SLEV</ChrgBr>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BICFI>NDUEAU44XXX</BICFI>
+                        <!--Creditor account BIC, can be external to BOFA-->
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Nm>MR H</Nm>
+                    <!--Creditor account name, can be external to BOFA-->
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <Othr>
+                            <Id>123456789</Id>
+                            <SchmeNm>
+                                <Cd>ABSB</Cd>
+                            </SchmeNm>
+                            <Issr>123456</Issr>
+                        </Othr>
+                        <!--Creditor account IBAN, can be external to BOFA-->
+                    </Id>
+                </CdtrAcct>
+            </CdtTrfTxInf>
+        </PmtInf>
+    </CstmrCdtTrfInitn>
+</Document>

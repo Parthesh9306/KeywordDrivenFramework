@@ -1,0 +1,188 @@
+package mail;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Properties;
+
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
+import javax.mail.Authenticator;
+import javax.mail.BodyPart;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+
+import operation.Debug;
+import operation.ReadObject;
+
+/**
+ * Send email with attachment
+ * 
+ * @author Chetan.Aher
+ * 
+ */
+public class Email {
+	private static String username;
+
+	private static String userPassword;
+
+	/**
+	 * Send mail by passing required parameters
+	 * 
+	 * @param emailsTosend
+	 * @param subject
+	 * @param message
+	 * @param attachFiles
+	 * @param host
+	 * @param port
+	 * @param mailFrom
+	 * @param password
+	 * @throws AddressException
+	 * @throws MessagingException
+	 */
+	public static void sendEmailWithAttachments(String[] emailsTosend,
+			String subject, String message, List<String> attachFiles,
+			String host, String port, String mailFrom, String password)
+			throws AddressException, MessagingException, IOException {
+		username = mailFrom;
+		userPassword = password;
+		// sets SMTP server properties
+		Properties properties = new Properties();
+		properties.put("mail.smtp.host", host);
+		properties.put("mail.smtp.port", port);
+		properties.put("mail.smtp.auth", "true");
+		properties.put("mail.smtp.starttls.enable", "true");
+		properties.put("mail.user", mailFrom);
+		properties.put("mail.password", password);
+
+		// creates a new session with an authenticator
+		Authenticator auth = new Authenticator() {
+			public PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, userPassword);
+			}
+		};
+		Session session = Session.getInstance(properties, auth);
+
+		// creates a new e-mail message
+		Message msg = new MimeMessage(session);
+		InternetAddress[] toAddresses = new InternetAddress[emailsTosend.length];
+
+		for (int i = 0; i < emailsTosend.length; i++) {
+			System.out.println(emailsTosend[i]);
+			toAddresses[i] = new InternetAddress(emailsTosend[i]);
+		}
+
+		msg.setFrom(new InternetAddress(username));
+		msg.setRecipients(Message.RecipientType.TO, toAddresses);
+		msg.setSubject(subject);
+		msg.setSentDate(new Date());
+
+		// creates message part
+		BodyPart messageBodyPart = new MimeBodyPart();
+		messageBodyPart.setContent(message, "text/html");
+
+		// creates multi-part
+		Multipart multipart = new MimeMultipart();
+		multipart.addBodyPart(messageBodyPart);
+
+		// adds attachments
+		messageBodyPart = new MimeBodyPart();
+		if (attachFiles != null) {
+			for (String filePath : attachFiles) {
+				//BodyPart attachPart = new MimeBodyPart();
+				DataSource source = new FileDataSource(filePath);
+				messageBodyPart.setDataHandler(new DataHandler(source));
+				System.out.println("File Sent:" + filePath);
+				messageBodyPart.setFileName(filePath);
+				multipart.addBodyPart(messageBodyPart);
+			}
+		}
+
+		// sets the multi-part as e-mail's content
+		msg.setContent(multipart);
+
+		// sends the e-mail
+		Transport.send(msg);
+	}
+	
+	/**
+	 * Send mail from getting content from environment property file
+	 * 
+	 * @param indexFilePath
+	 * @return
+	 */
+	public static boolean sendMail(String indexFilePath) {
+		ReadObject object = new ReadObject();
+		Properties allEnvObjects;
+		System.out.println("Sending e-mail....");
+		try {
+			allEnvObjects = object.getObjectRepository("applicationConfig");
+    		String[] emailsTosend = allEnvObjects.getProperty("mailRecepients").split(";");
+    		String host = allEnvObjects.getProperty("mailHost");
+    		String port = allEnvObjects.getProperty("mailPort");
+    		String mailFrom = allEnvObjects.getProperty("mailUsername");
+    		String password = EncoderDecoder.decodePassword(allEnvObjects.getProperty("mailPassword"));
+    		String fileContent = getHtmlFile(System.getProperty("user.dir") + File.separator +"Results" + File.separator + indexFilePath);
+    		String subject = "Test Suite Execution Results";
+    		String message = fileContent;
+    
+    		// attachments
+    		List<String> attachFiles = new ArrayList<String>();
+    		System.out.println("file to sent => " + Debug.grpResultFilePath);
+    		attachFiles.add(Debug.grpResultFilePath);
+			Email.sendEmailWithAttachments(emailsTosend, subject, message, attachFiles, host, port, mailFrom, password);
+		
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			System.out.println("Could not send email.");
+			return false;
+		}
+		System.out.println("Email sent successfully!");
+		return true;
+		
+	}
+	
+	/**
+	 * Set up html content for email to send after execution
+	 * 
+	 * @param fileName
+	 * @return
+	 * @throws IOException
+	 */
+	public static String getHtmlFile(String fileName) throws IOException {
+		String fileContent = "";
+
+		BufferedReader br = new BufferedReader(new FileReader(fileName));
+		try {
+			StringBuilder sb = new StringBuilder();
+			String line = br.readLine();
+
+			while (line != null) {
+				sb.append(line);
+				sb.append("\n");
+				line = br.readLine();
+			}
+			fileContent += sb.toString();
+		} finally {
+			br.close();
+		}
+		fileContent += "</table></body></html>";
+		fileContent += "<br><br><b style='color:blue'>Note: Please find attached results of Test cases.<b/>";
+
+		return fileContent;
+	}
+}

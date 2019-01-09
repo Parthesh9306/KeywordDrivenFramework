@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns="urn:bsva:std:tech:xsd:mdte.001.001.02">
+    <MndtReqMsg>
+        <GrpHdr>
+            <MsgId>021/MANRI/00210001/170703/646332</MsgId>
+            <CreDtTm>Var_BDT12:12:12</CreDtTm>
+            <InitgPty>
+                <Nm>Multichoice Company</Nm>
+                <Id>
+                    <OrgId>
+                        <Othr>
+                            <Id>ZA1SASBZAZAJJXXX</Id>
+                            <!--cust_code of the Owner BIC of NCC-->
+                        </Othr>
+                    </OrgId>
+                </Id>
+            </InitgPty>
+            <InstgAgt>
+                <FinInstnId>
+                    <ClrSysMmbId>
+                        <MmbId>210001</MmbId>
+                    </ClrSysMmbId>
+                </FinInstnId>
+            </InstgAgt>
+            <InstdAgt>
+                <FinInstnId>
+                    <ClrSysMmbId>
+                        <MmbId>210000</MmbId>
+                    </ClrSysMmbId>
+                </FinInstnId>
+            </InstdAgt>
+        </GrpHdr>
+        <MndtRqst>
+            <MndtInfRqstId>170703397149</MndtInfRqstId>
+            <RqstTp>MANDATE</RqstTp>
+            <Cdtr>
+                <Nm>CdtrNm</Nm>
+            </Cdtr>
+            <UltmtCdtr>
+                <Nm>UltmtCdtrNm</Nm>
+            </UltmtCdtr>
+            <Dbtr>
+                <Nm>DbtrNm</Nm>
+            </Dbtr>
+            <UltmtDbtr>
+                <Nm>UltmtDbtrNm</Nm>
+            </UltmtDbtr>
+            <MndtRfNbr>201708210000001073</MndtRfNbr>
+        </MndtRqst>
+    </MndtReqMsg>
+</Document>

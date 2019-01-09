@@ -1,0 +1,108 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.06">
+	<!-- Always starting point for SCT Outbounds -->
+	<CstmrCdtTrfInitn>
+		<GrpHdr>
+			<MsgId>MsgIdMsgId</MsgId>
+			<!-- Has to be a unique ID else GPP will Reject-->
+			<CreDtTm>2016-12-08T06:45:57</CreDtTm>
+			<!-- Approx Timestamp -->
+			<NbOfTxs>1</NbOfTxs>
+			<!-- Numeric count of total SCT Transactions in file -->
+			<CtrlSum>15</CtrlSum>
+			<!-- Total value of all transactions -->
+			<InitgPty>
+				<Nm>Direct Branch FrankfurtTR2X200</Nm>
+				<!-- Name of Initiating Party, will be BOFA client sending request. GPP does not validate -->
+				<Id>
+					<OrgId>
+						<Othr>
+							<Id>OM1CUST2</Id>
+							<!-- CUST_CODE in GPP for the BOFA Client Account, who is the Debitor. If Invalid, GPP will Reject request -->
+						</Othr>
+					</OrgId>
+				</Id>
+			</InitgPty>
+		</GrpHdr>
+		<PmtInf>
+			<PmtInfId>PmtInfIdPmtInfId</PmtInfId>
+			<!-- Has to be a unique ID else GPP will Reject -->
+			<PmtMtd>TRF</PmtMtd>
+			<BtchBookg>BtchBookgBtchBookg</BtchBookg>
+			<!-- True or False - only applicable when 2 or more transactions, will determine if GBS Leg 1 is consolidated or Individual. If True, PACS.008 S message for Leg 1, PACS.008 I for each Transaction. If false, PACS.008 I message created per transaction and used for Leg 1 as well OFAC.-->
+			<ReqdExctnDt>2016-12-08</ReqdExctnDt>
+			<!--  Settlement Date - normally same day for SCT's but can be future dated -->
+			<Dbtr>
+				<Id>
+					<OrgId>
+						<Othr>
+							<Id>LOCALOFFICEOM1</Id>
+							<!-- CUST_CODE in GPP for the BOFA Client Account, who is the Debitor. If Invalid, GPP will Reject request -->
+						</Othr>
+					</OrgId>
+				</Id>
+			</Dbtr>
+			<DbtrAcct>
+				<Id>
+					<Othr>
+						<Id>DbtrAcctId</Id>
+					</Othr>
+					<!-- Debitor account IBAN in GPP for the BOFA Client -->
+				</Id>
+			</DbtrAcct>
+			<DbtrAgt>
+				<FinInstnId>
+					<BICFI>DHILDHILXXX</BICFI>
+					<!-- Debitor account BIC in GPP for the BOFA Client -->
+				</FinInstnId>
+			</DbtrAgt>
+			<CdtTrfTxInf>
+				<!-- there can be multiple transaction blocks of these, 1 per credit -->
+				<PmtId>
+					<InstrId>InstrIdInstrId</InstrId>
+					<!-- Unique ID -->
+					<EndToEndId>EndToEndIdEndToEndId</EndToEndId>
+					<!-- Unique ID -->
+				</PmtId>
+				<PmtTpInf>
+					<SvcLvl>
+						<Prtry>RTGS</Prtry>
+					</SvcLvl>
+				</PmtTpInf>
+				<Amt>
+					<InstdAmt Ccy="ILS">15</InstdAmt>
+					<!-- Value of Transaction -->
+				</Amt>
+				<ChrgBr>SHAR</ChrgBr>
+				<CdtrAgt>
+					<FinInstnId>
+						<BICFI>CITIILXXXXX</BICFI>
+						<!-- Creditor account BIC, can be external to BOFA -->
+					</FinInstnId>
+				</CdtrAgt>
+				<Cdtr>
+					<Nm>Jerry WalkerTR2X2001</Nm>
+					<!-- Creditor account name, can be external to BOFA -->
+				</Cdtr>
+				<CdtrAcct>
+					<Id>
+						<Othr>
+							<Id>CdtrAcctId</Id>
+						</Othr>
+						<!-- Creditor account IBAN, can be external to BOFA -->
+					</Id>
+				</CdtrAcct>
+				<RmtInf>
+					<Strd>
+						<RfrdDocInf>
+							<Tp>
+								<CdOrPrtry>
+									<Cd>CINV</Cd>
+								</CdOrPrtry>
+							</Tp>
+						</RfrdDocInf>
+					</Strd>
+				</RmtInf>
+			</CdtTrfTxInf>
+		</PmtInf>
+	</CstmrCdtTrfInitn>
+</Document>

@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="22" passed="22">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="56223" started-at="2017-10-04T06:56:40Z" finished-at="2017-10-04T06:57:36Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="56223" started-at="2017-10-04T06:56:40Z" finished-at="2017-10-04T06:57:36Z">
+      <class name="testScript.HybridExecuteTest">
+        <test-method status="PASS" signature="before()[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="before" is-config="true" duration-ms="44" started-at="2017-10-04T12:26:40Z" finished-at="2017-10-04T12:26:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- before -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="30" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[PreRequsites]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[PreRequsites]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="5" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[MNT_Regression]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MNT_Regression]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="5" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[MNT_Regression_TestLink]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MNT_Regression_TestLink]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="5" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Report Center]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Report Center]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="5" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ChecksStopPayInquiry]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ChecksStopPayInquiry]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="5" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Issuance]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Issuance]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="5" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Transaction_Search]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Transaction_Search]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="5" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ClearedCheck&Passthru]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ClearedCheck&Passthru]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="4" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Demo]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[MNT_Regression]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="5" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[WorkFlowSheet]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[WorkFlowSheet]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="5" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[PackageWorkflow]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[PackageWorkflow]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="5" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[PaymentGCP]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[PaymentGCP]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="5" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[RECPAYMENT]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[RECPAYMENT]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="5" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CYB]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[CYB]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="5" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Product_SBSA_TT2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Product_SBSA_TT2]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="7" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TT02]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[TT02]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="5" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Product_SBSA]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Product_SBSA]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="5" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Cancel Pain09 timed out debtor]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Cancel Pain9 timedout_debtor]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="6" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:26:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Product_SBSA_Final]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Product_SBSA_Final]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="55527" started-at="2017-10-04T12:26:40Z" data-provider="hybridData" finished-at="2017-10-04T12:27:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Product_NED_Final]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Product_NED_Final]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="5" started-at="2017-10-04T12:27:36Z" data-provider="hybridData" finished-at="2017-10-04T12:27:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Product_NED_Merged_Apporv]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Product_NED_Merged_Apporv]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="testLogin" duration-ms="4" started-at="2017-10-04T12:27:36Z" data-provider="hybridData" finished-at="2017-10-04T12:27:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Product_NED_Merged_Happyflows]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Product_NED_Merged_Happyflows]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="after()[pri:0, instance:testScript.HybridExecuteTest@553f17c]" name="after" is-config="true" duration-ms="4" started-at="2017-10-04T12:27:36Z" finished-at="2017-10-04T12:27:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- after -->
+      </class> <!-- testScript.HybridExecuteTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>

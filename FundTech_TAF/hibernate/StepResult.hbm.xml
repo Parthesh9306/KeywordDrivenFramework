@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="hibernate.entity.StepResult" table="step_result">
+		<id name="id" type="int">
+			<column name="id" scale="0" />
+			<generator class="increment" />
+		</id>
+		<property name="stepDescription" type="string">
+			<column name="step_description" />
+		</property>
+		<property name="keyword" type="string">
+			<column name="keyword" />
+		</property>
+		<property name="object" type="string">
+			<column name="object" />
+		</property>
+		<property name="duration" type="string">
+			<column name="duration" />
+		</property>
+		
+		<property name="result" type="string">
+			<column name="result" />
+		</property>
+		
+		<property name="testData" type="string">
+			<column name="test_data" />
+		</property>
+
+		<many-to-one name="TestcaseResult" class="hibernate.entity.TestcaseResult">
+			<column name="testcase_result_id" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="hibernate.entity.Product" table="product">
+		<id name="id" type="int">
+			<column name="id" scale="0" />
+			<generator class="increment" />
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="name" />
+		</property>
+		
+		<property name="createdAt" type="date">
+			<column name="created_at" />
+		</property>
+		
+		<property name="createdBy" type="int">
+			<column name="created_by" />
+		</property>	
+		
+		<property name="description" type="java.lang.String">
+			<column name="description" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

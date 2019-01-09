@@ -1,0 +1,85 @@
+<FndtMsgBatch xmlns="http://fundtech.com/SCL/CommonTypes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <FndtHeader>
+  <FndtMsgId>H0A3G0927QM70S0P</FndtMsgId>
+  <FndtMsgCreDtTm>2016-12-08T13:56:21</FndtMsgCreDtTm>
+  <contextName>BulkAccopuntLookUp</contextName>
+  <contextLocalName/> 
+  <credentials>
+   <UserID>ADMIN1</UserID>
+   <Role>SERVICES</Role>
+  </credentials> 
+ </FndtHeader>
+ <FndtPmntTxInf>
+  <FndtMsg xmlns = "http://fundtech.com/SCL/CommonTypes">
+   <Header>
+    <contextName>DebitAccountLookup</contextName>
+    <P_MID forCreation = "false">H0A3G0927QM70S0P</P_MID>
+    <deliveryTimestamp>2015-02-27T19:59:08.611+11:00</deliveryTimestamp>
+   </Header>
+   <Msg>
+    <Extn>
+     <ProcessingPersistentInfo>
+      <P_OFFICE>ZA1</P_OFFICE>
+      <DebitSide>
+       <P_DBT_ACCT_OFFICE>ZA1</P_DBT_ACCT_OFFICE>
+       <P_DBT_ACCT_CCY>ZAR</P_DBT_ACCT_CCY>
+       <P_DBT_ACCT_NB>9996669998</P_DBT_ACCT_NB>                                                                 
+      </DebitSide>
+     </ProcessingPersistentInfo>
+     <ReferenceData>
+      <M_DBT_ACCOUNT>
+       <F_DBT_ACCT_BOOKNG_ENT>BFM421</F_DBT_ACCT_BOOKNG_ENT>
+       <F_DBT_ACCT_ACC_TYPE>DDA</F_DBT_ACCT_ACC_TYPE>
+       <F_DBT_ACCT_STOPFLAGDR>0</F_DBT_ACCT_STOPFLAGDR>
+       <F_DBT_ACCT_REASONDR/>
+       <F_DBT_ACCT_REASONCR/>
+       <F_DBT_ACCT_IS_RESIDENT>1</F_DBT_ACCT_IS_RESIDENT>
+      </M_DBT_ACCOUNT>
+      <M_DBT_CUST_PROFILE>
+       <F_DBT_CUST_CUST_CATEGORY>PB</F_DBT_CUST_CUST_CATEGORY>
+       <F_DBT_CUST_BASE_NO>94191300064</F_DBT_CUST_BASE_NO>
+       <F_DBT_CUST_CUST_CODE>LOCALOFFICEZA1</F_DBT_CUST_CUST_CODE>
+       <F_DBT_CUST_CUST_NAME/>
+       <F_DBT_CUST_ADDRESS1/>
+       <F_DBT_CUST_ADDRESS2/>
+       <F_DBT_CUST_ADDRESS3/>
+      </M_DBT_CUST_PROFILE>
+      <M_CONTACT_INFO>
+       <M_CONTACT_LINE>
+        <F_CONTACT_OF>DR_ACCT</F_CONTACT_OF>
+        <F_CONTACT_NAME/>
+        <F_CONTACT_FAX/>
+        <F_CONTACT_EMAIL>gurjeet.singh@fundtech.com; gurjeet.singh@fundtech.com</F_CONTACT_EMAIL>
+       </M_CONTACT_LINE>
+       <M_CONTACT_LINE>
+        <F_CONTACT_OF>DR_ACCT</F_CONTACT_OF>
+        <F_CONTACT_NAME>AC OFF 27</F_CONTACT_NAME>
+        <F_CONTACT_PHONE>AC OFF TEL 27</F_CONTACT_PHONE>
+        <F_CONTACT_EMAIL>AC OFF E-MAIL 27</F_CONTACT_EMAIL>
+       </M_CONTACT_LINE>
+      </M_CONTACT_INFO>
+     </ReferenceData>
+     <!-- 
+                                                <UserDefinedFields>
+                <System code = "***">
+                    <DBT_BANKFUSION_CUST_ID>LOCALOFFICEZA1</DBT_BANKFUSION_CUST_ID>
+                </System>
+            </UserDefinedFields>
+                                                -->
+    </Extn>
+   </Msg>
+   <ResponseDetails>
+    <returnCode>990</returnCode>
+    <!-- on reject should be 996-->
+    <description>123</description>
+    <errorsList>
+     <error>
+      <code>900012</code> 
+      <description>desc</description>
+     </error>
+    </errorsList>
+   </ResponseDetails>
+
+  </FndtMsg>
+ </FndtPmntTxInf>
+</FndtMsgBatch>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GPP_ACCINF_RSP>
+	<IntrfcClHdr>
+		<IntrfcClDtls>
+			<LclIntrfcNm>E0005</LclIntrfcNm>
+			<ActnTp>ACC_INF</ActnTp>
+		</IntrfcClDtls>
+		<ReqtgSys>ALU</ReqtgSys>
+		<Office>IE1</Office>
+		<ReqstRef>175091600494SS00</ReqstRef>
+		<RspnsTmStmp>2017-04-21T14:25:47.045</RspnsTmStmp>
+		<PrcssRtrStsInf>
+			<RtrCd>0000</RtrCd>
+			<RtrStsSvrty>Info</RtrStsSvrty>
+		</PrcssRtrStsInf>
+	</IntrfcClHdr>
+	<IntrfcClBdy>
+		<BscAcctInfRsp>
+			<DrCrInd>CR</DrCrInd>
+			<GPPPmtMsgId>175091600494SS00</GPPPmtMsgId>
+			<OrgnlAcctInf>
+				<AcctIdDtls>
+					<PrtryAcctId>90139433134800</PrtryAcctId>
+				</AcctIdDtls>
+			</OrgnlAcctInf>
+			<RspnsAcctInf>
+				<PrtryAcctId>90139433134800</PrtryAcctId>
+				<AcctCcy>EUR</AcctCcy>
+				<AcctgSys>ROIIBIS</AcctgSys>
+			</RspnsAcctInf>
+		</BscAcctInfRsp>
+		<AcctStsInf>
+			<RspnsCd>002</RspnsCd>
+			<RspnsRsnTxt>AC Closed TO ALL - OVER-RIDEABLE</RspnsRsnTxt>
+			<StpFlgInf>
+				<StpFlgFor>CR</StpFlgFor>
+				<StpFlgCd>200</StpFlgCd>
+			</StpFlgInf>
+		</AcctStsInf>
+	</IntrfcClBdy>
+</GPP_ACCINF_RSP>

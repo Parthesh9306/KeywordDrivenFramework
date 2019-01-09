@@ -1,0 +1,349 @@
+<html> <head> <meta http-equiv=Content-Languagecontent=en-us> <meta http-equiv=Content-Typecontent=text/html; charset=windows-1252:> <title>Test Automation Execution Summery Report </title> </head> <body> <blockquote> <table border=2 bordercolor=#000000 id=table1 width=1000 height=31 bordercolorlight= #000000> <tr> <td COLSPAN = 10 bgcolor = #FFF8C6> <p align=center><font color=#000080 size=4 face="Copperplate Gothic Bold">Test Automation Execution Result for Test Case: 370738</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Product Name: Total Payments</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Customer: SaaS</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Build / Release: Version 5.0.DC.SP_RND.57.00  </font><font face="Copperplate Gothic Bold"></font> </p></td></tr><tr><td COLSPAN = 10 bgcolor = #FFF8C6><p align=justify><b><font color=#000080 size=2 face= Verdana> DATE:11 Aug 2017 06:37:34PM<p align=justify><b><font color=#000080 size=2 face= Verdana> SystemInfo: FTDT798.fundtech.co.in</td></tr><tr></tr><tr bgcolor=#8A4117><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Step Description</b><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Action</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Object / Data</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Data</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Result</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Trace</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Duration (HH:MM:SS)</b></td></blockquote></body></html><tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>From WEEK 01  to WEEK 04</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>From WEEK 01  to WEEK 04</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Configure database connection</td>
+<td width=400><p align=center><font face=Verdana size=2>SETUPDBCONNECTION</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_SPSBSA}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : SPSBSA environment value : SPSBSA<br>Db connection set to : SPSBSA</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:6</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Configure Queue connection</td>
+<td width=400><p align=center><font face=Verdana size=2>SETUP_QUEUE_CONNECTION</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_Queue_SPSBSA}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : Queue_SPSBSA environment value : Queue_SPSBSA<br>Queue connection : Queue_SPSBSA</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:2</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save db field value in property variable: Query to execute ${Prop_variable name} if in property ## Column to fetch separated by comma ## properties to store seperated by comma </td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>select OUT_FILE_ID from OUT_FILE_BUFFERS where IN_FILE_ID='${Prop_IFID}'##OUT_FILE_ID##IFID_DN</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : IFID property value : H08BF5626JXD011W<br> IFID_DN : H08BF5757MTD0F0J<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save db field value in property variable: Query to execute ${Prop_variable name} if in property ## Column to fetch separated by comma ## properties to store seperated by comma </td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>select * from file_summary fs where fs.internal_file_id = '${Prop_IFID_DN}'##FILE_DES##OutFilePath</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : IFID_DN property value : H08BF5757MTD0F0J<br> OutFilePath : /home/was8/dh/profiles/SPSBSA_SCD_QA1/data/outgoing/file/SDD_ONUS/GPP021DDINP00210001D20170703011017LD.xml<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save db field value in property variable: Query to execute ${Prop_variable name} if in property ## Column to fetch separated by comma ## properties to store seperated by comma </td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>select * from file_summary fs where fs.internal_file_id = '${Prop_IFID_DN}'##FILE_NAME##OutFileName</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : IFID_DN property value : H08BF5757MTD0F0J<br> OutFileName : GPP021DDINP00210001D20170703011017LD.xml<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Update pacs002 to upload to server</td>
+<td width=400><p align=center><font face=Verdana size=2>VARFINDNREPLACE</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${READVAR_OutFilePath}:OutFilePath#SDD_ONUS/:SDD_ONUS/staging/</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : OutFilePath property value : /home/was8/dh/profiles/SPSBSA_SCD_QA1/data/outgoing/file/SDD_ONUS/GPP021DDINP00210001D20170703011017LD.xml<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Download FTP File</td>
+<td width=400><p align=center><font face=Verdana size=2>DOWNLOADFTPFILE</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_FTPDownload}##${Prop_OutFilePath}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : OutFilePath property value : /home/was8/dh/profiles/SPSBSA_SCD_QA1/data/outgoing/file/SDD_ONUS/staging/GPP021DDINP00210001D20170703011017LD.xml<br> variable : FTPDownload environment value : 192.168.168.183##22##was8##was8<br>Server path : D:\Proviso\FundTech_TAF_SOAP_UI\TemplateFile\<br> Proviso download location : D:\Proviso\FundTech_TAF_SOAP_UI\TemplateFile\</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:6</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Perform file operation of copy file , delete file , create file</td>
+<td width=400><p align=center><font face=Verdana size=2>FILEOPERATION</td>
+<td width=400><p align=center><font face=Verdana size=2>OB</td>
+<td width=400><p align=center><font face=Verdana size=2>COPY##${PROVISO_HOME}\TemplateFile\${Prop_OutFileName}##${PROVISO_HOME}\xml\${Prop_OutFileName}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : OutFileName property value : GPP021DDINP00210001D20170703011017LD.xml<br> variable : OutFileName property value : GPP021DDINP00210001D20170703011017LD.xml<br> PROVISO_HOME : D:\Proviso\FundTech_TAF_SOAP_UI<br> PROVISO_HOME : D:\Proviso\FundTech_TAF_SOAP_UI<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save xpath value</td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEVARIABLEBYXPATH</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Pacs03OutMsgId##//*[local-name() = 'MsgId']/text()##File_${Prop_OutFileName}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : OutFileName property value : GPP021DDINP00210001D20170703011017LD.xml<br>Xpath / File : File_GPP021DDINP00210001D20170703011017LD.xml <br>Xapth value : 021/DDINP/00210001/20170703/011017 <br>Variable to Store: Pacs03OutMsgId##//*[local-name() = 'MsgId']/text()##File_GPP021DDINP00210001D20170703011017LD.xml</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save xpath value</td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEVARIABLEBYXPATH</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Pacs03E2EId##//*[local-name() = 'EndToEndId']/text()##File_${Prop_OutFileName}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : OutFileName property value : GPP021DDINP00210001D20170703011017LD.xml<br>Xpath / File : File_GPP021DDINP00210001D20170703011017LD.xml <br>Xapth value : 0001/20160233/638905 <br>Variable to Store: Pacs03E2EId##//*[local-name() = 'EndToEndId']/text()##File_GPP021DDINP00210001D20170703011017LD.xml</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save xpath value</td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEVARIABLEBYXPATH</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Pacs03TxnId##//*[local-name() = 'TxId']/text()##File_${Prop_OutFileName}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : OutFileName property value : GPP021DDINP00210001D20170703011017LD.xml<br>Xpath / File : File_GPP021DDINP00210001D20170703011017LD.xml <br>Xapth value : 0001/2017-08-11/000011038 <br>Variable to Store: Pacs03TxnId##//*[local-name() = 'TxId']/text()##File_GPP021DDINP00210001D20170703011017LD.xml</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save xpath value</td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEVARIABLEBYXPATH</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Pacs03MandateId##//*[local-name() = 'MndtId']/text()##File_${Prop_OutFileName}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : OutFileName property value : GPP021DDINP00210001D20170703011017LD.xml<br>Xpath / File : File_GPP021DDINP00210001D20170703011017LD.xml <br>Xapth value : 0001201708110000024343 <br>Variable to Store: Pacs03MandateId##//*[local-name() = 'MndtId']/text()##File_GPP021DDINP00210001D20170703011017LD.xml</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Assign payment file to property</td>
+<td width=400><p align=center><font face=Verdana size=2>WRITEPROPERTY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Pacs002##<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.04" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <FIToFIPmtStsRpt>
+  <GrpHdr>
+   <MsgId>021/DROUT/00000016/20150222/Var_RandomNum1</MsgId>
+   <CreDtTm>2017-08-11T09:40:47</CreDtTm>
+   <InstgAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>210001</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </InstgAgt>
+   <InstdAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>210001</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </InstdAgt>
+  </GrpHdr>
+  <OrgnlGrpInfAndSts>
+   <OrgnlMsgId>Var_Pacs03OutMsg</OrgnlMsgId> <!--from 003-->
+   <OrgnlMsgNmId>pacs.003.001.03</OrgnlMsgNmId> <!--from 003-->
+   <GrpSts>PART</GrpSts>
+  </OrgnlGrpInfAndSts>
+  <TxInfAndSts>
+   <OrgnlEndToEndId>Var_Pacs03E2E</OrgnlEndToEndId><!--from 003-->
+   <OrgnlTxId>Var_Pacs03Txn</OrgnlTxId> <!--from 003-->
+   <TxSts>ACCP</TxSts>
+   <!--<StsRsnInf>
+    <Rsn>
+     <Cd>AM09</Cd>
+    </Rsn>
+   </StsRsnInf>-->
+   <OrgnlTxRef>
+    <IntrBkSttlmAmt Ccy="ZAR">101.14</IntrBkSttlmAmt>
+    <IntrBkSttlmDt>2017-01-25</IntrBkSttlmDt>
+    <MndtRltdInf>
+     <MndtId>Var_Pacs03Mandate</MndtId>
+    </MndtRltdInf>
+    <RmtInf>
+     <Ustrd>Payment to PL account</Ustrd>
+    </RmtInf>
+    <Dbtr>
+     <Nm>800006D1D50000017</Nm>
+    </Dbtr>
+    <DbtrAcct>
+     <Id>
+      <Othr>
+       <Id>000525252</Id>
+      </Othr>
+     </Id>
+    </DbtrAcct>
+    <DbtrAgt>
+     <FinInstnId>
+      <ClrSysMmbId>
+       <MmbId>051001</MmbId>
+      </ClrSysMmbId>
+     </FinInstnId>
+    </DbtrAgt>
+    <CdtrAgt>
+     <FinInstnId>
+      <ClrSysMmbId>
+       <MmbId>051001</MmbId>
+      </ClrSysMmbId>
+     </FinInstnId>
+    </CdtrAgt>
+    <Cdtr>
+     <Nm>Std Bank Home Loans</Nm>
+    </Cdtr>
+    <CdtrAcct>
+     <Id>
+      <Othr>
+       <Id>4444444444</Id>
+      </Othr>
+     </Id>
+    </CdtrAcct>
+   </OrgnlTxRef>
+  </TxInfAndSts>
+ </FIToFIPmtStsRpt>
+</Document></td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Update pacs002 to upload to server</td>
+<td width=400><p align=center><font face=Verdana size=2>VARFINDNREPLACE</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${READVAR_Pacs002}:Pacs002_${Prop_RandomNum1}.txt#Var_RandomNum1:${Prop_RandomNum1}#Var_Pacs03OutMsg:${Prop_Pacs03OutMsgId}#Var_Pacs03E2E:${Prop_Pacs03E2EId}#Var_Pacs03Txn:${Prop_Pacs03TxnId}#Var_Pacs03Mandate:${Prop_Pacs03MandateId}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : RandomNum1 property value : 638905<br> variable : RandomNum1 property value : 638905<br> variable : Pacs03OutMsgId property value : 021/DDINP/00210001/20170703/011017<br> variable : Pacs03E2EId property value : 0001/20160233/638905<br> variable : Pacs03TxnId property value : 0001/2017-08-11/000011038<br> variable : Pacs03MandateId property value : 0001201708110000024343<br> variable : Pacs002 property value : <Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.04" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <FIToFIPmtStsRpt>
+  <GrpHdr>
+   <MsgId>021/DROUT/00000016/20150222/Var_RandomNum1</MsgId>
+   <CreDtTm>2017-08-11T09:40:47</CreDtTm>
+   <InstgAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>210001</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </InstgAgt>
+   <InstdAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>210001</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </InstdAgt>
+  </GrpHdr>
+  <OrgnlGrpInfAndSts>
+   <OrgnlMsgId>Var_Pacs03OutMsg</OrgnlMsgId> <!--from 003-->
+   <OrgnlMsgNmId>pacs.003.001.03</OrgnlMsgNmId> <!--from 003-->
+   <GrpSts>PART</GrpSts>
+  </OrgnlGrpInfAndSts>
+  <TxInfAndSts>
+   <OrgnlEndToEndId>Var_Pacs03E2E</OrgnlEndToEndId><!--from 003-->
+   <OrgnlTxId>Var_Pacs03Txn</OrgnlTxId> <!--from 003-->
+   <TxSts>ACCP</TxSts>
+   <!--<StsRsnInf>
+    <Rsn>
+     <Cd>AM09</Cd>
+    </Rsn>
+   </StsRsnInf>-->
+   <OrgnlTxRef>
+    <IntrBkSttlmAmt Ccy="ZAR">101.14</IntrBkSttlmAmt>
+    <IntrBkSttlmDt>2017-01-25</IntrBkSttlmDt>
+    <MndtRltdInf>
+     <MndtId>Var_Pacs03Mandate</MndtId>
+    </MndtRltdInf>
+    <RmtInf>
+     <Ustrd>Payment to PL account</Ustrd>
+    </RmtInf>
+    <Dbtr>
+     <Nm>800006D1D50000017</Nm>
+    </Dbtr>
+    <DbtrAcct>
+     <Id>
+      <Othr>
+       <Id>000525252</Id>
+      </Othr>
+     </Id>
+    </DbtrAcct>
+    <DbtrAgt>
+     <FinInstnId>
+      <ClrSysMmbId>
+       <MmbId>051001</MmbId>
+      </ClrSysMmbId>
+     </FinInstnId>
+    </DbtrAgt>
+    <CdtrAgt>
+     <FinInstnId>
+      <ClrSysMmbId>
+       <MmbId>051001</MmbId>
+      </ClrSysMmbId>
+     </FinInstnId>
+    </CdtrAgt>
+    <Cdtr>
+     <Nm>Std Bank Home Loans</Nm>
+    </Cdtr>
+    <CdtrAcct>
+     <Id>
+      <Othr>
+       <Id>4444444444</Id>
+      </Othr>
+     </Id>
+    </CdtrAcct>
+   </OrgnlTxRef>
+  </TxInfAndSts>
+ </FIToFIPmtStsRpt>
+</Document><br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>OB</td>
+<td width=400><p align=center><font face=Verdana size=2>MINIMUM</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:5</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Upload file to server</td>
+<td width=400><p align=center><font face=Verdana size=2>UPLOADFTPFILE</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Pacs002_${Prop_RandomNum1}.txt,${Env_ACPath}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : RandomNum1 property value : 638905<br> variable : ACPath environment value : /home/was8/dh/profiles/SPSBSA_SCD_QA1/data/incoming/AC,192.168.168.183,22,was8,was8<br>File to Upload : D:\Proviso\FundTech_TAF_SOAP_UI\FileToUpload\Pacs002_638905.txt<Br> Location to Upload : /home/was8/dh/profiles/SPSBSA_SCD_QA1/data/incoming/AC</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:3</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>OB</td>
+<td width=400><p align=center><font face=Verdana size=2>MINIMUM</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:5</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Verify property / value from DB</td>
+<td width=400><p align=center><font face=Verdana size=2>VERIFYFROMDBQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>COMPLETE##select * FROM MINF WHERE P_MID = '${Prop_MID_Pacs_003}'##P_MSG_STS</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID_Pacs_003 property value : H08BF5626MTD0120<br>DB value found : COMPLETE<br> Value to verify : COMPLETE<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Disconnect Database</td>
+<td width=400><p align=center><font face=Verdana size=2>DESTROYDBCONNECTION</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_SPSBSA}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : SPSBSA environment value : SPSBSA<br>Db connection destroyed : SPSBSA</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Disconnect Message Queue</td>
+<td width=400><p align=center><font face=Verdana size=2>DESTROY_QUEUE_CONNECTION</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_Queue_SPSBSA}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : Queue_SPSBSA environment value : Queue_SPSBSA<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>

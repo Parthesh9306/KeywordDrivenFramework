@@ -1,0 +1,97 @@
+SQL> 
+SQL> PROMPT Connecting Database.........
+Connecting Database.........
+SQL> PROMPT ===================================
+===================================
+SQL> connect QCANZ152CIAUTO/QCANZ152CIAUTO@ANZ_175;
+Connected.
+SQL> 
+SQL> DECLARE
+  2  	 v_seller_code VARCHAR2(10) := '%';
+  3  BEGIN
+  4  	 dbms_output.put_line('Stub for update SYSADDDAYS parameter value');
+  5  	 dbms_output.put_line('==========================================');
+  6  	 dbms_output.put_line('Seller	  | Seller Dt | Sys Dt	  | Generic Dt|  Days Diff | Seller Dt');
+  7  	 dbms_output.put_line('-----------|-----------|-----------|-----------|------------|----------');
+  8  	 FOR i IN (SELECT a.seller_code, CEIL(generic.get_date(a.seller_code) - SYSDATE) days_diff
+  9  		     FROM system_parameters_mst a
+ 10  		    WHERE a.parameter_code = 'SYSADDDAYS'
+ 11  		      AND a.seller_code like v_seller_code
+ 12  		    ORDER BY a.seller_code)
+ 13  	 LOOP
+ 14  	     dbms_output.put_line(RPAD(i.seller_code,10,' ')||' | ' ||generic.get_date(i.seller_code) ||' | ' ||SYSDATE ||' | ' ||generic.get_datetime ||' | ' ||LPAD(i.days_diff,10,' ' ) ||' | ' ||generic.get_date(i.seller_code));
+ 15  
+ 16  	     UPDATE system_parameters_mst a
+ 17  		SET a.parameter_value = i.days_diff
+ 18  	      WHERE a.parameter_code = 'SYSADDDAYS'
+ 19  		AND a.seller_code = i.seller_code;
+ 20  	 END LOOP;
+ 21  
+ 22  
+ 23  	 dbms_output.put_line('-----------------------------------------------------------------------');
+ 24  	 dbms_output.put_line('Stub for update SYSADDDAYS parameter value');
+ 25  	 dbms_output.put_line('==========================================');
+ 26  	 FOR i IN (SELECT a.seller_code, CEIL(generic.get_date(a.seller_code) - SYSDATE) days_diff
+ 27  		     FROM system_parameters_mst a
+ 28  		    WHERE a.parameter_code = 'SYSADDDAYS'
+ 29  		      AND a.seller_code like v_seller_code
+ 30  		    ORDER BY a.seller_code)
+ 31  	 LOOP
+ 32  	     dbms_output.put_line('Seller: ' || RPAD(i.seller_code,10,' ')
+ 33  			 ||', Seller Date: ' ||generic.get_date(i.seller_code)
+ 34  			 ||', Sys Date: ' || SYSDATE
+ 35  			 ||', Days Difference: ' || i.days_diff);
+ 36  
+ 37  	     UPDATE system_parameters_mst a
+ 38  		SET a.parameter_value = i.days_diff
+ 39  	      WHERE a.parameter_code = 'SYSADDDAYS'
+ 40  		AND a.seller_code = i.seller_code;
+ 41  	 END LOOP;
+ 42  	 dbms_output.put_line('.');
+ 43  	 dbms_output.put_line('Done.');
+ 44  	 dbms_output.put_line('.');
+ 45  EXCEPTION
+ 46  	 WHEN OTHERS THEN
+ 47  	     dbms_output.put_line('ERROR# '||sqlerrm);
+ 48  	 COMMIT;
+ 49  	 dbms_output.put_line('Commited.');
+ 50  END;
+ 51  /
+Stub for update SYSADDDAYS parameter value
+==========================================
+Seller     | Seller Dt | Sys Dt    | Generic Dt|  Days Diff | Seller Dt
+-----------|-----------|-----------|-----------|------------|----------
+CN         | 26-APR-14 | 01-JUL-15 | 01-JUL-15 |       -431 | 26-APR-14
+FI         | 04-MAR-11 | 01-JUL-15 | 01-JUL-15 |      -1580 | 04-MAR-11
+HK         | 22-DEC-13 | 01-JUL-15 | 01-JUL-15 |       -556 | 22-DEC-13
+ID         | 23-JUN-14 | 01-JUL-15 | 01-JUL-15 |       -373 | 23-JUN-14
+IN         | 25-SEP-14 | 01-JUL-15 | 01-JUL-15 |       -279 | 25-SEP-14
+JP         | 24-JUL-14 | 01-JUL-15 | 01-JUL-15 |       -342 | 24-JUL-14
+KH         | 08-AUG-12 | 01-JUL-15 | 01-JUL-15 |      -1057 | 08-AUG-12
+OWNER      | 01-JUL-15 | 01-JUL-15 | 01-JUL-15 |          0 | 01-JUL-15
+PH         | 10-JAN-14 | 01-JUL-15 | 01-JUL-15 |       -537 | 10-JAN-14
+SG         | 03-MAY-15 | 01-JUL-15 | 01-JUL-15 |        -59 | 03-MAY-15
+TW         | 24-JAN-13 | 01-JUL-15 | 01-JUL-15 |       -888 | 24-JAN-13
+VN         | 02-OCT-12 | 01-JUL-15 | 01-JUL-15 |      -1002 | 02-OCT-12
+-----------------------------------------------------------------------
+Stub for update SYSADDDAYS parameter value
+==========================================
+Seller: CN        , Seller Date: 26-APR-14, Sys Date: 01-JUL-15, Days Difference: -431
+Seller: FI        , Seller Date: 04-MAR-11, Sys Date: 01-JUL-15, Days Difference: -1580
+Seller: HK        , Seller Date: 22-DEC-13, Sys Date: 01-JUL-15, Days Difference: -556
+Seller: ID        , Seller Date: 23-JUN-14, Sys Date: 01-JUL-15, Days Difference: -373
+Seller: IN        , Seller Date: 25-SEP-14, Sys Date: 01-JUL-15, Days Difference: -279
+Seller: JP        , Seller Date: 24-JUL-14, Sys Date: 01-JUL-15, Days Difference: -342
+Seller: KH        , Seller Date: 08-AUG-12, Sys Date: 01-JUL-15, Days Difference: -1057
+Seller: OWNER     , Seller Date: 01-JUL-15, Sys Date: 01-JUL-15, Days Difference: 0
+Seller: PH        , Seller Date: 10-JAN-14, Sys Date: 01-JUL-15, Days Difference: -537
+Seller: SG        , Seller Date: 03-MAY-15, Sys Date: 01-JUL-15, Days Difference: -59
+Seller: TW        , Seller Date: 24-JAN-13, Sys Date: 01-JUL-15, Days Difference: -888
+Seller: VN        , Seller Date: 02-OCT-12, Sys Date: 01-JUL-15, Days Difference: -1002
+.
+Done.
+.
+
+PL/SQL procedure successfully completed.
+
+SQL> spool off;

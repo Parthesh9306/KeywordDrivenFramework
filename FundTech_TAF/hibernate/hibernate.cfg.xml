@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+	<!-- db properties fetched from properties file -->
+		<mapping file=".\hibernate\TestSuiteResult.hbm.xml" />
+		<mapping file=".\hibernate\TestcaseResult.hbm.xml" />
+		<mapping file=".\hibernate\StepResult.hbm.xml" />
+		<mapping file=".\hibernate\ExecutionMaster.hbm.xml" />
+		<mapping file=".\hibernate\ExecutionDetails.hbm.xml" />
+		<mapping file=".\hibernate\ObjectRepository.hbm.xml" />
+		<mapping file=".\hibernate\Product.hbm.xml" />
+		<mapping file=".\hibernate\Environment.hbm.xml" />
+		
+	</session-factory>
+</hibernate-configuration>

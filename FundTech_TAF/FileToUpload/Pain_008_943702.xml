@@ -1,0 +1,137 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.008.001.02" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <CstmrDrctDbtInitn>
+  <GrpHdr>
+   <MsgId>021/DDINP/00210002/20170703/943702</MsgId> <!-- unique -->
+   <CreDtTm>2017-01-24T07:32:30</CreDtTm>
+   <Authstn>
+    <Prtry>MAC</Prtry>
+   </Authstn>
+   <NbOfTxs>1</NbOfTxs>
+   <CtrlSum>101.14</CtrlSum> <!--100,101.14-->
+   <InitgPty>
+    <Nm>Multichoice Company</Nm><!--Company 1-->
+    <Id>
+     <OrgId>
+      <Othr>
+       <Id>LOCALOFFICEZA1</Id>
+      </Othr>
+     </OrgId>
+    </Id>
+   </InitgPty>
+  </GrpHdr>
+  <PmtInf>
+   <PmtInfId>DD_O485ProductS002623</PmtInfId>   
+   <PmtMtd>DD</PmtMtd>
+   <BtchBookg>1</BtchBookg>
+   <NbOfTxs>1</NbOfTxs>
+   <CtrlSum>101.14</CtrlSum>   <!--100,101.14-->
+   <PmtTpInf>
+    <!-- <CtgyPurp>
+      <Prtry>0021</Prtry>
+     </CtgyPurp>-->
+              <LclInstrm>
+                <Prtry>99</Prtry> 
+              </LclInstrm>
+              <SeqTp>RCUR</SeqTp> <!-- FRST ,FNAL, RCUR-->
+            </PmtTpInf>
+   <ReqdColltnDt>2017-01-24</ReqdColltnDt>
+   <Cdtr>
+    <Nm>NAME</Nm><!--AVIHAI-->
+    <CtctDtls>
+     <PhneNb>+27-113500000</PhneNb>
+     <EmailAdr>SAMultichoice@Multichoce.co.za</EmailAdr>
+    </CtctDtls>
+    <PstlAdr>
+     <AdrLine>DBTADRESLIN V3XML DBTADRESLIN V3XML</AdrLine>
+     <AdrLine>DBTADRESLIN V3XML DBTADRESLIN V3XML</AdrLine>
+    </PstlAdr>
+    <CtryOfRes>ZA</CtryOfRes>
+    <Id>
+     <OrgId>
+      <Othr>
+       <Id>ZA1CUST1</Id>
+      </Othr>
+     </OrgId>
+    </Id>
+   </Cdtr>
+   <CdtrAcct>
+    <Id>
+     <Othr>
+      <Id>4444444444</Id>
+     </Othr>
+    </Id>
+    <Ccy>ZAR</Ccy>
+   </CdtrAcct>
+   <CdtrAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>198765</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </CdtrAgt>
+   <ChrgBr>CRED</ChrgBr>
+   <DrctDbtTxInf>
+    <PmtId>
+     <InstrId>943702</InstrId> <!-- unique -->
+     <EndToEndId>0001/20159222/943702</EndToEndId> <!-- unique -->
+    </PmtId>
+    <PmtTpInf>
+     <CtgyPurp>
+      <Prtry>0021</Prtry>
+     </CtgyPurp>
+    </PmtTpInf>
+    <InstdAmt Ccy="ZAR">101.14</InstdAmt>  <!--in ooff must be  same like <ColltnAmt Ccy="ZAR">101.14</ColltnAmt> -->
+    <DrctDbtTx>
+     <MndtRltdInf>
+      <MndtId>00011701247414140000</MndtId>  <!--201703280000000013  ,8765201701240000005001,8765201701230000004013--> 
+      <DtOfSgntr>2017-01-24</DtOfSgntr>
+      <AmdmntInd>false</AmdmntInd>
+     </MndtRltdInf>
+     <CdtrSchmeId>
+      <Id>
+       <PrvtId>
+        <Othr>
+         <Id>MultChoice</Id><!--IR97ZZZ123111-->
+         <SchmeNm>
+          <Prtry>SDD</Prtry>
+         </SchmeNm>
+        </Othr>
+       </PrvtId>
+      </Id>
+     </CdtrSchmeId>
+    </DrctDbtTx>
+    <DbtrAgt>
+     <FinInstnId>
+      <ClrSysMmbId>
+       <MmbId>051001</MmbId>
+      </ClrSysMmbId>
+     </FinInstnId>
+    </DbtrAgt>
+    <Dbtr>
+     <Nm>Dimistos</Nm>
+     <PstlAdr>
+      <Ctry>DE</Ctry>
+      <AdrLine>101 SDD Five Days Future File St</AdrLine>
+     </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+     <Id>
+      <Othr>
+       <Id>2346071456</Id> 
+      </Othr>
+     </Id>
+     <Tp>
+      <Prtry>CURRENT</Prtry><!--CACC-->
+     </Tp>
+     <Ccy>ZAR</Ccy>
+    </DbtrAcct>
+    <Purp>
+     <Cd>OTHR</Cd>
+    </Purp>
+    <RmtInf>
+     <Ustrd>MultChoice170124741414</Ustrd><!-- pain.009 UltmtCdtr Id + pain.009 MndtReqId :exm. MultChoiceDA00009554/98240117  INV/1019761246  -->
+    </RmtInf>
+   </DrctDbtTxInf>
+  </PmtInf>
+ </CstmrDrctDbtInitn>
+</Document>

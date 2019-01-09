@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+    <line>
+      <![CDATA[ScreenShot1]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="11587" started-at="2015-06-23T11:59:00Z" finished-at="2015-06-23T11:59:12Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="11587" started-at="2015-06-23T11:59:00Z" finished-at="2015-06-23T11:59:12Z">
+      <class name="testScript.HybridExecuteTest">
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@1284f8e]" name="testLogin" duration-ms="0" started-at="2015-06-23T17:29:01Z" data-provider="hybridData" finished-at="2015-06-23T17:29:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Sanity]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Sanity Test Cases]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScript.HybridExecuteTest@1284f8e]" name="testLogin" duration-ms="10838" started-at="2015-06-23T17:29:01Z" data-provider="hybridData" finished-at="2015-06-23T17:29:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Regression]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Regression Test Cases]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[ScreenShot1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+      </class> <!-- testScript.HybridExecuteTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

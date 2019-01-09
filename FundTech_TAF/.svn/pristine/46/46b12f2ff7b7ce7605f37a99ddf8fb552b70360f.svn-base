@@ -1,0 +1,74 @@
+SET ECHO ON;
+SET FEEDBACK ON;
+SET AUTOCOMMIT OFF;
+SET SERVEROUTPUT ON SIZE 1000000;
+SET SERVEROUTPUT ON SIZE UNLIMITED
+SET PAGESIZE 200
+SET LINESIZE 2000
+SET VERIFY OFF;
+SET TRIMSPOOL ON;
+SET TERM ON;
+CLEAR SCREEN;
+
+SPOOL sysadd_update.log
+
+PROMPT Connecting Database.........
+PROMPT ===================================
+connect QCANZ152CIAUTO/QCANZ152CIAUTO@ANZ_175;
+
+DECLARE
+    v_seller_code VARCHAR2(10) := '%';
+BEGIN
+    dbms_output.put_line('Stub for update SYSADDDAYS parameter value');
+    dbms_output.put_line('==========================================');
+    dbms_output.put_line('Seller     | Seller Dt | Sys Dt    | Generic Dt|  Days Diff | Seller Dt');
+    dbms_output.put_line('-----------|-----------|-----------|-----------|------------|----------');
+    FOR i IN (SELECT a.seller_code, CEIL(generic.get_date(a.seller_code) - SYSDATE) days_diff
+                FROM system_parameters_mst a
+               WHERE a.parameter_code = 'SYSADDDAYS'
+                 AND a.seller_code like v_seller_code
+               ORDER BY a.seller_code)
+    LOOP
+        dbms_output.put_line(RPAD(i.seller_code,10,' ')||' | ' ||generic.get_date(i.seller_code) ||' | ' ||SYSDATE ||' | ' ||generic.get_datetime ||' | ' ||LPAD(i.days_diff,10,' ' ) ||' | ' ||generic.get_date(i.seller_code));
+
+        UPDATE system_parameters_mst a
+           SET a.parameter_value = i.days_diff
+         WHERE a.parameter_code = 'SYSADDDAYS'
+           AND a.seller_code = i.seller_code;
+    END LOOP;
+
+	
+    dbms_output.put_line('-----------------------------------------------------------------------');
+    dbms_output.put_line('Stub for update SYSADDDAYS parameter value');
+    dbms_output.put_line('==========================================');
+    FOR i IN (SELECT a.seller_code, CEIL(generic.get_date(a.seller_code) - SYSDATE) days_diff 
+                FROM system_parameters_mst a
+               WHERE a.parameter_code = 'SYSADDDAYS' 
+                 AND a.seller_code like v_seller_code
+               ORDER BY a.seller_code)
+    LOOP
+        dbms_output.put_line('Seller: ' || RPAD(i.seller_code,10,' ') 
+                    ||', Seller Date: ' ||generic.get_date(i.seller_code)
+                    ||', Sys Date: ' || SYSDATE 
+                    ||', Days Difference: ' || i.days_diff);
+
+        UPDATE system_parameters_mst a
+           SET a.parameter_value = i.days_diff
+         WHERE a.parameter_code = 'SYSADDDAYS'
+           AND a.seller_code = i.seller_code;
+    END LOOP;
+    dbms_output.put_line('.');
+    dbms_output.put_line('Done.');
+    dbms_output.put_line('.');
+EXCEPTION
+    WHEN OTHERS THEN
+        dbms_output.put_line('ERROR# '||sqlerrm);
+    COMMIT;
+    dbms_output.put_line('Commited.');
+END;
+/
+spool off;
+commit;
+exit;
+
+

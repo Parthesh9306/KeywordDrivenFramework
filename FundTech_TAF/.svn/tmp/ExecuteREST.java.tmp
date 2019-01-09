@@ -1,0 +1,258 @@
+package operation;
+
+import static com.jayway.restassured.RestAssured.given;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
+
+import org.json.JSONException;
+
+import com.jayway.restassured.builder.RequestSpecBuilder;
+import com.jayway.restassured.response.Header;
+import com.jayway.restassured.response.Headers;
+import com.jayway.restassured.response.Response;
+import com.jayway.restassured.specification.RequestSpecification;
+import com.jayway.restassured.specification.ResponseSpecification;
+
+
+/**
+ * Execute Rest Request(GET/POST/PUT/DELETE)
+ * @author Atul.Gadhave
+ *
+ */
+
+public class ExecuteREST {
+	
+	public static String restResponseStatusCode = null;
+	public static String restResponseStatusLine = null;
+	public static String restResponse = null;
+	public static Iterator<Header> restResponseHeaders = null;
+	public static RequestSpecBuilder builder = new RequestSpecBuilder();
+	public static RequestSpecification requestSpec = null;
+	public static ResponseSpecification responseSpecification = null;
+	public static Response response = null;
+
+	 /**
+     * Execute GET Rest Request
+     * @param baseURL
+     * @return Response
+     * @throws JSONException 
+     */
+	public static String executeRestGETRequest(String baseURL,HashMap<String, String> headers, String user, String pwd) throws JSONException {
+		
+		
+		if(headers != null){
+			builder.addHeaders(headers);
+		}
+		requestSpec = builder.build();
+		if(user != null && pwd != null){
+			requestSpec.authentication().preemptive().basic(user, pwd);
+		}	
+		responseSpecification = given().spec(requestSpec).expect();
+		
+		response = responseSpecification.get(baseURL);
+		
+		restResponseStatusCode = String.valueOf(response.getStatusCode());
+		restResponseStatusLine = response.getStatusLine();
+		restResponse = response.asString();
+		restResponseHeaders = response.getHeaders().iterator();
+		
+		System.out.println("Request submitted successfully, response details are as below:");
+        System.out.println("StatusCode: " + restResponseStatusCode);
+        System.out.println("StatusLine: " + restResponseStatusLine);
+		System.out.println("Rest Response: "+ restResponse);
+		return restResponse;
+	}
+	
+	 /**
+     * Execute POST Rest Request
+     * @param  baseURL
+     * @param  apiBody
+     * @return Response
+     * @throws JSONException,InterruptedException,IOException 
+     */
+	public static String  executeRestPOSTRequest(String baseURL,String apiBody,HashMap<String, String> headers, String user, String pwd) throws JSONException,InterruptedException,IOException {
+		 
+		if(headers != null){
+			builder.addHeaders(headers);
+		}
+		builder.setBody(apiBody);
+		requestSpec = builder.build();
+		
+<<<<<<< .mine
+		RequestSpecification requestSpec = builder.build();
+				
+		//Making post request with authentication, leave blank in case there are no credentials- basic("","")
+		Response response = given().spec(requestSpec).when().post(baseURL);
+		//Response response = given().spec(requestSpec).when().put(baseURL);
+		
+		//System.out.println("Request submitted successful, response details are as below:");
+
+        //System.out.println("StatusCode: " + response.getStatusCode());
+
+        //System.out.println("StatusLine: " + response.getStatusLine());
+        
+        //String rsp = response.asString();
+        
+        //System.out.println("ResponseString: " + rsp);
+
+	   return response;
+=======
+		if(user != null && pwd != null){
+			requestSpec.authentication().preemptive().basic(user, pwd);
+		}		
+		responseSpecification = given().spec(requestSpec).expect();
+		response = responseSpecification.post(baseURL);				
+			
+		restResponseStatusCode = String.valueOf(response.getStatusCode());
+		restResponseStatusLine = response.getStatusLine();
+		restResponse = response.asString();
+>>>>>>> .r3294
+		
+		System.out.println("Request submitted successfully, response details are as below:");
+        System.out.println("StatusCode: " + restResponseStatusCode);
+        System.out.println("StatusLine: " + restResponseStatusLine);
+		System.out.println("Rest Response: "+ restResponse);	
+		return restResponse;
+	}
+
+	 /**
+     * Execute PUT Rest Request
+     * @param  baseURL
+     * @param  apiBody
+     * @return Response
+     * @throws JSONException,InterruptedException,IOException 
+     */
+	public static String executeRestPUTRequest(String baseURL,String apiBody,HashMap<String, String> headers, String user, String pwd) throws JSONException,InterruptedException,IOException {
+		 
+		if(headers != null){
+			builder.addHeaders(headers);
+		}
+		builder.setBody(apiBody);
+		requestSpec = builder.build();
+		
+		if(user != null && pwd != null){
+			requestSpec.authentication().preemptive().basic(user, pwd);
+		}		
+		responseSpecification = given().spec(requestSpec).expect();
+		response = responseSpecification.put(baseURL);		
+		
+		restResponseStatusCode = String.valueOf(response.getStatusCode());
+		restResponseStatusLine = response.getStatusLine();
+		restResponse = response.asString();
+		
+		System.out.println("Request submitted successfully, response details are as below:");
+        System.out.println("StatusCode: " + restResponseStatusCode);
+        System.out.println("StatusLine: " + restResponseStatusLine);
+		System.out.println("Rest Response: "+ restResponse);	
+		return restResponse;       
+	}
+	
+	 /**
+     * Execute POST Rest Request
+     * @param  baseURL
+     * @return Response
+     * @throws JSONException 
+     */
+	
+	public static String executeRestDELETERequest(String baseURL,HashMap<String, String> headers, String user, String pwd) throws JSONException {
+		
+		if(headers != null){
+			builder.addHeaders(headers);
+		}
+		requestSpec = builder.build();
+		if(user != null && pwd != null){
+			requestSpec.authentication().preemptive().basic(user, pwd);
+		}
+		responseSpecification = given().spec(requestSpec).expect();
+		response = responseSpecification.delete(baseURL);
+		
+		restResponseStatusCode = String.valueOf(response.getStatusCode());
+		restResponseStatusLine = response.getStatusLine();
+		restResponse = response.asString();
+		
+		System.out.println("Request submitted successfully, response details are as below:");
+        System.out.println("StatusCode: " + restResponseStatusCode);
+        System.out.println("StatusLine: " + restResponseStatusLine);
+		System.out.println("Rest Response: "+ restResponse);	
+		return restResponse; 
+	}
+	
+<<<<<<< .mine
+	
+	/**
+     * Execute POST Rest Request
+     * @param  baseURL
+     * @param  apiBody
+     * @return Response
+     * @throws JSONException,InterruptedException,IOException 
+     */
+	public static boolean  verifyRESTRequestAttributes(String restResponse,String attributes) throws JSONException,InterruptedException,IOException {
+		 
+		//Convert Rest response String in to JSON
+		JSONObject jsonResp = new JSONObject(restResponse);
+		String attributesArray[] = attributes.split(",");
+		for(String attributeArray :  attributesArray)
+		{	
+			String attribute[] =  attributeArray.split(":");
+			if(jsonResp.has(attribute[0])){
+				  System.out.println("Response Attribute contains key:-"+attribute[1]);
+		}
+		
+		}
+	   return true;
+		
+	 }
+	
+	// * RestAassured Example
+	// * 
+	 public static void main(String args[]) throws JSONException,InterruptedException {
+=======
+	
+	 
+	 /* public static void main(String[] args) {
+>>>>>>> .r3294
+		 
+		//Initializing Rest API's URL
+		String APIUrl = "http://jsonplaceholder.typicode.com/posts";
+
+			
+		//Initializing payload or API body
+		String APIBody = "{\"name\":\"Norway\"}"; //e.g.- "{\"key1\":\"value1\",\"key2\":\"value2\"}"
+				//String APIBody = "{\"userId\": 61, \"id\": 502, \"title\": \"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\"body\": \"quia et \"}";
+					
+		// Building request using requestSpecBuilder
+		RequestSpecBuilder builder = new RequestSpecBuilder();
+			
+		//Setting API's body
+		//builder.setBody(APIBody);
+			
+		//Setting content type as application/json or application/xml
+		//builder.setContentType("application/json; charset=UTF-8");
+			
+		RequestSpecification requestSpec = builder.build();
+		
+		//Making post request with authentication, leave blank in case there are no credentials- basic("","")
+		Response response = given().spec(requestSpec).when().get(APIUrl);
+		
+		System.out.println("Request submitted successful, response detail as below:");
+
+        System.out.println("StatusCode: " + response.getStatusCode());
+
+        System.out.println("StatusLine: " + response.getStatusLine());
+
+        System.out.println("ResponseString: " + response.asString());
+
+<<<<<<< .mine
+      
+		}
+=======
+       
+		}*/
+>>>>>>> .r3294
+
+}
+
+
+

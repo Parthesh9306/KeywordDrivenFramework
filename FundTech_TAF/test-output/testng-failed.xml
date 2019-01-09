@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Command line suite]">
+  <test name="Command line test(failed)">
+    <classes>
+      <class name="testScript.HybridExecuteTest">
+        <methods>
+          <include name="after"/>
+          <include name="testLogin" invocation-numbers="0"/>
+          <include name="before"/>
+        </methods>
+      </class> <!-- testScript.HybridExecuteTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->

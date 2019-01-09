@@ -1,0 +1,727 @@
+<html> <head> <meta http-equiv=Content-Languagecontent=en-us> <meta http-equiv=Content-Typecontent=text/html; charset=windows-1252:> <title>Test Automation Execution Summery Report </title> </head> <body> <blockquote> <table border=2 bordercolor=#000000 id=table1 width=1000 height=31 bordercolorlight= #000000> <tr> <td COLSPAN = 10 bgcolor = #FFF8C6> <p align=center><font color=#000080 size=4 face="Copperplate Gothic Bold">Test Automation Execution Result for Test Case: 373423</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Product Name: Total Payments</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Customer: SaaS</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Build / Release: Version 5.0.DC.SP_RND.57.00  </font><font face="Copperplate Gothic Bold"></font> </p></td></tr><tr><td COLSPAN = 10 bgcolor = #FFF8C6><p align=justify><b><font color=#000080 size=2 face= Verdana> DATE:18 Sep 2017 11:02:50AM<p align=justify><b><font color=#000080 size=2 face= Verdana> SystemInfo: FTDT798.fundtech.co.in</td></tr><tr></tr><tr bgcolor=#8A4117><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Step Description</b><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Action</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Object / Data</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Data</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Result</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Trace</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Duration (HH:MM:SS)</b></td></blockquote></body></html><tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>1.1 Incoming pain_010 when Authorization succeeds</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>1.1 Incoming pain_010 when Authorization succeeds</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Configure database connection</td>
+<td width=400><p align=center><font face=Verdana size=2>SETUPDBCONNECTION</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_SPNED}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : SPNED environment value : SPNED<br>Db connection set to : SPNED</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:7</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Configure Queue connection</td>
+<td width=400><p align=center><font face=Verdana size=2>SETUP_QUEUE_CONNECTION</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_Queue_SPNED}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : Queue_SPNED environment value : Queue_SPNED<br>Queue connection : Queue_SPNED</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:3</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save db field value in property variable: Query to execute ${Prop_variable name} if in property ## Column to fetch separated by comma ## properties to store seperated by comma </td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>SELECT to_char(BSNESSDATE,'YYYY-MM-DD') AS BSNESSDATE FROM banks WHERE office = 'ZA1'##BSNESSDATE##BD</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> BD : 2017-09-29<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save db field value in property variable: Query to execute ${Prop_variable name} if in property ## Column to fetch separated by comma ## properties to store seperated by comma </td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>SELECT to_char(BSNESSDATE,'YYMMDD') AS BSNESSDATE FROM banks WHERE office = 'ZA1'##BSNESSDATE##BD1</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> BD1 : 170929<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save db field value in property variable: Query to execute ${Prop_variable name} if in property ## Column to fetch separated by comma ## properties to store seperated by comma </td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>SELECT to_char(BSNESSDATE+1,'YYYY-MM-DD') AS BSNESSDATE FROM banks WHERE office = 'ZA1'##BSNESSDATE##FD</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> FD : 2017-09-30<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save db field value in property variable: Query to execute ${Prop_variable name} if in property ## Column to fetch separated by comma ## properties to store seperated by comma </td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>SELECT to_char(BSNESSDATE,'DD') AS BSNESSDATE FROM banks WHERE office = 'ZA1'##BSNESSDATE##Day</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> Day : 29<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Generate Random Message Id</td>
+<td width=400><p align=center><font face=Verdana size=2>GENERATERANDOMVALUEINPROPERTY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Hour##NUMBER##6</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2>Property Name : Hour<br> Value generated 456886</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Generate Random Message Id</td>
+<td width=400><p align=center><font face=Verdana size=2>GENERATERANDOMVALUEINPROPERTY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Hour1##NUMBER##6</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2>Property Name : Hour1<br> Value generated 142330</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Generate Random Message Id</td>
+<td width=400><p align=center><font face=Verdana size=2>GENERATERANDOMVALUEINPROPERTY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Pacs002_MsgID##NUMBER##6</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2>Property Name : Pacs002_MsgID<br> Value generated 603983</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Generate Random Message Id</td>
+<td width=400><p align=center><font face=Verdana size=2>GENERATERANDOMVALUEINPROPERTY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Pacs002_MsgID1##NUMBER##6</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2>Property Name : Pacs002_MsgID1<br> Value generated 614398</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Generate Random Message Id</td>
+<td width=400><p align=center><font face=Verdana size=2>GENERATERANDOMVALUEINPROPERTY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>PAIN10_MsgID##NUMBER##6</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2>Property Name : PAIN10_MsgID<br> Value generated 552604</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Generate random MsgID</td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>SELECT to_char(BSNESSDATE+1,'DD') AS BSNESSDATE FROM banks WHERE office = 'ZA1'##BSNESSDATE##FutureDay</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> FutureDay : 30<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Write message to queue if from Property use ${Prop_variableName}</td>
+<td width=400><p align=center><font face=Verdana size=2>WRITE_QUEUE</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Q_AC_MND_TT1_IW_IN##<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.009.001.03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <MndtInitnReq>
+          <GrpHdr>
+            <MsgId>100/MANIM/210002/${Prop_BD}/${Prop_Hour}</MsgId>       <!-- use queue_Q_AC_MND_TT1_OW_IN-->
+            <!--change only six last digits - needs to be unique -->
+            <CreDtTm>${Prop_BD}T09:30:47</CreDtTm>
+            <InitgPty>
+              <!-- ST G -->
+              <Nm>Multichoice Company</Nm>
+              <Id>
+                <OrgId>
+                  <Othr>
+                    <Id>LOCALOFFICEZA1</Id>
+                  </Othr>
+                </OrgId>
+              </Id>
+            </InitgPty>
+            <InstgAgt>
+              <FinInstnId>
+                <ClrSysMmbId>
+                  <MmbId>210002</MmbId>
+   <!--For Online this contains the creditor bank for input and output.-->
+   <!--In batch input this contains the identifier of the initiating institution. On output, this contains the identifier of the PSO, namely 210000-->
+   <!--NEDBANK NCC 210002--> 
+                </ClrSysMmbId>
+              </FinInstnId>
+            </InstgAgt>
+            <InstdAgt>
+              <FinInstnId>
+                <ClrSysMmbId>
+                  <MmbId>210002</MmbId>
+   <!--For Online this contains the debtor bank for input and output.-->
+   <!--In batch input this contains the identifier of the initiating institution. On output, this contains the identifier of the PSO, namely 210000-->
+   <!--NEDBANK NCC 210002--> 
+                </ClrSysMmbId>
+              </FinInstnId>
+            </InstdAgt>
+          </GrpHdr>
+          <Mndt>
+            <MndtId>DA00009554</MndtId>
+            <MndtReqId>${Prop_BD1}${Prop_Hour}</MndtReqId><!--unique -->
+   <!--This is the Creditor Contract number and may not change. This will appear on the statement and will be referenced in Mandate Suspension, etc.-->
+            <Tp>
+              <SvcLvl>
+                <Prtry>T</Prtry><!--Tracking Indicator (Service Level) Valid values are ”Y” or “F”-->
+              </SvcLvl>
+              <LclInstrm>
+                <Prtry>0227</Prtry>
+    <!--Code 0227 means debtor authorisation is required.-->
+    <!--Code 0228 means that authorisation has been done.-->
+    <!--Code 0229 means that authorisation is required in Real Time and cell number is required.-->
+    <!--Code 0230 means that authorisation is required in Real Time and is processed using cell number registered at bank.-->
+              </LclInstrm>
+            </Tp>
+            <Ocrncs>
+              <SeqTp>RCUR</SeqTp><!--Valid Codes include “OOFF” – Once Off , “RCUR” - Recurring-->
+              <Frqcy>MNTH</Frqcy>
+              <Drtn>
+                <FrDt>${Prop_BD}</FrDt><!--BD/YYYY-MM-DD. Must be current date.-->
+              </Drtn>
+              <FrstColltnDt>${Prop_FD}</FrstColltnDt><!--YYYY-MM-DD BD+1-->
+            </Ocrncs>
+            <ColltnAmt Ccy="ZAR">101.14</ColltnAmt><!--Must contain “ZAR”, Must contain a value for “FIXED” and “VARIABLE” Debit Value Types.-->
+            <MaxAmt Ccy="ZAR">140.40</MaxAmt> <!--Must contain “ZAR”, Maximum amount of any instalment, no more than 1.5X collectAmt-->
+            <CdtrSchmeId>
+              <Id>
+                <OrgId>
+                  <Othr>
+                    <Id>MultChoice</Id><!--(Creditor Scheme Name)-->
+                  </Othr>
+                </OrgId>
+              </Id>
+            </CdtrSchmeId>
+            <Cdtr>
+              <Nm>Name</Nm><!--Creditor Name-->
+              <Id>
+                <OrgId>
+                  <Othr>
+                    <Id>0002${Prop_BD}815${Prop_Hour}</Id><!--4N=Bank Number + 10AN=Original System Date(YYYY-MM-DD) + 9N=Mandate sequence number-->         
+     <!--  needs to be unique -->
+                  </Othr>
+                </OrgId>
+              </Id>
+              <CtctDtls>
+                <PhneNb>+27-113500000</PhneNb><!--Mobile or landline number, needs to cater for the international standard (+27)e.g. “+27-823509883”-->
+                <EmailAdr>SAMultichoice@Multichoce.co.za</EmailAdr><!--Email Address-->
+              </CtctDtls>
+            </Cdtr>
+            <CdtrAcct>
+              <Id>
+                <Othr>
+                  <Id>8888888888</Id><!--Creditor Account Number-->
+                </Othr>
+              </Id>
+            </CdtrAcct>
+            <CdtrAgt>
+              <FinInstnId>
+                <ClrSysMmbId>
+                  <MmbId>210002</MmbId>
+                  <!--Creditor Bank (Creditor Branch Number) , membership for MOP -->
+                </ClrSysMmbId>
+              </FinInstnId>
+            </CdtrAgt>
+            <UltmtCdtr>
+              <Nm>Name</Nm><!--Ultimate Creditor Name (Ultimate Creditor Identifier) -->
+              <Id>
+                <OrgId>
+                  <Othr>
+                    <Id>MultChoice</Id><!--Creditor Abbreviated Short Name-->
+                  </Othr>
+                </OrgId>
+              </Id>
+            </UltmtCdtr>
+            <Dbtr>
+              <Nm>Dimistos</Nm><!--Debtor Name-->
+              <Id>
+                <PrvtId>
+                  <Othr>
+                    <Id>P/12028965420</Id><!--Debtor  Identification Values allowed :1 AN = Document type: “P” = Passport/“I” = ID Document/“T” = Temporary residence ID, 1 AN  = “/” + 33AN = Identification Document Number-->
+                  </Othr>
+                </PrvtId>
+              </Id>
+              <CtctDtls>
+                <PhneNb>+27-3550000</PhneNb><!--Mobile or landline number, needs to cater for the international standard (+27)e.g. “+27-823509883”-->
+                <EmailAdr>Dimistos@yahoo.com</EmailAdr>
+              </CtctDtls>
+            </Dbtr>
+            <DbtrAcct>
+              <Id>
+                <Othr>
+                  <Id>4444444444</Id><!--Debtor Account Number-->
+                </Othr>
+              </Id>
+              <Tp>
+                <Prtry>CACC</Prtry><!--Debtor Account Type CACC - Current Account/SVGS - Saving Account/TRAN - Transmission Account -->
+              </Tp>
+            </DbtrAcct>
+            <DbtrAgt>
+              <FinInstnId>
+                <ClrSysMmbId>
+                  <MmbId>051001</MmbId>
+                  <!--Branch NCC ID of debtor bank, membership for MOP-->
+                </ClrSysMmbId>
+              </FinInstnId>
+            </DbtrAgt>
+            <UltmtDbtr>
+              <Nm>UltimateMultichoce</Nm><!--Ultimate Debtor Name-->
+            </UltmtDbtr>
+            <SplmtryData>
+              <Envlp>
+                <Cnts>
+                  <AthntctnTp>REAL TIME</AthntctnTp><!--Must contain “REAL TIME” or “BATCH” or “PREAUTH”-->
+                  <RqstTrnsnbr>1</RqstTrnsnbr><!--(Only for Real Time messages)-->
+                  <CllctnDy>03</CllctnDy><!--Contains a number for the day  of collection as per Frequency selected-->
+                  <DtAdjRl>N</DtAdjRl><!--Date Adjustment Rule Indicator, This field may contain: “Y” = Yes/“N” = No -->
+                  <AdjstCtgy>N</AdjstCtgy><!--Adjustment Category, This field may contain: “N”-Never, “Q”-Quarterly, “A”-Annually, “B”-Bi-annually or “R”-Repo -->
+                  <FrstColltnAmt Ccy="ZAR">101.14</FrstColltnAmt><!-- First Collection Amount (Initial Amount) If different from instalment amount-->
+                  <DbVlTp>FIXED</DbVlTp><!--Debit Value Type, Must contain  “FIXED”/“VARIABLE”/“USAGE BASED”-->
+                </Cnts>
+              </Envlp>
+            </SplmtryData>
+          </Mndt>
+        </MndtInitnReq>
+      </Document>##NULL</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : BD property value : 2017-09-29<br> variable : Hour property value : 456886<br> variable : BD property value : 2017-09-29<br> variable : BD1 property value : 170929<br> variable : Hour property value : 456886<br> variable : BD property value : 2017-09-29<br> variable : FD property value : 2017-09-30<br> variable : BD property value : 2017-09-29<br> variable : Hour property value : 456886<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>MINIMUM</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:5</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save db field value in property variable: Query to execute ${Prop_variable name} if in property ## Column to fetch separated by comma ## properties to store seperated by comma </td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>select * FROM MINF WHERE p_duplicate_index like '%${Prop_BD1}${Prop_Hour}%'##P_MID##MID</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : BD1 property value : 170929<br> variable : Hour property value : 456886<br> MID : H09I83336BL40L2A<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Verify property / value from DB</td>
+<td width=400><p align=center><font face=Verdana size=2>VERIFYFROMDBQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>WAIT_AUTHORIZATION##select * FROM MINF WHERE P_MID = '${Prop_MID}'##P_MSG_STS</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID property value : H09I83336BL40L2A<br>DB value found : WAIT_AUTHORIZATION<br> Value to verify : WAIT_AUTHORIZATION<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Verify property / value from DB</td>
+<td width=400><p align=center><font face=Verdana size=2>VERIFYFROMDBQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>BOOK,AC_MND_TT1##select * FROM MINF WHERE P_MID = '${Prop_MID}'##P_DBT_MOP,P_CDT_MOP</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID property value : H09I83336BL40L2A<br>DB value found : BOOK<br> Value to verify : BOOK<br>DB value found : AC_MND_TT1<br> Value to verify : AC_MND_TT1<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>MINIMUM</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:5</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Write message to queue if from Property use ${Prop_variableName}</td>
+<td width=400><p align=center><font face=Verdana size=2>WRITE_QUEUE</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Q_IN_MND_MP_AUTH##<FndtMsg xmlns="http://fundtech.com/SCL/CommonTypes">
+ <Header>
+  <contextName>MandateAuthorizeAsync</contextName>
+  <P_MID>${Prop_MID}</P_MID>
+  <deliveryTimestamp>${Prop_BD}T13:27:15.534+03:00</deliveryTimestamp>
+  <EventId>G07RJ3940M0Y0L1U</EventId>
+ </Header>
+ <Msg>
+  <Pmnt>
+   <Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.012.001.03">
+    <MndtAccptncRpt>
+     <GrpHdr>
+      <MsgId>100/MANDR/00210001/20160425/000555</MsgId>
+      <CreDtTm>${Prop_BD}T18:13:22.330</CreDtTm>
+     </GrpHdr>
+     <UndrlygAccptncDtls>
+      <OrgnlMsgInf>
+       <MsgId>021/MANOT/210002/20160120/578477</MsgId>
+       <MsgNmId>pain.009.001.03</MsgNmId>
+      </OrgnlMsgInf>
+      <AccptncRslt>
+       <Accptd>true</Accptd>
+      </AccptncRslt>
+      <OrgnlMndt>
+       <OrgnlMndt>
+        <RfrdDoc>
+         <Tp>
+          <CdOrPrtry>
+           <Prtry>AAUT</Prtry>
+          </CdOrPrtry>
+         </Tp>
+        </RfrdDoc>
+       </OrgnlMndt>
+      </OrgnlMndt>
+      <SplmtryData>
+       <Envlp>
+        <Cnts>
+         <MntdRfNbr>00012016042500000097</MntdRfNbr>
+         <AthntctnTp>PREAUTH</AthntctnTp>
+         <Chnnl>My Channel</Chnnl>
+         <MndtAthDt>${Prop_BD}</MndtAthDt>
+        </Cnts>
+       </Envlp>
+      </SplmtryData>
+     </UndrlygAccptncDtls>
+    </MndtAccptncRpt>
+   </Document>
+  </Pmnt>
+ </Msg>
+</FndtMsg>##NULL</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID property value : H09I83336BL40L2A<br> variable : BD property value : 2017-09-29<br> variable : BD property value : 2017-09-29<br> variable : BD property value : 2017-09-29<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>MINIMUM</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:5</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Verify property / value from DB</td>
+<td width=400><p align=center><font face=Verdana size=2>VERIFYFROMDBQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>COMPLETE##select * FROM MINF WHERE P_MID = '${Prop_MID}'##P_MSG_STS</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID property value : H09I83336BL40L2A<br>DB value found : COMPLETE<br> Value to verify : COMPLETE<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>MINIMUM</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:5</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save db field value in property variable: Query to execute ${Prop_variable name} if in property ## Column to fetch separated by comma ## properties to store seperated by comma </td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>select * FROM MINF WHERE p_delivery_index like '%0002${Prop_BD}815${Prop_Hour}%' and p_msg_type = 'Pain_012'##P_MID##MID_Pain12</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : BD property value : 2017-09-29<br> variable : Hour property value : 456886<br> MID_Pain12 : H09I83350H740M2E<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:2</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Verify property / value from DB</td>
+<td width=400><p align=center><font face=Verdana size=2>VERIFYFROMDBQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>WAIT_CONFIRMATION##select * FROM MINF WHERE P_MID = '${Prop_MID_Pain12}'##P_MSG_STS</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID_Pain12 property value : H09I83350H740M2E<br>DB value found : WAIT_CONFIRMATION<br> Value to verify : WAIT_CONFIRMATION<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Write message to queue if from Property use ${Prop_variableName}</td>
+<td width=400><p align=center><font face=Verdana size=2>WRITE_QUEUE</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Q_AC_MND_TT1_IW_IN##<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.04">
+    <FIToFIPmtStsRpt>
+        <GrpHdr>
+            <MsgId>100/ST012/00210001/20170315/${Prop_Pacs002_MsgID}</MsgId>
+            <!--change only six last digits - needs to be unique -->
+            <!--unique ID -->
+            <CreDtTm>${Project_BD}T08:41:44.264</CreDtTm>
+            <InstgAgt>
+                <!-- ST G -->
+                <FinInstnId>
+                    <ClrSysMmbId>
+                        <MmbId>210001</MmbId>
+                    </ClrSysMmbId>
+                </FinInstnId>
+            </InstgAgt>
+            <InstdAgt>
+                <FinInstnId>
+                    <ClrSysMmbId>
+                        <MmbId>210001</MmbId>
+                    </ClrSysMmbId>
+                </FinInstnId>
+            </InstdAgt>
+        </GrpHdr>
+        <OrgnlGrpInfAndSts>
+            <OrgnlMsgId>100/MANDR/00210001/${Prop_BD}${Prop_Hour}</OrgnlMsgId>
+            <!-- is matched with OUTPUT pain.009 MsgId(Document\MndtInitnReq\GrpHdr\MsgId)-->
+            <OrgnlMsgNmId>pain.012.001.03</OrgnlMsgNmId>
+            <!-- is matched with pain.009 type-->
+            <OrgnlCreDtTm>${Prop_BD}T09:30:47.000</OrgnlCreDtTm>
+        </OrgnlGrpInfAndSts>
+        <TxInfAndSts>
+            <StsId>100/ST012/00210001/20170315/${Prop_Pacs002_MsgID}</StsId>
+            <!--needs to be the same as MsgId in GrpHdr-->
+            <OrgnlTxId>0002${Prop_BD}815${Prop_Hour}</OrgnlTxId>
+            <!-- is matched with pain.009 Cdtr Id(Document\MndtInitnReq\Mndt\MsgId\Cdtr\Id\OrgId\othr\Id)-->
+            <!--cdtr id of Pian009 -->
+            <TxSts>ACCP</TxSts>
+            <!-- Msg status - ACCP for accept - RJCT for reject -->
+            <OrgnlTxRef>
+                <IntrBkSttlmAmt Ccy="ZAR">101.14</IntrBkSttlmAmt>
+                <!-- is matched with pain.009 ColltnAmt(Document\MndtInitnReq\Mndt\ColltnAmt)-->
+                <SttlmInf>
+                    <SttlmMtd>CLRG</SttlmMtd>
+                </SttlmInf>
+                <MndtRltdInf>
+                    <MndtId>DA00009562</MndtId>
+                </MndtRltdInf>
+            </OrgnlTxRef>
+        </TxInfAndSts>
+        <SplmtryData>
+            <Envlp>
+                <Cnts>
+                    <RqstTrnsnbr>1</RqstTrnsnbr>
+                </Cnts>
+            </Envlp>
+        </SplmtryData>
+    </FIToFIPmtStsRpt>
+</Document>##NULL</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : Pacs002_MsgID property value : 603983<br> variable : BD property value : 2017-09-29<br> variable : Hour property value : 456886<br> variable : BD property value : 2017-09-29<br> variable : Pacs002_MsgID property value : 603983<br> variable : BD property value : 2017-09-29<br> variable : Hour property value : 456886<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Verify property / value from DB</td>
+<td width=400><p align=center><font face=Verdana size=2>VERIFYFROMDBQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>COMPLETE##select * FROM MINF WHERE P_MID = '${Prop_MID_Pain12}'##P_MSG_STS</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID_Pain12 property value : H09I83350H740M2E<br>DB value found : WAIT_CONFIRMATION<br> Value to verify : COMPLETE<br>DB value found : COMPLETE<br> Value to verify : COMPLETE<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:2</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save db field value in property variable: Query to execute ${Prop_variable name} if in property ## Column to fetch separated by comma ## properties to store seperated by comma </td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>select * from mandate man where creditor_id_key='0002${Prop_BD}815${Prop_Hour}'##UMR##UMR</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : BD property value : 2017-09-29<br> variable : Hour property value : 456886<br> UMR : 201709180000000001<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Write message to queue if from Property use ${Prop_variableName}</td>
+<td width=400><p align=center><font face=Verdana size=2>WRITE_QUEUE</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Q_AC_MND_TT1_IW_IN##<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.010.001.03">
+    <MndtAmdmntReq>
+        <GrpHdr>
+            <MsgId>100/MANAM/00210001/${Prop_BD}/${Prop_Hour1}</MsgId>
+            <CreDtTm>${Prop_BD}T09:30:47</CreDtTm>
+            <InitgPty>
+                <Nm>Multichoice Company</Nm>
+            </InitgPty>
+            <InstgAgt>
+                <FinInstnId>
+                    <ClrSysMmbId>
+                        <MmbId>210001</MmbId>
+                    </ClrSysMmbId>
+                </FinInstnId>
+            </InstgAgt>
+            <InstdAgt>
+                <FinInstnId>
+                    <ClrSysMmbId>
+                        <MmbId>210002</MmbId>
+                        <!--210000 -->
+                    </ClrSysMmbId>
+                </FinInstnId>
+            </InstdAgt>
+        </GrpHdr>
+        <UndrlygAmdmntDtls>
+            <AmdmntRsn>
+                <Rsn>
+                    <Prtry>MD17</Prtry>
+                </Rsn>
+            </AmdmntRsn>
+            <Mndt>
+                <MndtId>0001201701250000204005</MndtId>
+                <Tp>
+                    <SvcLvl>
+                        <Prtry>Y</Prtry>
+                    </SvcLvl>
+                    <LclInstrm>
+                        <Prtry>0227</Prtry>
+                    </LclInstrm>
+                </Tp>
+                <Ocrncs>
+                    <SeqTp>RCUR</SeqTp>
+                    <FrstColltnDt>${Prop_BD}</FrstColltnDt>
+                </Ocrncs>
+                <ColltnAmt Ccy="ZAR">101.14</ColltnAmt>
+                <MaxAmt Ccy="ZAR">140.40</MaxAmt>
+                <CdtrSchmeId>
+                    <Id>
+                        <OrgId>
+                            <Othr>
+                                <Id>Multicho</Id>
+                            </Othr>
+                        </OrgId>
+                    </Id>
+                </CdtrSchmeId>
+                <Cdtr>
+                    <Nm>Name</Nm>
+                    <Id>
+                        <OrgId>
+                            <Othr>
+                                <Id>0001${Prop_BD}815${Prop_Hour1}</Id>
+                            </Othr>
+                        </OrgId>
+                    </Id>
+                    <CtctDtls>
+                        <PhneNb>+27-113500000</PhneNb>
+                    </CtctDtls>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <Othr>
+                            <Id>4444444444</Id>
+                        </Othr>
+                    </Id>
+                </CdtrAcct>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <ClrSysMmbId>
+                            <MmbId>051001</MmbId>
+                        </ClrSysMmbId>
+                    </FinInstnId>
+                </CdtrAgt>
+                <UltmtCdtr>
+                    <Nm>Name</Nm>
+                    <Id>
+                        <OrgId>
+                            <Othr>
+                                <Id>NM</Id>
+                            </Othr>
+                        </OrgId>
+                    </Id>
+                </UltmtCdtr>
+                <Dbtr>
+                    <Nm>Dimistos</Nm>
+                    <Id>
+                        <PrvtId>
+                            <Othr>
+                                <Id>P/1202896540</Id>
+                            </Othr>
+                        </PrvtId>
+                    </Id>
+                    <CtctDtls>
+                        <PhneNb>+27-113500000</PhneNb>
+                        <EmailAdr>SAMultichoice@Multichoce.co.za</EmailAdr>
+                    </CtctDtls>
+                </Dbtr>
+                <DbtrAcct>
+                    <Id>
+                        <Othr>
+                            <Id>8888888888</Id>
+                            <!--- this is an optional tag, but when has a value, per Zachi, hard code deletes NCC value from Mndt  -->
+                        </Othr>
+                    </Id>
+                    <Tp>
+                        <Prtry>ACNO</Prtry>
+                    </Tp>
+                </DbtrAcct>
+                <DbtrAgt>
+                    <FinInstnId>
+                        <ClrSysMmbId>
+                            <MmbId>198765</MmbId>
+                            <!--Branch NCC ID of debtor bank-->
+                        </ClrSysMmbId>
+                    </FinInstnId>
+                </DbtrAgt>
+            </Mndt>
+            <OrgnlMndt>
+                <OrgnlMndt>
+                    <MndtId>DA00009554</MndtId>
+                    <MndtReqId>${Prop_BD1}${Prop_Hour}</MndtReqId>
+                    <Cdtr>
+                        <Nm>Name</Nm>
+                        <Id>
+                            <OrgId>
+                                <Othr>
+                                    <Id>NM</Id>
+                                </Othr>
+                            </OrgId>
+                        </Id>
+                    </Cdtr>
+                    <Dbtr>
+                        <Nm>Dimistos</Nm>
+                    </Dbtr>
+                    <DbtrAgt>
+                        <FinInstnId>
+                            <ClrSysMmbId>
+                                <MmbId>198765</MmbId>
+                            </ClrSysMmbId>
+                        </FinInstnId>
+                    </DbtrAgt>
+                </OrgnlMndt>
+            </OrgnlMndt>
+            <SplmtryData>
+                <Envlp>
+                    <Cnts>
+                        <AthntctnTp>REAL TIME</AthntctnTp>
+                        <RqstTrnsnbr>1</RqstTrnsnbr>
+                        <CllctnDy>${Prop_Day}</CllctnDy>
+                        <DtAdjRl>N</DtAdjRl>
+                        <AdjstCtgy>N</AdjstCtgy>
+                        <MndtRfNbr>${Prop_UMR}</MndtRfNbr>
+                        <FrstColltnAmt Ccy="ZAR">101.14</FrstColltnAmt>
+                        <DbVlTp>FIXED</DbVlTp>
+                    </Cnts>
+                </Envlp>
+            </SplmtryData>
+        </UndrlygAmdmntDtls>
+    </MndtAmdmntReq>
+</Document>##NULL</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : BD property value : 2017-09-29<br> variable : Hour1 property value : 142330<br> variable : BD property value : 2017-09-29<br> variable : BD property value : 2017-09-29<br> variable : BD property value : 2017-09-29<br> variable : Hour1 property value : 142330<br> variable : BD1 property value : 170929<br> variable : Hour property value : 456886<br> variable : Day property value : 29<br> variable : UMR property value : 201709180000000001<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>MINIMUM</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:5</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Save db field value in property variable: Query to execute ${Prop_variable name} if in property ## Column to fetch separated by comma ## properties to store seperated by comma </td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>select * FROM MINF WHERE p_duplicate_index like '%${Prop_UMR}%' and p_msg_type ='Pain_010' ##P_MID##MID_Pain10</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : UMR property value : 201709180000000001<br> MID_Pain10 : H09I83406GF40L2K<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:3</td>
+</td></tr>
+<tr bgcolor = #FA5858>
+<td width=400><p align=center><font face=Verdana size=2>Verify property / value from DB</td>
+<td width=400><p align=center><font face=Verdana size=2>VERIFYFROMDBQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>WAIT_AUTHORIZATION##select * FROM MINF WHERE P_MID = '${Prop_MID_Pain10}'##P_MSG_STS</td>
+<td width=400><p align=center><b><font face=Verdana size=2><a href="373423_18Sep2017__110250AM\18_Sep_2017__11_03_55AM_10.91.106.143.png" target="_blank">Fail</a> </href></font></b></td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID_Pain10 property value : H09I83406GF40L2K<br>DB value found : REJECTED<br> Value to verify : WAIT_AUTHORIZATION<br>DB value found : REJECTED<br> Value to verify : WAIT_AUTHORIZATION<br>DB value found : REJECTED<br> Value to verify : WAIT_AUTHORIZATION<br>DB value found : REJECTED<br> Value to verify : WAIT_AUTHORIZATION<br>DB value found : REJECTED<br> Value to verify : WAIT_AUTHORIZATION<br>DB value found : REJECTED<br> Value to verify : WAIT_AUTHORIZATION<br>DB value found : REJECTED<br> Value to verify : WAIT_AUTHORIZATION<br>DB value found : REJECTED<br> Value to verify : WAIT_AUTHORIZATION<br>DB value found : REJECTED<br> Value to verify : WAIT_AUTHORIZATION<br>DB value found : REJECTED<br> Value to verify : WAIT_AUTHORIZATION<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:14</td>
+</td></tr>

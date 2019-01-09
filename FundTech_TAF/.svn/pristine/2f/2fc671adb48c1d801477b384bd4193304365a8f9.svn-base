@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="hibernate.entity.ExecutionDetails" table="execution_details">
+		<id name="id" type="int">
+			<column name="id" scale="0" />
+			<generator class="increment" />
+		</id>
+		
+		<property name="createdAt" type="date">
+			<column name="created_at" />
+		</property>
+		
+		<property name="executionMasterId" type="int">
+			<column name="execution_master_id"  />
+		</property>
+		<one-to-one name="executionMaster" class="hibernate.entity.ExecutionMaster"></one-to-one>
+	</class>
+</hibernate-mapping>

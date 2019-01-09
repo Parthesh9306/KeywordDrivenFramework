@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.012.001.03">
+ <MndtAccptncRpt>
+  <GrpHdr>
+   <MsgId>021/MANDR/00210001/20170124/588601</MsgId>
+   <CreDtTm>2017-01-24T15:04:23.506</CreDtTm>
+   <InitgPty>
+    <Nm>Multichoice1</Nm>
+   </InitgPty>
+   <InstdAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>198765</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </InstdAgt>
+  </GrpHdr>
+  <UndrlygAccptncDtls>
+   <OrgnlMsgInf>
+    <MsgId>021/MANIN/00210002/20170919/019038</MsgId>
+    <!-- needed for matching -->
+    <MsgNmId>pain.009.001.03</MsgNmId>
+    <!-- needed for matching -->
+   </OrgnlMsgInf>
+   <AccptncRslt>
+    <Accptd>true</Accptd>
+   </AccptncRslt>
+   <OrgnlMndt>
+    <OrgnlMndt>
+     <MndtId>JAN2016-0001-0003</MndtId>
+     <Cdtr>
+      <Id>
+       <OrgId>
+        <Othr>
+         <Id>00022017-09-19000017109</Id>
+         <!-- needed for matching -->
+        </Othr>
+       </OrgId>
+      </Id>
+     </Cdtr>
+     <CdtrAgt>
+      <FinInstnId>
+       <ClrSysMmbId>
+        <MmbId>051001</MmbId>
+       </ClrSysMmbId>
+      </FinInstnId>
+     </CdtrAgt>
+     <Dbtr>
+      <CtctDtls>
+       <EmailAdr>Dimistos@yahoo.com</EmailAdr>
+      </CtctDtls>
+     </Dbtr>
+     <DbtrAcct>
+      <Id>
+       <Othr>
+        <Id>1231232</Id>
+       </Othr>
+      </Id>
+     </DbtrAcct>
+     <DbtrAgt>
+      <FinInstnId>
+       <Nm>13213</Nm>
+      </FinInstnId>
+     </DbtrAgt>
+     <RfrdDoc>
+      <Tp>
+       <CdOrPrtry>
+        <Prtry>AAUT</Prtry>
+       </CdOrPrtry>
+      </Tp>
+     </RfrdDoc>
+    </OrgnlMndt>
+   </OrgnlMndt>
+   <SplmtryData>
+    <Envlp>
+     <Cnts>
+      <AthntctnTp>BATCH</AthntctnTp>
+      <!-- change as needed -->
+      <RqstTrnsnbr>1</RqstTrnsnbr>
+      <CllctnDy>29</CllctnDy>
+      <DtAdjRl>N</DtAdjRl>
+      <AdjstCtgy>Q</AdjstCtgy>
+      <AdjstAmt Ccy="ZAR">100</AdjstAmt>
+      <Chnnl>INTERNETBANKING</Chnnl>
+      <MndtRfNbr>0001201701245886010000</MndtRfNbr>
+      <FrstColltnAmt Ccy="ZAR">100</FrstColltnAmt>
+      <DbVlTp>FIXED</DbVlTp>
+      <MndtAthDt>2016-04-21</MndtAthDt>
+     </Cnts>
+    </Envlp>
+   </SplmtryData>
+  </UndrlygAccptncDtls>
+ </MndtAccptncRpt>
+</Document>

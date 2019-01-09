@@ -1,0 +1,636 @@
+package operation;
+
+
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import oracle.sql.CLOB;
+import oracle.xdb.XMLType;
+import Utility.GlobalLib;
+import Utility.ProvisoException;
+import constants.Separator;
+
+/**
+ * Perform operation related to DB
+ * 
+ * @author Chetan.Aher
+ * 
+ */
+public class DbOperation {
+	/**
+	 * Driver name for DB
+	 */
+	private static String driverName;
+
+	/**
+	 * Connection URL for db
+	 */
+	private static String connectionURL;
+
+	/**
+	 * Username of Db
+	 */
+	private static String username;
+
+	/**
+	 * Password of DB
+	 */
+	private static String password;
+
+	private static Connection connection;
+	
+	private static Map<String, Connection> connectionPool = new HashMap<String, Connection>();
+
+
+	/**
+	 * Common function to get connection while executing queries
+	 * 
+	 * @param dbConnectProperty
+	 * @return
+	 * @throws IOException 
+	 * @throws ClassNotFoundException 
+	 * @throws SQLException 
+	 * @throws ProvisoException 
+	 */
+	public Connection getConnection(String dbConnectProperty) throws IOException, ClassNotFoundException, SQLException, ProvisoException {
+	    if (connectionPool.get(dbConnectProperty) == null) {
+		    PropertyFileOperation fileOperation = new PropertyFileOperation();
+            Properties props = null;
+            System.out.println("Creating connection : " + dbConnectProperty);
+            
+            if (!Debug.enviromentIsOn || dbConnectProperty.equals("ConnectionCore")) {
+                props = fileOperation.getAllPropertiesFromFile(Debug.propertyFileToRead);    
+            } else {
+                props = fileOperation.getAllPropertiesFromFile(Debug.objectsFolderPath + Debug.enviromentFileName + ".properties");  
+            }
+			
+			driverName = props.getProperty(dbConnectProperty
+					+ ".driverName");
+			connectionURL = props.getProperty(dbConnectProperty
+					+ ".connectionURL");
+			username = props.getProperty(dbConnectProperty + ".username");
+			password = props.getProperty(dbConnectProperty + ".password");
+			if (null == driverName || null == connectionURL || null == username || null == password) {
+			    throw new ProvisoException("Please specify Db connection details in environment as driverName,"
+			        + " connectionURL, username, password and connection name here");
+			}
+			Class.forName(driverName);
+
+			connection = DriverManager.getConnection(connectionURL,
+					username, password);
+		
+			driverName = props.getProperty(dbConnectProperty
+					+ ".driverName");
+			connectionURL = props.getProperty(dbConnectProperty
+					+ ".connectionURL");
+			username = props.getProperty(dbConnectProperty + ".username");
+			password = props.getProperty(dbConnectProperty + ".password");
+			Class.forName(driverName);
+			connection = DriverManager.getConnection(connectionURL,
+						username, password);
+			connectionPool.put(dbConnectProperty, connection);
+		}
+		
+		connection = connectionPool.get(dbConnectProperty);
+		
+		return connection;
+	}
+
+	/**
+	 * Execute select query and return result
+	 * 
+	 * @param dbConnectProperty
+	 * @param queryString
+	 * @param selectField
+	 * @return
+	 * @throws IOException 
+	 * @throws ClassNotFoundException 
+	 * @throws SQLException 
+	 * @throws IOException 
+	 * @throws ClassNotFoundException 
+	 * @throws ProvisoException 
+	 */
+	public String executeQuery(String dbConnectProperty, String queryString,
+			String selectField) throws SQLException, ClassNotFoundException, IOException, ProvisoException {
+		String dbValue = "";
+		ResultSet resultSet = executeQuery(dbConnectProperty, queryString);
+
+		while (resultSet.next()) {
+			System.out.println("Select column : " + selectField);
+			Object valueFetched = resultSet.getObject(selectField);
+			dbValue = getStringValueFromResultSet(valueFetched);
+			break;
+		}
+		System.out.println("DB value found : " + dbValue);
+
+		return dbValue;
+	}
+
+	/**
+	 * Execute select query and return result
+	 * 
+	 * @param dbConnectProperty
+	 * @param queryString
+	 * @param selectField
+	 * @param dbPollingMaxAttempt
+	 * @param dbPollingDuration
+	 * @return
+	 * @throws InterruptedException
+	 * @throws IOException 
+	 * @throws SQLException 
+	 */
+	public boolean executeQueryAndStoreProperties(String queryString,
+			String selectField, String properties, int dbPollingDuration,
+			int dbPollingMaxAttempt) throws InterruptedException, IOException, SQLException {
+		String dbValue = "";
+		boolean pollingFlag = false;
+		boolean returnValue = false;
+		for (int dbPollingAttept = 1; dbPollingAttept <= dbPollingMaxAttempt; dbPollingAttept++) {
+			ResultSet resultSet = executeQuery(queryString);
+			PropertyFileOperation propertyFileOperation = new PropertyFileOperation();
+
+			while (resultSet.next()) {
+				String[] selectFields = selectField
+						.split(Separator.SEPARATOR_COMMA);
+				String[] propertiesSplit = properties
+						.split(Separator.SEPARATOR_COMMA);
+
+				if (selectFields.length != propertiesSplit.length) {
+					System.out.println("Invalid input for query");
+				}
+
+				for (int i = 0; i < selectFields.length; i++) {
+					Object valueFetched = resultSet
+							.getObject(selectFields[i]);
+					dbValue = getStringValueFromResultSet(valueFetched);
+
+					if (dbValue == null || "".equals(dbValue)) {
+						pollingFlag = true;
+						System.out
+								.println("No DB value found for variable : "
+										+ propertiesSplit[i]);
+					} else {
+						System.out.println("DB value found : " + dbValue
+								+ " Write to variable : "
+								+ propertiesSplit[i]);
+						returnValue = true;
+					}
+					propertyFileOperation.writeByKeyValueProperty(
+							propertiesSplit[i], dbValue);
+					Debug.traceMessage = Debug.traceMessage +" "+ propertiesSplit[i] + " : " + dbValue +"<br>";
+				}
+				break;
+			}
+			if (pollingFlag) {
+				System.out.println("Db polling attempt : " + dbPollingAttept
+						+ " Sleep for : " + dbPollingDuration + "ms");
+				Thread.sleep(dbPollingDuration);
+			} else {
+				break;
+			}
+		}
+
+		return returnValue;
+	}
+
+	/**
+	 * Execute select query and return result
+	 * 
+	 * @param dbConnectProperty
+	 * @param queryString
+	 * @param selectField
+	 * @param dbPollingMaxAttempt
+	 * @param dbPollingDuration
+	 * @return
+	 * @throws SQLException 
+	 * @throws IOException 
+	 * @throws InterruptedException 
+	 * @throws Exception 
+	 */
+	public boolean executeQueryAndVerify(String queryString,
+			String selectField, String valuesToVerify, int dbPollingDuration,
+			int dbPollingMaxAttempt) throws SQLException, IOException, InterruptedException  {
+		String dbValue = "";
+		boolean pollingFlag = false;
+		int recordCount = 1;
+		boolean returnValue = false;
+		
+			for (int dbPollingAttept = 1; dbPollingAttept <= dbPollingMaxAttempt; dbPollingAttept++) {
+				ResultSet resultSet = executeQuery(queryString);
+				
+				while (resultSet.next()) {
+					List<Boolean> flags = new ArrayList<Boolean>();
+					System.out.println("record number search in : "
+							+ recordCount);
+
+					String[] selectFields = selectField
+							.split(Separator.SEPARATOR_COMMA);
+					String[] valuesToVerifySplit = valuesToVerify
+							.split(Separator.SEPARATOR_COMMA);
+
+					if (selectFields.length != valuesToVerifySplit.length) {
+						System.out.println("Invalid input for query");
+						break;
+					}
+
+					for (int i = 0; i < selectFields.length; i++) {
+						Object valueFetched = resultSet
+								.getObject(selectFields[i]);
+						dbValue = getStringValueFromResultSet(valueFetched);
+						
+						String valueToVerify = GlobalLib
+								.getPropertyOrValue(valuesToVerifySplit[i]);
+						Debug.traceMessage = Debug.traceMessage + "DB value found : " + dbValue
+								+ "<br> Value to verify : " + valueToVerify + "<br>";
+
+						if (!dbValue.equals(valueToVerify)) {
+							flags.add(true);
+							System.out.println("No match found");
+						} else {
+							flags.add(false);
+						}
+					}
+					pollingFlag = false;
+					for (int i = 0; i < flags.size(); i++) {
+						pollingFlag = pollingFlag | flags.get(i);
+					}
+					if (!pollingFlag) {
+						returnValue = true;
+						break;
+					}
+					recordCount++;
+				}
+				if (pollingFlag) {
+					System.out.println("Db polling attempt : "
+							+ dbPollingAttept + " Sleep for : "
+							+ dbPollingDuration + "ms");
+					Thread.sleep(dbPollingDuration);
+				} else {
+					System.out.println("Match found");
+					break;
+				}
+			}
+
+		return returnValue;
+	}
+
+	/**
+	 * Execute select query and return result set
+	 * 
+	 * @param dbConnectProperty
+	 * @param queryString
+	 * @return
+	 * @throws IOException 
+	 * @throws ClassNotFoundException 
+	 * @throws ProvisoException 
+	 * @throws SQLException 
+	 */
+	public ResultSet executeQuery(String dbConnectProperty, String queryString) throws ClassNotFoundException, IOException, ProvisoException, SQLException {
+		System.out.println("Query Executed =>" + queryString);
+		getConnection(dbConnectProperty);
+		Statement statement = connection.createStatement();
+		return statement.executeQuery(queryString);
+	}
+
+	/**
+	 * Execute select query and return result set
+	 * 
+	 * @param dbConnectProperty
+	 * @param queryString
+	 * @return
+	 * @throws SQLException 
+	 */
+	public ResultSet executeQuery(String queryString) throws SQLException {
+		System.out.println("Query Executed =>" + queryString);
+		
+		if (connection == null) {
+			System.out.println("Create db connection first");
+		} else {
+			Statement statement = connection.createStatement();
+			return statement.executeQuery(queryString);
+		}
+		
+		return null;
+	}
+
+	/**
+	 * Perform query of Db function for connection specified by providing table
+	 * name, db function ,alias and where condition
+	 * 
+	 * @param dbConnectProperty
+	 * @param tableName
+	 * @param dbFunction
+	 * @param alias
+	 * @param whereCondition
+	 * @return
+	 * @throws Exception 
+	 * @throws SQLException 
+	 * @throws IOException 
+	 * @throws ClassNotFoundException 
+	 * @throws SQLException 
+	 * @throws IOException 
+	 * @throws ClassNotFoundException 
+	 */
+	public String performQueryDbFunction(String dbConnectProperty,
+			String tableName, String dbFunction, String alias,
+			String whereCondition) throws Exception  {
+		String queryString = " SELECT " + dbFunction + " AS " + alias
+				+ " FROM " + tableName + " WHERE ";
+
+		String[] conditions = whereCondition.split(Separator.SEPARATOR_AND);
+
+		for (int i = 0; i < conditions.length; i++) {
+			String[] splitCondition = conditions[i]
+					.split(Separator.SEPARATOR_EQUALTO);
+			splitCondition[1] = GlobalLib.getPropertyOrValue(splitCondition[1]);
+			if (splitCondition[1].contains("WithoutQuotes")) {
+				String[] quoteCondition = splitCondition[1]
+						.split(Separator.SEPARATOR_DASH);
+				queryString = queryString + splitCondition[0] + " = "
+						+ quoteCondition[1] + "";
+			} else {
+				queryString = queryString + splitCondition[0] + " = '"
+						+ splitCondition[1] + "'";
+			}
+			if (conditions.length != 1 && i != conditions.length - 1) {
+				queryString = queryString + " and ";
+			}
+		}
+
+		return executeQuery(dbConnectProperty, queryString, alias);
+	}
+
+	/**
+	 * Perform query of Db function for connection specified by providing table
+	 * name, db function ,alias and where condition
+	 * 
+	 * @param dbConnectProperty
+	 * @param tableName
+	 * @param dbFunction
+	 * @param alias
+	 * @param whereCondition
+	 * @return
+	 * @throws Exception 
+	 * @throws SQLException 
+	 * @throws IOException 
+	 * @throws ClassNotFoundException 
+	 */
+	public String performQueryDbFunction(String dbConnectProperty,
+			String tableName, String dbFunction, String alias,
+			String whereCondition, String orderBy) throws Exception {
+		String queryString = " SELECT " + dbFunction + " AS " + alias
+				+ " FROM " + tableName + " WHERE ";
+
+		String[] conditions = whereCondition.split(Separator.SEPARATOR_AND);
+
+		for (int i = 0; i < conditions.length; i++) {
+			String[] splitCondition = conditions[i]
+					.split(Separator.SEPARATOR_EQUALTO);
+			splitCondition[1] = GlobalLib.getPropertyOrValue(splitCondition[1]);
+			if (splitCondition[1].contains("WithoutQuotes")) {
+				String[] quoteCondition = splitCondition[1]
+						.split(Separator.SEPARATOR_DASH);
+				queryString = queryString + splitCondition[0] + " = "
+						+ quoteCondition[1] + "";
+			} else {
+				queryString = queryString + splitCondition[0] + " = '"
+						+ splitCondition[1] + "'";
+			}
+			if (conditions.length != 1 && i != conditions.length - 1) {
+				queryString = queryString + " and ";
+			}
+		}
+		queryString = queryString + orderBy + " ";
+
+		return executeQuery(dbConnectProperty, queryString, alias);
+	}
+
+	/**
+	 * Call stored procedure by providing connection from property file and
+	 * stored procedure string
+	 * 
+	 * @param dbConnectProperty
+	 * @param storedProcedure
+	 * @return
+	 * @throws IOException 
+	 * @throws ClassNotFoundException 
+	 * @throws ProvisoException 
+	 */
+	public String performStoredProcedure(String dbConnectProperty,
+			String storedProcedure, String parameter) throws ClassNotFoundException, IOException, ProvisoException {
+		String retVal = "";
+		try {
+			getConnection(dbConnectProperty);
+			CallableStatement callableStatement = connection
+					.prepareCall(storedProcedure);
+			String[] parameters = parameter
+					.split(Separator.SEPARATOR_DOUBLE_EXCLAMATION);
+			for (int i = 0; i < parameters.length; i++) {
+				callableStatement.registerOutParameter((i + 1),
+						Integer.parseInt(parameters[i]));
+			}
+
+			callableStatement.executeUpdate();
+			retVal = callableStatement.getString(1);
+			System.out.println("DB Call sucessfull" + retVal);
+		} catch (SQLException e) {
+			System.out.println("Stored procedure exception");
+			e.printStackTrace();
+		}
+
+		return retVal;
+	}
+
+	/**
+	 * Call stored procedure by providing connection from property file and
+	 * stored procedure string
+	 * 
+	 * @param dbConnectProperty
+	 * @param prepareStatementString
+	 * @return
+	 * @throws IOException 
+	 * @throws ClassNotFoundException 
+	 * @throws ProvisoException 
+	 */
+	public boolean performPrepareStatement(String dbConnectProperty,
+			String prepareStatementString, String parameter) throws ClassNotFoundException, IOException, ProvisoException {
+
+		try {
+			getConnection(dbConnectProperty);
+			PreparedStatement prepareStatement = connection
+					.prepareStatement(prepareStatementString);
+			String[] parameters = parameter.split("!!");
+			for (int i = 0; i < parameters.length; i++) {
+				// NEED TO MAKE DYANAMIC
+				// prepareStatement.setInt(1, Integer.parseInt(parameters[i]));
+				prepareStatement.setBoolean(1, false);
+				prepareStatement.setInt(2, Integer.parseInt(parameters[i]));
+			}
+			prepareStatement.executeUpdate();
+			prepareStatement.close();
+
+			return true;
+		} catch (SQLException e) {
+			System.out.println("Stored procedure exception");
+			e.printStackTrace();
+
+			return false;
+		}
+	}
+	
+	/**
+	 * Perform update statement
+	 * 
+	 * @param prepareStatementString
+	 * @return
+	 * @throws SQLException
+	 */
+    public int performUpdate(String prepareStatementString) throws SQLException {
+        System.out.println("Update executed : " + prepareStatementString);
+        Statement statement = connection.createStatement();
+        return statement.executeUpdate(prepareStatementString);
+    }
+
+    /**
+	 * Set up DB connection
+	 * 
+	 * @param connectionName
+	 * @return
+     * @throws SQLException 
+     * @throws IOException 
+     * @throws ClassNotFoundException 
+     * @throws ProvisoException 
+	 */
+	public boolean setUpDbConnection(String connectionName) throws ClassNotFoundException, IOException, SQLException, ProvisoException {
+		getConnection(connectionName);
+
+		if (connection == null) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * Destroy db connection
+	 * @param connectionName 
+	 * 
+	 */
+	public void destroyConnection(String dbConnectProperty) {
+	    connection = connectionPool.get(dbConnectProperty);
+	    
+		if (connection != null) {
+			try {
+				connection.close();
+				connectionPool.put(dbConnectProperty, null);
+			} catch (SQLException e) {
+				System.out.println("Error while closing connection");
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 * Get String value from result set
+	 * 
+	 * @param objectFetched
+	 * @return
+	 * @throws SQLException
+	 */
+	public String getStringValueFromResultSet(Object objectFetched) throws SQLException {
+		String dbValue = "";
+		
+		if (objectFetched instanceof XMLType) {
+			XMLType xml = (XMLType) objectFetched;
+			dbValue = xml.getStringVal();
+		} else if (objectFetched instanceof CLOB) {
+			CLOB clob = (CLOB) objectFetched;
+			long len = clob.length();
+			dbValue = clob.getSubString(1, (int) len);
+		} else if (objectFetched instanceof BigDecimal) {
+			BigDecimal bigDecimal = (BigDecimal) objectFetched;
+			dbValue = bigDecimal.toPlainString();
+		} else {
+			dbValue = (String) objectFetched;
+		}
+		
+		return dbValue;
+	}
+
+	/**
+	 * Perform GPP db verification on fail action to print trace for VERIFYTEXTFROMDB
+	 * 
+	 * @param dbConnection
+	 * @param whereCondition
+	 * @return
+	 * @throws Exception 
+	 */
+	public String performGPPDBVerificationFailAction(String dbConnection, String whereCondition) throws Exception {
+		String mid = GlobalLib.getPropertyOrValue(whereCondition.split(Separator.SEPARATOR_EQUALTO)[1]);
+		String queryString = "SELECT error_code, description FROM JOURNALMESSAGES WHERE "
+				+ "ERROR_CODE IN (SELECT ERROR_CODE FROM MSGERR WHERE MID ='" + mid + "')";
+		ResultSet resultSet = executeQuery(dbConnection, queryString );
+		
+		return getErrorCodeAndDescriptionGPP(resultSet);
+	}
+
+	/**
+	 * Perform GPP db verification on fail action to print trace for VERIFYFROMDBQUERY
+	 * 
+	 * @param valuesToVerify
+	 * @return
+	 * @throws SQLException
+	 */
+	public String performGPPDBVerificationFailActionQuery(String query) throws SQLException {
+		String dbValue = "";
+		String mid = "";
+		
+		Matcher matcher = Pattern.compile("[\"'](.+)[\"']").matcher(query);
+		
+        if (matcher.find()) {
+        	mid = matcher.group(1);
+        }
+        
+		String queryString = "SELECT error_code, description FROM JOURNALMESSAGES WHERE "
+				+ "ERROR_CODE IN (SELECT ERROR_CODE FROM MSGERR WHERE MID ='" + mid + "')";
+
+		ResultSet resultSet = executeQuery(queryString);
+		dbValue = getErrorCodeAndDescriptionGPP(resultSet);
+		
+		return dbValue;
+	}
+	
+	/**
+	 * Get error code and description for GPP fail verification
+	 * 
+	 * @param resultSet
+	 * @return
+	 * @throws SQLException
+	 */
+	private String getErrorCodeAndDescriptionGPP(ResultSet resultSet) throws SQLException {
+		String dbValue = "";
+		
+		while (resultSet.next()) {
+			String errorCode = getStringValueFromResultSet(resultSet.getObject("error_code"));
+			String description = getStringValueFromResultSet(resultSet.getObject("description"));
+			System.out.println("error code : " + errorCode + " description : " + description);
+			dbValue = dbValue + "error code : " + errorCode + " description : " + description; 
+		}
+		
+		return dbValue;
+	}
+}

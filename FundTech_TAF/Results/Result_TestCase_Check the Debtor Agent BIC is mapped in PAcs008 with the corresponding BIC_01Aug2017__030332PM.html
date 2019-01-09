@@ -1,0 +1,443 @@
+<html> <head> <meta http-equiv=Content-Languagecontent=en-us> <meta http-equiv=Content-Typecontent=text/html; charset=windows-1252:> <title>Test Automation Execution Summery Report </title> </head> <body> <blockquote> <table border=2 bordercolor=#000000 id=table1 width=1000 height=31 bordercolorlight= #000000> <tr> <td COLSPAN = 10 bgcolor = #FFF8C6> <p align=center><font color=#000080 size=4 face="Copperplate Gothic Bold">Test Automation Execution Result for Test Case: Check the Debtor Agent BIC is mapped in PAcs008 with the corresponding BIC</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Product Name: Total Payments</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Customer: SAAS</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Build / Release: Version 5.0.DC.SP_RND.57.00 </font><font face="Copperplate Gothic Bold"></font> </p></td></tr><tr><td COLSPAN = 10 bgcolor = #FFF8C6><p align=justify><b><font color=#000080 size=2 face= Verdana> DATE:01 Aug 2017 03:03:32PM<p align=justify><b><font color=#000080 size=2 face= Verdana> SystemInfo: FTDT800.fundtech.co.in</td></tr><tr></tr><tr bgcolor=#8A4117><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Step Description</b><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Action</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Object / Data</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Data</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Result</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Trace</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Duration (HH:MM:SS)</b></td></blockquote></body></html><tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>Check the Debtor Agent BIC is mapped in Pacs008 with the corresponding BIC</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>Check the Debtor Agent BIC is mapped in Pacs008 with the corresponding BIC</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Connect to database</td>
+<td width=400><p align=center><font face=Verdana size=2>SETUPDBCONNECTION</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_SPNAB_PRD_QA}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : SPNAB_PRD_QA environment value : SPNAB_PRD_QA<br>Db connection set to : SPNAB_PRD_QA</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:8</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Setup MQ connection </td>
+<td width=400><p align=center><font face=Verdana size=2>SETUP_QUEUE_CONNECTION</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_Queue_SPNAB_PRD_QA}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : Queue_SPNAB_PRD_QA environment value : Queue_SPNAB_PRD_QA<br>Queue connection : Queue_SPNAB_PRD_QA</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:3</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Generate random OSNID</td>
+<td width=400><p align=center><font face=Verdana size=2>GENERATERANDOMVALUEINPROPERTY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Instr_ID##NUMBER_PRE##7_INSTR1</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2>Property Name : Instr_ID<br> Value generated INSTR16996907</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Generate random End to End Id</td>
+<td width=400><p align=center><font face=Verdana size=2>GENERATERANDOMVALUEINPROPERTY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>E2E_ID##NUMBER_PRE##6_E2EID11</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2>Property Name : E2E_ID<br> Value generated E2EID11518842</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Generate random Message Id</td>
+<td width=400><p align=center><font face=Verdana size=2>GENERATERANDOMVALUEINPROPERTY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>MsgId##NUMBER_PRE##7_NER061</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2>Property Name : MsgId<br> Value generated NER0613928929</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Fetch Db value into a variable: Db Connection name##TableName##Select column or function##Aliase##Where condition (columnName=value/Prop_variable)##Property name to store</td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>SELECT to_char(BSNESSDATE,'YYYY-MM-DD') AS BSNESSDATE FROM banks WHERE office = 'NAB'##BSNESSDATE##ObusinessDate</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> ObusinessDate : 2017-08-01<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Load payment (Pain001/Pacs008) message</td>
+<td width=400><p align=center><font face=Verdana size=2>EXECUTE_SOAP_REQUEST</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_Environment}##<soapenv:Envelope xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope"
+xmlns:q0="http://fundtech.com/SCL/BusinessFlowSelectorService"
+xmlns:q1="http://fundtech.com/SCL/CommonTypes"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header>
+    <contextName>PaymentInitiation</contextName>
+    <deliveryTimestamp>2016-08-31T06:19:06</deliveryTimestamp>
+    <q2:FndtHeader xmlns:q2="http://fundtech.com/SCL/CommonTypes">
+      <q2:credentials>
+        <q2:UserID>TUSHAR1</q2:UserID>
+        <q2:Role>ALL1</q2:Role>
+      </q2:credentials>
+    </q2:FndtHeader>
+  </soapenv:Header>
+  <soapenv:Body>
+    <q0:BusinessFlowSelectorRequest>
+      <q0:message>
+        <![CDATA[
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.06">
+        <CstmrCdtTrfInitn>
+          <GrpHdr>
+            <MsgId>${Prop_MsgId}</MsgId>
+            <CreDtTm>${Prop_ObusinessDate}T06:45:57.057Z</CreDtTm>
+            <NbOfTxs>1</NbOfTxs>
+            <InitgPty>
+              <Id>
+                <OrgId>
+                  <Othr>
+                    <Id>NABSANATAAU33XXX</Id>
+                 </Othr>
+                </OrgId>
+              </Id>
+            </InitgPty>
+          </GrpHdr>
+          <PmtInf>
+            <PmtInfId>TESTSNE2753</PmtInfId>
+            <PmtMtd>TRF</PmtMtd>
+            <ReqdExctnDt>${Prop_ObusinessDate}</ReqdExctnDt>
+            <Dbtr>
+              <Nm>NPP DR test2 ACC</Nm>
+              <Id>
+                <OrgId>
+                  <Othr>
+                    <Id>NATAAU33XXX</Id>
+                  </Othr>
+                </OrgId>
+              </Id>
+            </Dbtr>
+            <DbtrAcct>
+              <Id>
+                <Othr>
+                  <Id>${Env_Outward_DebitorAccount}</Id>
+                  <SchmeNm>
+                    <Cd>BBAN</Cd>
+                  </SchmeNm>
+                  <Issr>${Env_Outward_DebitorIssr}</Issr>
+                </Othr>
+              </Id>
+            </DbtrAcct>
+            <DbtrAgt>
+              <FinInstnId>
+                <BICFI>NATAAU33XXX</BICFI>
+                <PstlAdr>
+                  <AdrLine>AdrLine</AdrLine>
+                </PstlAdr>
+              </FinInstnId>
+            </DbtrAgt>
+            <CdtTrfTxInf>
+              <PmtId>
+                <InstrId>${Prop_Instr_ID}</InstrId>
+                <EndToEndId>${Prop_E2E_ID}</EndToEndId>
+              </PmtId>
+              <PmtTpInf>
+                <InstrPrty>HIGH</InstrPrty>
+                <SvcLvl>
+                  <Prtry>sct.01</Prtry>
+                </SvcLvl>
+                <LclInstrm>
+                  <Cd>CCI</Cd>
+                </LclInstrm>
+              </PmtTpInf>
+              <Amt>
+                <InstdAmt Ccy="AUD">${Env_BaseAmount}</InstdAmt>
+              </Amt>
+              <ChrgBr>SHAR</ChrgBr>
+              <UltmtDbtr>
+                <Nm>sdrfg</Nm>
+                <PstlAdr>
+                  <AdrLine>Adr</AdrLine>
+                </PstlAdr>
+                <Id>
+                  <PrvtId>
+                    <Othr>
+                      <Id>Idd</Id>
+                      <SchmeNm>
+                        <Cd>Cod1</Cd>
+                      </SchmeNm>
+                    </Othr>
+                  </PrvtId>
+                </Id>
+              </UltmtDbtr>
+              
+              <Cdtr>
+                <Nm>NPP CR test ACC</Nm>
+              </Cdtr>
+              <CdtrAcct>
+                <Id>
+                  <Othr>
+                    <Id>${Env_Outward_CreditorIssr}</Id>
+                    <SchmeNm>
+                      <Cd>BBAN</Cd>
+                    </SchmeNm>
+                    <Issr>${Env_Outward_CreditorIssr}</Issr>
+                  </Othr>
+                </Id>
+              </CdtrAcct>
+              <RgltryRptg>
+                     <Dtls>
+                     <Inf>Y</Inf>
+                     </Dtls>
+             </RgltryRptg>
+            </CdtTrfTxInf>
+          </PmtInf>
+        </CstmrCdtTrfInitn>
+      </Document>
+]]>
+</q0:message>
+      <q0:inMsgContext>Feeder</q0:inMsgContext>
+    </q0:BusinessFlowSelectorRequest>
+  </soapenv:Body>
+</soapenv:Envelope></td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MsgId property value : NER0613928929<br> variable : ObusinessDate property value : 2017-08-01<br> variable : ObusinessDate property value : 2017-08-01<br> variable : Instr_ID property value : INSTR16996907<br> variable : E2E_ID property value : E2EID11518842<br> variable : Environment environment value : http://splinux8.fundtech.isr:10252/gppold/services/BusinessFlowSelectorService?wsdl<br> variable : Outward_DebitorAccount environment value : 083001222333444<br> variable : Outward_DebitorIssr environment value : 083001<br> variable : BaseAmount environment value : 200.00<br> variable : Outward_CreditorIssr environment value : 704606<br> variable : Outward_CreditorIssr environment value : 704606<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:3</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Wait</td>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>MINIMUM</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:10</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Get MID into MID
+Fetch Db value into a variable : Db Connection name##TableName##Select column or function##Aliase##Where condition (columnName=value/Prop_variable)##Property name to store</td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>SELECT * FROM MINF WHERE P_ORIG_INSTR_ID='${Prop_Instr_ID}'##P_MID##MID</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : Instr_ID property value : INSTR16996907<br> MID : H081C3325OXV170P<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Verify database field value from Db : Expected Value / Prop_variable##Db connection name##table name##Select field or function##Aliase##Where condition(Column name = Value/Prop_variable)</td>
+<td width=400><p align=center><font face=Verdana size=2>VERIFYFROMDBQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>MP_WAIT##select * FROM MINF WHERE P_MID = '${Prop_MID}'##P_MSG_STS</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID property value : H081C3325OXV170P<br>DB value found : MP_WAIT<br> Value to verify : MP_WAIT<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Fetch Db value into a variable : Db Connection name##TableName##Select column or function##Aliase##Where condition (columnName=value/Prop_variable)##Property name to store</td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>SELECT * FROM MINF WHERE P_MID='${Prop_MID}'##P_TX_ID##PTXID</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID property value : H081C3325OXV170P<br> PTXID : TESTSNE2753<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Fetch Db value into a variable : Db Connection name##TableName##Select column or function##Aliase##Where condition (columnName=value/Prop_variable)##Property name to store</td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>SELECT * FROM MSG_POSTING WHERE MID='${Prop_MID}'AND POSTING_TYPE='MAIN_DR'##POSTING_REQST_ID##PostingReqId</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID property value : H081C3325OXV170P<br> PostingReqId : H081C3326PWV170WGPPS<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Set Positive Posting Response</td>
+<td width=400><p align=center><font face=Verdana size=2>WRITE_QUEUE</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Q_IN_POST_RESPONSE_NPP##<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <FIToFIPmtStsRpt>
+        <GrpHdr>
+            <MsgId>${Prop_MsgId}</MsgId>
+            <CreDtTm>${Prop_ObusinessDate}T06:05:09</CreDtTm>
+            <InstgAgt>
+                <FinInstnId>
+                    <BIC>KREDBEBB</BIC>
+                </FinInstnId>
+            </InstgAgt>
+            <InstdAgt>
+                <FinInstnId>
+                    <BIC>AXABBE22</BIC>
+                </FinInstnId>
+            </InstdAgt>
+        </GrpHdr>
+        <OrgnlGrpInfAndSts>
+            <OrgnlMsgId>${Prop_PostingReqId}</OrgnlMsgId>
+            <OrgnlMsgNmId>pacs.008.001.05</OrgnlMsgNmId>
+            <GrpSts>PART</GrpSts>
+        </OrgnlGrpInfAndSts>
+        <TxInfAndSts>
+            <StsId>SS000002</StsId>
+            <OrgnlEndToEndId>${Prop_E2E_ID}</OrgnlEndToEndId>
+            <OrgnlTxId>${Prop_PTXID}</OrgnlTxId>  
+            <ClrSysRef>${Prop_MID}</ClrSysRef>
+            <TxSts>ACSC</TxSts>            
+            <OrgnlTxRef>
+                <IntrBkSttlmAmt Ccy="AUD">${Env_BaseAmount}</IntrBkSttlmAmt>
+            </OrgnlTxRef>
+        </TxInfAndSts>
+    </FIToFIPmtStsRpt>
+</Document>##NULL</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MsgId property value : NER0613928929<br> variable : ObusinessDate property value : 2017-08-01<br> variable : PostingReqId property value : H081C3326PWV170WGPPS<br> variable : E2E_ID property value : E2EID11518842<br> variable : PTXID property value : TESTSNE2753<br> variable : MID property value : H081C3325OXV170P<br> variable : BaseAmount environment value : 200.00<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Verify database field value from Db : Expected Value / Prop_variable##Db connection name##table name##Select field or function##Aliase##Where condition(Column name = Value/Prop_variable)</td>
+<td width=400><p align=center><font face=Verdana size=2>VERIFYFROMDBQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>OFAC_POSSIBLE_HIT##select * FROM MINF WHERE P_MID = '${Prop_MID}'##P_MSG_STS</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID property value : H081C3325OXV170P<br>DB value found : MP_WAIT<br> Value to verify : OFAC_POSSIBLE_HIT<br>DB value found : OFAC_POSSIBLE_HIT<br> Value to verify : OFAC_POSSIBLE_HIT<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:6</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Fetch Db value into a variable : Db Connection name##TableName##Select column or function##Aliase##Where condition (columnName=value/Prop_variable)##Property name to store</td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>SELECT * FROM MINF WHERE P_MID='${Prop_MID}'##P_TIME_STAMP##Timestamp</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID property value : H081C3325OXV170P<br> Timestamp : 2017-08-01 12:33:41.225<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Set compliance message with Release</td>
+<td width=400><p align=center><font face=Verdana size=2>EXECUTE_SOAP_REQUEST</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_ComplianceEndPoint}##<soapenv:Envelope xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" 
+  xmlns:q0="http://fundtech.com/SCL/MessageSubmitService"  
+  xmlns:q1="http://fundtech.com/SCL/CommonTypes"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"  
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">  
+  <soapenv:Header>
+    <q1:FndtHeader>
+<q1:credentials>
+     <q1:UserID>ROHIT1</q1:UserID>
+     <q1:Role>ALL1</q1:Role>
+   </q1:credentials>
+</q1:FndtHeader>
+  </soapenv:Header>
+  <soapenv:Body>  
+   <q0:MessageSubmitRequest>
+  <q0:MsgBatch>
+        <q1:FndtHeader>
+           <q1:credentials>                              
+                <q1:UserID>ROHIT1</q1:UserID>
+           </q1:credentials>                                                                            
+        </q1:FndtHeader>  
+   <q1:FndtPmntTxInf> 
+         <q1:FndtMsg>
+         <q1:Header>
+         
+                <q1:P_MID>${Prop_MID}</q1:P_MID>
+         </q1:Header>
+      <q1:Msg>
+        <q1:Pmnt>                       
+ 
+       </q1:Pmnt>
+        <q1:Extn>
+          <q1:ProcessingPersistentInfo>
+           <!-- <q1:P_INSTR_ID>NABNPP11082016_DEV2039</q1:P_INSTR_ID>-->
+           <!--<q1:P_TX_ID>NABNPP11082016TRANS_DEV2073</q1:P_TX_ID>-->
+            <q1:P_OFFICE>NAB</q1:P_OFFICE>
+            <q1:P_DEPARTMENT>AUN</q1:P_DEPARTMENT>   
+            <q1:P_TIME_STAMP>${Prop_Timestamp}</q1:P_TIME_STAMP>         
+          </q1:ProcessingPersistentInfo>
+          <q1:OperationalSection>
+            <q1:D_BUTTON_ID>Release</q1:D_BUTTON_ID>
+          </q1:OperationalSection>          
+        </q1:Extn>
+      </q1:Msg>
+    </q1:FndtMsg>    
+   </q1:FndtPmntTxInf>  
+  </q0:MsgBatch>
+</q0:MessageSubmitRequest>
+</soapenv:Body>  
+</soapenv:Envelope></td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID property value : H081C3325OXV170P<br> variable : Timestamp property value : 2017-08-01 12:33:41.225<br> variable : ComplianceEndPoint environment value : http://splinux8.fundtech.isr:10252/gppold/services/MessageSubmitService<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Verify database field value from Db : Expected Value / Prop_variable##Db connection name##table name##Select field or function##Aliase##Where condition(Column name = Value/Prop_variable)</td>
+<td width=400><p align=center><font face=Verdana size=2>VERIFYFROMDBQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>WAIT_ACK##select * FROM MINF WHERE P_MID = '${Prop_MID}'##P_MSG_STS</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID property value : H081C3325OXV170P<br>DB value found : WAIT_ACK<br> Value to verify : WAIT_ACK<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Fetch Db value into a variable : Db Connection name##TableName##Select column or function##Aliase##Where condition (columnName=value/Prop_variable)##Property name to store</td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>SELECT * FROM MINF WHERE P_MID='${Prop_MID}'##P_TX_ID##PTXID</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID property value : H081C3325OXV170P<br> PTXID : NATAAU33XXXN20170801000000000002070<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Fetch Db value into a variable : Db Connection name##TableName##Select column or function##Aliase##Where condition (columnName=value/Prop_variable)##Property name to store</td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>select interface_content,time_stamp, interface_name from message_external_interaction where MID = '${Prop_MID}' and interface_name='NPP_OUTWARD_PACS_008'##INTERFACE_CONTENT##InterfaceContent</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : MID property value : H081C3325OXV170P<br> InterfaceContent : <BusMsg>
+<AppHdr xmlns="urn:iso:std:iso:20022:tech:xsd:head.001.001.01">
+  <Fr>
+    <FIId>
+      <FinInstnId>
+        <BICFI>NATAAU33XXX</BICFI>
+      </FinInstnId>
+    </FIId>
+  </Fr>
+  <To>
+    <FIId>
+      <FinInstnId>
+        <BICFI>NDUEAU44XXX</BICFI>
+      </FinInstnId>
+    </FIId>
+  </To>
+  <BizMsgIdr>NATAAU33XXX20170801000000000000208</BizMsgIdr>
+  <MsgDefIdr>pacs.008.001.05</MsgDefIdr>
+  <BizSvc>npp.clear.01-sct.01</BizSvc>
+  <CreDt>2017-08-01T09:33:48.311Z</CreDt>
+  <Prty>NORM</Prty>
+</AppHdr><Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.05"><FIToFICstmrCdtTrf><GrpHdr><MsgId>NATAAU33XXX20170801000000000000208</MsgId><CreDtTm>2017-08-01T09:33:48.311Z</CreDtTm><NbOfTxs>1</NbOfTxs><SttlmInf><SttlmMtd>CLRG</SttlmMtd><ClrSys><Cd>NPP</Cd></ClrSys></SttlmInf><InstgAgt><FinInstnId><BICFI>NATAAU33XXX</BICFI></FinInstnId></InstgAgt><InstdAgt><FinInstnId><BICFI>NDUEAU44XXX</BICFI></FinInstnId></InstdAgt></GrpHdr><CdtTrfTxInf><PmtId><InstrId>INSTR16996907</InstrId><EndToEndId>E2EID11518842</EndToEndId><TxId>NATAAU33XXXN20170801000000000002070</TxId></PmtId><PmtTpInf><InstrPrty>HIGH</InstrPrty><SvcLvl><Prtry>npp.clear.01-sct.01</Prtry></SvcLvl></PmtTpInf><IntrBkSttlmAmt Ccy="AUD">200.00</IntrBkSttlmAmt><IntrBkSttlmDt>2017-08-01</IntrBkSttlmDt><ChrgBr>SLEV</ChrgBr><UltmtDbtr><Nm>sdrfg</Nm><Id><PrvtId><Othr><Id>Idd</Id><SchmeNm><Cd>Cod1</Cd></SchmeNm></Othr></PrvtId></Id></UltmtDbtr><Dbtr><Nm>NPP DR test2 ACC</Nm></Dbtr><DbtrAcct><Id><Othr><Id>083001222333444</Id><SchmeNm><Cd>BBAN</Cd></SchmeNm><Issr>083001</Issr></Othr></Id></DbtrAcct><DbtrAgt><FinInstnId><BICFI>NATAAU33XXX</BICFI></FinInstnId></DbtrAgt><CdtrAgt><FinInstnId><BICFI>MMCIAU41XXX</BICFI></FinInstnId></CdtrAgt><Cdtr><Nm>NPP CR test ACC</Nm></Cdtr><CdtrAcct><Id><Othr><Id>704606</Id><SchmeNm><Cd>BBAN</Cd></SchmeNm><Issr>704606</Issr></Othr></Id></CdtrAcct></CdtTrfTxInf></FIToFICstmrCdtTrf></Document>
+</BusMsg><br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Verify xpath value</td>
+<td width=400><p align=center><font face=Verdana size=2>VERIFYBYXPATH</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>NATAAU33XXX##//*[local-name() = 'DbtrAgt']/*[local-name() = 'FinInstnId']/*[local-name() = 'BICFI']/text()##Prop_InterfaceContent</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2>Xpath / File : Prop_InterfaceContent Xapth value : NATAAU33XXX</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Disconnect database connection</td>
+<td width=400><p align=center><font face=Verdana size=2>DESTROYDBCONNECTION</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_SPNAB_SCD_QA}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : SPNAB_SCD_QA environment value : SPNAB_SCD_QA<br>Db connection destroyed : SPNAB_SCD_QA</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Disconnect Message Queue</td>
+<td width=400><p align=center><font face=Verdana size=2>DESTROY_QUEUE_CONNECTION</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${Env_Queue_SPNAB_SCD_QA}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : Queue_SPNAB_SCD_QA environment value : Queue_SPNAB_SCD_QA<br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:1</td>
+</td></tr>

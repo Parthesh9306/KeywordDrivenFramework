@@ -1,0 +1,61 @@
+<Document><PmtRtr xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.004.001.03">
+        <GrpHdr>
+            <MsgId>021/DDINP/00210002/20161915/802186</MsgId>
+            <CreDtTm>2017-07-03T10:00:00</CreDtTm>
+            <Authstn>
+                <Prtry>ABCD1234</Prtry>
+            </Authstn>
+            <NbOfTxs>1</NbOfTxs>
+            <CtrlSum>101.14</CtrlSum>
+            <TtlRtrdIntrBkSttlmAmt Ccy="ZAR">101.14</TtlRtrdIntrBkSttlmAmt>
+            <SttlmInf>
+                <SttlmMtd>CLRG</SttlmMtd>
+                <ClrSys>
+                    <Prtry>AC</Prtry>
+                </ClrSys>
+            </SttlmInf>
+            <InstgAgt>
+                <FinInstnId>
+                    <ClrSysMmbId>
+                        <MmbId>198765</MmbId>
+                        <!--NCC of Sender SBSA or ACH depending on the direction of the message SBSA NCC=210001 AC NCC=210000-->
+                    </ClrSysMmbId>
+                </FinInstnId>
+            </InstgAgt>
+            <InstdAgt>
+                <FinInstnId>
+                    <ClrSysMmbId>
+                        <MmbId>210001</MmbId>
+                        <!--NCC of Sender SBSA or ACH depending on the direction of the message SBSA NCC=210001 AC NCC=210000-->
+                    </ClrSysMmbId>
+                </FinInstnId>
+            </InstdAgt>
+        </GrpHdr>
+        <OrgnlGrpInf>
+            <OrgnlMsgId>021/DDINP/00210001/20170703/003006</OrgnlMsgId>
+            <!--From <MsgId> tag in PAIN008-->
+            <OrgnlMsgNmId>pacs.003.001.03</OrgnlMsgNmId>
+        </OrgnlGrpInf>
+        <TxInf>
+            <RtrId>RTN/0002/2017-02-20/802186</RtrId>
+            <!--RTN/0002/2017-02-20/000000120-->
+            <OrgnlEndToEndId>0001/20160233/802186</OrgnlEndToEndId>
+            <!--TO TEST THIS: OrgnlEndToEndId must be the same EndToEndId as in Pacs.003/camt.056-->
+            <OrgnlTxId>0001/2017-08-22/000002009</OrgnlTxId>
+            <!--TO TEST THIS: OrgnlTxId must be the same TxId as in Pacs.003/camt.056-->
+            <RtrdIntrBkSttlmAmt Ccy="ZAR">101.14</RtrdIntrBkSttlmAmt>
+            <IntrBkSttlmDt>2017-07-03</IntrBkSttlmDt>
+            <RtrRsnInf>
+                <Rsn>
+                    <Prtry>901000</Prtry>
+                </Rsn>
+            </RtrRsnInf>
+            <OrgnlTxRef>
+                <MndtRltdInf>
+                    <MndtId>201708220000001179</MndtId>
+                    <!--TO TEST THIS: should be the same MndtId as in Pacs.003/camt.056-->
+                </MndtRltdInf>
+            </OrgnlTxRef>
+        </TxInf>
+    </PmtRtr>
+</Document>

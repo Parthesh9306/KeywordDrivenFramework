@@ -1,0 +1,175 @@
+package operation;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Properties;
+
+import constants.Separator;
+
+/**
+ * Read and write property file 
+ * 
+ * @author Chetan.Aher
+ *
+ */
+public class PropertyFileOperation {
+    /**
+     * File path to read property file
+     */
+	static	String filepath = System.getProperty("user.dir")+"/objects/";
+    
+    /**
+     * File name to write into and read from
+     */
+
+	String fileName = "variables.properties";
+    
+    /**
+     * Set fileName to be user for storing properties
+     * @param propertyFileName
+     */
+    public void setPropertyFileName(String propertyFileName) {
+    	this.fileName = propertyFileName;
+    }
+
+    /**
+     * Write in properties to file pass value as propertyKey,propertyValue 
+     * comma separated
+     * For multiple pass as ':' separated
+     * 
+     * @param key
+     * @param value
+     * @throws IOException 
+     */
+    public void writeProperty(String valueToWrite) throws IOException {
+        File configFile = new File(filepath + fileName);
+	    Properties props = new Properties();
+	    
+	    if (configFile.exists()) {
+		FileInputStream in = new FileInputStream(filepath + fileName);
+		props.load(in);
+	    }
+	    
+
+	    String[] propertiesToWrite = valueToWrite.split(Separator.SEPARATOR_DOUBLE_EQUALTO);
+	    for (String propertyKeyValue : propertiesToWrite) {
+
+		String[] properties = propertyKeyValue.split(Separator.SEPARATOR_COMMA, 2);
+			props.setProperty(properties[0], properties[1]);
+	    }
+
+	    FileWriter writer = new FileWriter(configFile);
+	    props.store(writer, "Variable properties");
+	    writer.close();
+	}
+
+    /**
+     * Write in property file
+     * For multiple pass as ':' separated
+     * 
+     * @param key
+     * @param value
+     * @throws IOException 
+     */
+    public void writeByKeyValueProperty(String keyToStore, String valueToStore) throws IOException {
+        File configFile = new File(filepath + fileName);
+        Properties props = new Properties();
+        
+        if (configFile.exists()) {
+    	FileInputStream in = new FileInputStream(filepath + fileName);
+    	props.load(in);
+        }
+        props.put(keyToStore, new Object());
+        props.setProperty(keyToStore, valueToStore);
+    
+        FileWriter writer = new FileWriter(configFile);
+        props.store(writer, "Variable properties");
+        writer.close();
+	}
+    
+    /**
+     * Access value from property file by key
+     * 
+     * @param key
+     * @return
+     * @throws IOException 
+     */
+    public String readProperty(String key) throws IOException {
+    	File configFile = new File(filepath + fileName);
+    	FileReader reader = new FileReader(configFile);
+        Properties props = new Properties();
+        props.load(reader);
+        reader.close();
+
+        return props.getProperty(key);
+    }
+    
+    /**
+     * Write in property file
+     * For multiple pass as ':' separated
+     * 
+     * @param key
+     * @param value
+     * @throws IOException 
+     */
+    public void clearProperty() throws IOException {
+		File configFile = new File(filepath + fileName);
+	    Properties props = new Properties();
+	    
+	    if (configFile.exists()) {
+		FileInputStream in = new FileInputStream(filepath + fileName);
+		props.load(in);
+	    }
+	    
+	    props.clear();
+
+	    FileWriter writer = new FileWriter(configFile);
+	    props.store(writer, "Variable properties");
+	    writer.close();
+	}
+
+    /**
+     * Write properties by hash map
+     * 
+     * @param propertyValuesMap
+     * @throws IOException 
+     */
+    public void writePropertyByMap(HashMap<String, String> propertyValuesMap) throws IOException {
+        File configFile = new File(filepath + fileName);
+        Properties props = new Properties();
+
+        if (configFile.exists()) {
+            FileInputStream in = new FileInputStream(filepath + fileName);
+            props.load(in);
+        }
+        props.putAll(propertyValuesMap);
+        FileWriter writer = new FileWriter(configFile);
+        props.store(writer, "Variable properties");
+        writer.close();
+    }
+    
+    /**
+     * Get all properties from file
+     * 
+     * @param file
+     * @return
+     * @throws IOException
+     */
+    public Properties getAllPropertiesFromFile(String file) throws IOException {
+        File configFile = new File(file);
+        Properties props = new Properties();
+
+        if (configFile.exists()) {
+            FileInputStream in = new FileInputStream(file);
+            props.load(in);
+            in.close();
+        }
+        
+        return props;
+    }
+}

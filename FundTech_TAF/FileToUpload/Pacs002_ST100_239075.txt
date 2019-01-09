@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.04 FIToFIPaymentStatusReportV04_pacs.002.001.04_for_Pacs_Payment_msgs.xsd" xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.04" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <FIToFIPmtStsRpt>
+        <GrpHdr>
+            <MsgId>021/ST100/00000010/20170919/239075</MsgId>
+            <CreDtTm>2015-12-30T09:44:47</CreDtTm>
+            <InstgAgt>
+                <FinInstnId>
+                    <ClrSysMmbId>
+                        <MmbId>210000</MmbId>
+                    </ClrSysMmbId>
+                </FinInstnId>
+            </InstgAgt>
+            <InstdAgt>
+                <FinInstnId>
+                    <ClrSysMmbId>
+                        <MmbId>210001</MmbId>
+                    </ClrSysMmbId>
+                </FinInstnId>
+            </InstdAgt>
+        </GrpHdr>
+        <OrgnlGrpInfAndSts>
+            <OrgnlMsgId>021/MANAM/00210001/20170919/239075</OrgnlMsgId>
+            <!--Same as <MsgId> in outgoing AC_MND(pain010) file-->
+            <OrgnlMsgNmId>pain.010.001.03</OrgnlMsgNmId>
+            <OrgnlCreDtTm>2015-12-30T09:44:48</OrgnlCreDtTm>
+            <GrpSts>PART</GrpSts>
+            <NbOfTxsPerSts>
+                <!--  ACCP only -->
+                <DtldNbOfTxs>1</DtldNbOfTxs>
+                <DtldSts>ACCP</DtldSts>
+            </NbOfTxsPerSts>
+            <!--  ACCP only -->
+            <NbOfTxsPerSts>
+                <!--  RJCT only -->
+                <DtldNbOfTxs>1</DtldNbOfTxs>
+                <DtldSts>RJCT</DtldSts>
+            </NbOfTxsPerSts>
+            <!--  RJCT only -->
+        </OrgnlGrpInfAndSts>
+        <TxInfAndSts>
+            <OrgnlTxId>00012017-09-19815239075</OrgnlTxId>
+            <!--  matching CdtrId of original pain010 -->
+            <TxSts>ACCP</TxSts>
+            <StsRsnInf>
+                <Rsn>
+                    <Prtry>900000</Prtry>
+                </Rsn>
+            </StsRsnInf>
+        </TxInfAndSts>
+        <TxInfAndSts>
+            <OrgnlTxId>00012017-09-19815547537</OrgnlTxId>
+            <!--  matching CdtrId of original pain010-->
+            <TxSts>RJCT</TxSts>
+            <StsRsnInf>
+                <Rsn>
+                    <Prtry>900000</Prtry>
+                </Rsn>
+            </StsRsnInf>
+        </TxInfAndSts>
+        <!--  For each trx with error -->
+        <!--OrgnlTxId>00002017-01-50000000005</OrgnlTxId> <  matching CdtrId of original pain010 -->
+        <!--TxSts>RJCT</TxSts-->
+        <!--StsRsnInf>
+    <Rsn>
+     <Prtry>902203</Prtry>
+    </Rsn>
+   </StsRsnInf>
+   <OrgnlTxRef>
+    <DbtrAgt>
+     <FinInstnId>
+      <ClrSysMmbId>
+       <MmbId>198765</MmbId>
+      </ClrSysMmbId>
+     </FinInstnId>
+    </DbtrAgt>
+    <UltmtCdtr>
+     <Id>
+      <OrgId>
+       <Othr>
+        <Id>NM</Id>
+       </Othr>
+      </OrgId>
+     </Id>
+    </UltmtCdtr>
+   </OrgnlTxRef>
+  </TxInfAndSts-->
+    </FIToFIPmtStsRpt>
+</Document>

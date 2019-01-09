@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="hibernate.entity.Environment" table="environment">
+		<id name="id" type="int">
+			<column name="id" scale="0" />
+			<generator class="increment" />
+		</id>
+
+		<property name="name" type="java.lang.String">
+			<column name="name" />
+		</property>
+
+		<property name="value" type="java.lang.String">
+			<column name="value" />
+		</property>
+
+		<property name="productId" type="int">
+			<column name="product_id" />
+		</property>
+
+		<property name="projectId" type="int">
+			<column name="project_id" />
+		</property>
+
+		<property name="versionId" type="int">
+			<column name="version_id" />
+		</property>
+
+		<property name="createdBy" type="int">
+			<column name="created_by" />
+		</property>
+
+		<property name="createdAt" type="date">
+			<column name="created_at" />
+		</property>
+
+	</class>
+</hibernate-mapping>

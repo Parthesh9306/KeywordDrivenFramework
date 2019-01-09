@@ -1,0 +1,232 @@
+<html> <head> <meta http-equiv=Content-Languagecontent=en-us> <meta http-equiv=Content-Typecontent=text/html; charset=windows-1252:> <title>Test Automation Execution Summery Report </title> </head> <body> <blockquote> <table border=2 bordercolor=#000000 id=table1 width=1000 height=31 bordercolorlight= #000000> <tr> <td COLSPAN = 10 bgcolor = #FFF8C6> <p align=center><font color=#000080 size=4 face="Copperplate Gothic Bold">Test Automation Execution Result for Test Case: 370280</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Product Name: Total Payments</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Customer: SaaS</font><font face="Copperplate Gothic Bold"></font> </p><p align=center><font color=#000080 size=3 face="Copperplate Gothic Bold">Build / Release: Version 5.0.DC.SP_RND.57.00  </font><font face="Copperplate Gothic Bold"></font> </p></td></tr><tr><td COLSPAN = 10 bgcolor = #FFF8C6><p align=justify><b><font color=#000080 size=2 face= Verdana> DATE:21 Aug 2017 06:07:22PM<p align=justify><b><font color=#000080 size=2 face= Verdana> SystemInfo: FTDT798.fundtech.co.in</td></tr><tr></tr><tr bgcolor=#8A4117><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Step Description</b><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Action</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Object / Data</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Data</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Result</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Trace</b></td><td width=300><p align=center><b><font color = white face=Arial Narrow size=2>Duration (HH:MM:SS)</b></td></blockquote></body></html><tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>2.7. Once Off Outgoing Pacs_003 + Inward Pacs_004</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>2.7. Once Off Outgoing Pacs_003 + Inward Pacs_004</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Assign payment file to property</td>
+<td width=400><p align=center><font face=Verdana size=2>WRITEPROPERTY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Pacs004##<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.04" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <FIToFIPmtStsRpt>
+  <GrpHdr>
+   <MsgId>021/DROUT/00000016/20150222/Var_RandomNum1</MsgId>
+   <CreDtTm>2017-08-11T09:40:47</CreDtTm>
+   <InstgAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>210001</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </InstgAgt>
+   <InstdAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>210001</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </InstdAgt>
+  </GrpHdr>
+  <OrgnlGrpInfAndSts>
+   <OrgnlMsgId>Var_Pacs03OutMsg</OrgnlMsgId> <!--from 003-->
+   <OrgnlMsgNmId>pacs.003.001.03</OrgnlMsgNmId> <!--from 003-->
+   <GrpSts>PART</GrpSts>
+  </OrgnlGrpInfAndSts>
+  <TxInfAndSts>
+   <OrgnlEndToEndId>Var_Pacs03E2E</OrgnlEndToEndId><!--from 003-->
+   <OrgnlTxId>Var_Pacs03Txn</OrgnlTxId> <!--from 003-->
+   <TxSts>ACCP</TxSts>
+   <!--<StsRsnInf>
+    <Rsn>
+     <Cd>AM09</Cd>
+    </Rsn>
+   </StsRsnInf>-->
+   <OrgnlTxRef>
+    <IntrBkSttlmAmt Ccy="ZAR">101.14</IntrBkSttlmAmt>
+    <IntrBkSttlmDt>2017-01-25</IntrBkSttlmDt>
+    <MndtRltdInf>
+     <MndtId>Var_Pacs03Mandate</MndtId>
+    </MndtRltdInf>
+    <RmtInf>
+     <Ustrd>Payment to PL account</Ustrd>
+    </RmtInf>
+    <Dbtr>
+     <Nm>800006D1D50000017</Nm>
+    </Dbtr>
+    <DbtrAcct>
+     <Id>
+      <Othr>
+       <Id>000525252</Id>
+      </Othr>
+     </Id>
+    </DbtrAcct>
+    <DbtrAgt>
+     <FinInstnId>
+      <ClrSysMmbId>
+       <MmbId>051001</MmbId>
+      </ClrSysMmbId>
+     </FinInstnId>
+    </DbtrAgt>
+    <CdtrAgt>
+     <FinInstnId>
+      <ClrSysMmbId>
+       <MmbId>051001</MmbId>
+      </ClrSysMmbId>
+     </FinInstnId>
+    </CdtrAgt>
+    <Cdtr>
+     <Nm>Std Bank Home Loans</Nm>
+    </Cdtr>
+    <CdtrAcct>
+     <Id>
+      <Othr>
+       <Id>4444444444</Id>
+      </Othr>
+     </Id>
+    </CdtrAcct>
+   </OrgnlTxRef>
+  </TxInfAndSts>
+ </FIToFIPmtStsRpt>
+</Document></td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Update pacs002 to upload to server</td>
+<td width=400><p align=center><font face=Verdana size=2>VARFINDNREPLACE</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>${READVAR_Pacs004}:Pacs004_${Prop_RandomNum1}.txt#Var_RandomNum1:${Prop_RandomNum1}#Var_Pacs03OutMsg:${Prop_Pacs03OutMsgId}#Var_Pacs03E2E:${Prop_Pacs03E2EId}#Var_Pacs03Txn:${Prop_Pacs03TxnId}#Var_Pacs03Mandate:${Prop_Pacs03MandateId}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : RandomNum1 property value : 554463<br> variable : RandomNum1 property value : 554463<br> variable : Pacs03OutMsgId property value : 021/DDINP/00210001/20170703/002009<br> variable : Pacs03E2EId property value : 0001/20160233/554463<br> variable : Pacs03TxnId property value : 0001/2017-08-21/000001015<br> variable : Pacs03MandateId property value : 201708210000001080<br> variable : Pacs004 property value : <Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.04" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <FIToFIPmtStsRpt>
+  <GrpHdr>
+   <MsgId>021/DROUT/00000016/20150222/Var_RandomNum1</MsgId>
+   <CreDtTm>2017-08-11T09:40:47</CreDtTm>
+   <InstgAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>210001</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </InstgAgt>
+   <InstdAgt>
+    <FinInstnId>
+     <ClrSysMmbId>
+      <MmbId>210001</MmbId>
+     </ClrSysMmbId>
+    </FinInstnId>
+   </InstdAgt>
+  </GrpHdr>
+  <OrgnlGrpInfAndSts>
+   <OrgnlMsgId>Var_Pacs03OutMsg</OrgnlMsgId> <!--from 003-->
+   <OrgnlMsgNmId>pacs.003.001.03</OrgnlMsgNmId> <!--from 003-->
+   <GrpSts>PART</GrpSts>
+  </OrgnlGrpInfAndSts>
+  <TxInfAndSts>
+   <OrgnlEndToEndId>Var_Pacs03E2E</OrgnlEndToEndId><!--from 003-->
+   <OrgnlTxId>Var_Pacs03Txn</OrgnlTxId> <!--from 003-->
+   <TxSts>ACCP</TxSts>
+   <!--<StsRsnInf>
+    <Rsn>
+     <Cd>AM09</Cd>
+    </Rsn>
+   </StsRsnInf>-->
+   <OrgnlTxRef>
+    <IntrBkSttlmAmt Ccy="ZAR">101.14</IntrBkSttlmAmt>
+    <IntrBkSttlmDt>2017-01-25</IntrBkSttlmDt>
+    <MndtRltdInf>
+     <MndtId>Var_Pacs03Mandate</MndtId>
+    </MndtRltdInf>
+    <RmtInf>
+     <Ustrd>Payment to PL account</Ustrd>
+    </RmtInf>
+    <Dbtr>
+     <Nm>800006D1D50000017</Nm>
+    </Dbtr>
+    <DbtrAcct>
+     <Id>
+      <Othr>
+       <Id>000525252</Id>
+      </Othr>
+     </Id>
+    </DbtrAcct>
+    <DbtrAgt>
+     <FinInstnId>
+      <ClrSysMmbId>
+       <MmbId>051001</MmbId>
+      </ClrSysMmbId>
+     </FinInstnId>
+    </DbtrAgt>
+    <CdtrAgt>
+     <FinInstnId>
+      <ClrSysMmbId>
+       <MmbId>051001</MmbId>
+      </ClrSysMmbId>
+     </FinInstnId>
+    </CdtrAgt>
+    <Cdtr>
+     <Nm>Std Bank Home Loans</Nm>
+    </Cdtr>
+    <CdtrAcct>
+     <Id>
+      <Othr>
+       <Id>4444444444</Id>
+      </Othr>
+     </Id>
+    </CdtrAcct>
+   </OrgnlTxRef>
+  </TxInfAndSts>
+ </FIToFIPmtStsRpt>
+</Document><br></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Upload pacs002 file on server</td>
+<td width=400><p align=center><font face=Verdana size=2>UPLOADFTPFILE</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Pacs004_${Prop_RandomNum1}.txt,${Env_AutomationPath}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : RandomNum1 property value : 554463<br> variable : AutomationPath environment value : /home/was8/dh/profiles/SPSBSA_SCD_QA1/data/incoming/debulk/Auto,192.168.168.183,22,was8,was8<br>File to Upload : D:\Proviso\FundTech_TAF_SOAP_UI\FileToUpload\Pacs004_554463.txt<Br> Location to Upload : /home/was8/dh/profiles/SPSBSA_SCD_QA1/data/incoming/debulk/Auto</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:4</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>MINIMUM</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:5</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>Upload file to server</td>
+<td width=400><p align=center><font face=Verdana size=2>COPYFTPFILE</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>Pacs004_${Prop_RandomNum1}.txt,${Env_AutomationPath},${Env_ACPath}</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2> variable : RandomNum1 property value : 554463<br> variable : AutomationPath environment value : /home/was8/dh/profiles/SPSBSA_SCD_QA1/data/incoming/debulk/Auto,192.168.168.183,22,was8,was8<br> variable : ACPath environment value : /home/was8/dh/profiles/SPSBSA_SCD_QA1/data/incoming/AC,192.168.168.183,22,was8,was8<br>File to Upload : <Br> Location to Copy : /home/was8/dh/profiles/SPSBSA_SCD_QA1/data/incoming/AC</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:6</td>
+</td></tr>
+<tr bgcolor = #FFFFFF>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>WAIT</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>MINIMUM</td>
+<td width=400><p align=center><font face=Verdana size=2>Pass</td>
+<td width=400><p align=center><font face=Verdana size=2></td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:5</td>
+</td></tr>
+<tr bgcolor = #FA5858>
+<td width=400><p align=center><font face=Verdana size=2>Save db field value in property variable: Query to execute ${Prop_variable name} if in property ## Column to fetch separated by comma ## properties to store seperated by comma </td>
+<td width=400><p align=center><font face=Verdana size=2>SAVEFIELDVALUEFROMDATABASEQUERY</td>
+<td width=400><p align=center><font face=Verdana size=2>NA</td>
+<td width=400><p align=center><font face=Verdana size=2>select * from file_summary where file_reference = '021/DROUT/00000016/20150222/${Prop_RandomNum1}' order by TIME_STAMP desc ##INTERNAL_FILE_ID##IFID1</td>
+<td width=400><p align=center><b><font face=Verdana size=2><a href="370280_21Aug2017__060722PM\21_Aug_2017__06_07_44PM_10.91.106.143.png" target="_blank">Fail</a> </href></font></b></td>
+<td width=400><p align=center><font face=Verdana size=2>Null Value found null</td>
+<td width=400><p align=center><font face=Verdana size=2>0:0:0</td>
+</td></tr>

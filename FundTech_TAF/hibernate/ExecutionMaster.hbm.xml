@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="hibernate.entity.ExecutionMaster" table="execution_master">
+		<id name="id" type="int">
+			<column name="id" scale="0" />
+			<generator class="increment" />
+		</id>
+		
+		<one-to-one name="executionDetails" class="hibernate.entity.ExecutionDetails"
+			></one-to-one>
+			
+		<property name="name" type="string">
+			<column name="name" />
+		</property>
+		<property name="machineId" type="int">
+			<column name="machine_id" />
+		</property>
+		<property name="executionStatus" type="boolean">
+			<column name="execution_status" />
+		</property>
+		<one-to-one name="objectRepository" class="hibernate.entity.ObjectRepository"></one-to-one>
+		
+		<set name="product" table="product"
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="product_id" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.entity.Product" />
+        </set>
+        
+		<property name="productId" type="int">
+			<column name="product_id" />
+		</property>
+		<property name="projectId" type="int">
+			<column name="project_id" />
+		</property>
+		<property name="testSuiteId" type="int">
+			<column name="test_suite_id" />
+		</property>
+		
+		<property name="versionId" type="int">
+			<column name="version_id" />
+		</property>
+
+		<property name="businessModuleId" type="int">
+			<column name="business_module_id" />
+		</property>
+		
+		<property name="technicalModuleId" type="int">
+			<column name="technical_module_id" />
+		</property>
+		
+		<property name="environmentId" type="int">
+			<column name="environment_id" />
+		</property>
+		
+		<property name="createdBy" type="int">
+			<column name="created_by" />
+		</property>	
+		
+		<property name="createdAt" type="date">
+			<column name="created_at" />
+		</property>
+
+	<!-- <property name="result" > -->
+	<!-- <column name="result"></column> -->
+	<!-- <type name="org.hibernate.type.EnumType"> -->
+	<!-- <param name="enumClass">hibernate.enum.Result</param> -->
+	<!-- </type> -->
+	<!-- </property> -->
+		<property name="result" column="result">
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">hibernate.enums.Result</param>
+				<param name="type">12</param>
+			</type>
+		</property>
+		
+		<property name="passCount" type="int">
+			<column name="pass_count" />
+		</property>	
+		
+		<property name="failCount" type="int">
+			<column name="fail_count" />
+		</property>	
+
+		<set name="testSuiteResults" cascade="all">
+			<key column="execution_master_id"></key>
+			<one-to-many class="hibernate.entity.TestSuiteResult" />
+		</set>
+	</class>
+</hibernate-mapping>
